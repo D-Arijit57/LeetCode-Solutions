@@ -2,7 +2,8 @@ class Solution {
 public:
     int numOfUnplacedFruits(vector<int>& fruits, vector<int>& baskets) {
         int n = fruits.size();
-        vector<bool> used(n, false);  // Track which baskets are used
+        // vector of n sized each index with a false value 
+        vector<bool> used(n, false);  // Track which baskets are used 
         int unplaced = 0;
         
         // Process each fruit type from left to right
