@@ -1,7 +1,7 @@
 class Solution {
 public:
     int longestConsecutive(vector<int>& nums) {
-       if (nums.empty()) return 0;
+        if (nums.empty()) return 0;
         unordered_set<int>numSet(nums.begin() ,nums.end());
         // Creat a hashset to store all numbers for O(1) lookup
         int maxLen = 0;
