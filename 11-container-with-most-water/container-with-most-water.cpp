@@ -1,6 +1,14 @@
 class Solution {
 public:
     int maxArea(vector<int>& height) {
+            /*
+         The algorithm says:
+
+        "I have a container with area X"    
+        "If I move the taller bar, I'm guaranteed worse"
+        "If I move the shorter bar, I might find better"
+        "So I'll move the shorter bar and check"
+            */
         int n = height.size();
         // two pointer apporach 
         // one from the start and one from the end 
