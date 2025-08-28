@@ -1,29 +1,19 @@
 class Solution {
 public:
     bool isValid(string s) {
-      stack<char>st;
-      if(s[0] == ')' || s[0] == ']' || s[0] == '}')
-      return false;
-      for(int i = 0 ;  i<s.size() ; i++){
-          if(s[i] == '(' || s[i] == '[' || s[i] == '{')
-          st.push(s[i]);
-          else if(st.size()){
-              char c = st.top();
-              if(c == '(' && s[i] != ')')
-              return false;
-              else if(c=='[' && s[i]!=']')
-              return false;
-              else if(c == '{' && s[i] != '}')
-              return false;
-              st.pop();
-          }
-          else
-          return false;
-      }
-      if(!st.empty())
-          return false;
-        return true ;
-
-       
+        stack<char> st;
+        unordered_map<char, char> CloseToOpen = {
+            {')', '('}, {'}', '{'}, {']', '['}};
+        for (char c : s) {
+            if (CloseToOpen.count(c)) {
+                if (!st.empty() && st.top() == CloseToOpen[c]) {
+                    st.pop();
+                } else
+                    return false;
+            } else {
+                st.push(c);
+            }
+        }
+        return st.empty();
     }
-};
+    };
