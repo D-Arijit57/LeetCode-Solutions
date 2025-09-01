@@ -43,7 +43,7 @@ public:
         // Calculate the average of the final ratios.
         double totalRatioSum = 0;
         for (const auto& c : classes) {
-            totalRatioSum += static_cast<double>(c[0]) / c[1];
+            totalRatioSum += (double)(c[0]) / c[1];
         }
 
         return totalRatioSum / classes.size();
