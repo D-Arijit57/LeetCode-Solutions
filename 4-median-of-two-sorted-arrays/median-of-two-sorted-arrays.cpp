@@ -1,50 +1,34 @@
 class Solution {
 public:
     double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
-        // Ensure nums1 is the smaller array for optimization
-        if (nums1.size() > nums2.size()) {
-            return findMedianSortedArrays(nums2, nums1);
+       int n1 = nums1.size(), n2 = nums2.size();
+    //if n1 is bigger swap the arrays:
+    if (n1 > n2) return findMedianSortedArrays(nums2, nums1);
+
+    int n = n1 + n2; //total length
+    int left = (n1 + n2 + 1) / 2; //length of left half
+    //apply binary search:
+    int low = 0, high = n1;
+    while (low <= high) {
+        int mid1 = (low + high) >> 1;
+        int mid2 = left - mid1;
+        //calculate l1, l2, r1 and r2;
+        int l1 = INT_MIN, l2 = INT_MIN;
+        int r1 = INT_MAX, r2 = INT_MAX;
+        if (mid1 < n1) r1 = nums1[mid1];
+        if (mid2 < n2) r2 = nums2[mid2];
+        if (mid1 - 1 >= 0) l1 = nums1[mid1 - 1];
+        if (mid2 - 1 >= 0) l2 = nums2[mid2 - 1];
+
+        if (l1 <= r2 && l2 <= r1) {
+            if (n % 2 == 1) return max(l1, l2);
+            else return ((double)(max(l1, l2) + min(r1, r2))) / 2.0;
         }
-        
-        int m = nums1.size();
-        int n = nums2.size();
-        int total = m + n;
-        int half = (total + 1) / 2; // Elements needed on left side
-        
-        int left = 0, right = m;
-        
-        while (left <= right) {
-            // Partition nums1 at i, nums2 at j
-            int i = (left + right) / 2;
-            int j = half - i;
-            
-            // Get boundary values
-            int nums1Left = (i == 0) ? INT_MIN : nums1[i - 1];
-            int nums1Right = (i == m) ? INT_MAX : nums1[i];
-            int nums2Left = (j == 0) ? INT_MIN : nums2[j - 1];
-            int nums2Right = (j == n) ? INT_MAX : nums2[j];
-            
-            // Check if partition is correct
-            if (nums1Left <= nums2Right && nums2Left <= nums1Right) {
-                // Found correct partition
-                if (total % 2 == 1) {
-                    // Odd total length - return max of left side
-                    return max(nums1Left, nums2Left);
-                } else {
-                    // Even total length - return average of middle two
-                    return (max(nums1Left, nums2Left) + min(nums1Right, nums2Right)) / 2.0;
-                }
-            }
-            else if (nums1Left > nums2Right) {
-                // nums1 partition too far right, move left
-                right = i - 1;
-            }
-            else {
-                // nums1 partition too far left, move right
-                left = i + 1;
-            }
-        }
-        
-        return 0.0; // Should never reach here with valid input
+
+        //eliminate the halves:
+        else if (l1 > r2) high = mid1 - 1;
+        else low = mid1 + 1;
+    }
+    return 0; //dummy statement
     }
 };
