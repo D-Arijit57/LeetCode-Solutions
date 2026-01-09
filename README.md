@@ -8,6 +8,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 |  |
 | ------- |
 | [0004-median-of-two-sorted-arrays](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0004-median-of-two-sorted-arrays) |
+| [0015-3sum](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0015-3sum) |
 | [0026-remove-duplicates-from-sorted-array](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0026-remove-duplicates-from-sorted-array) |
 | [0033-search-in-rotated-sorted-array](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0033-search-in-rotated-sorted-array) |
 | [0080-remove-duplicates-from-sorted-array-ii](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0080-remove-duplicates-from-sorted-array-ii) |
@@ -69,6 +70,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 ## Two Pointers
 |  |
 | ------- |
+| [0015-3sum](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0015-3sum) |
 | [0026-remove-duplicates-from-sorted-array](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0026-remove-duplicates-from-sorted-array) |
 | [0080-remove-duplicates-from-sorted-array-ii](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0080-remove-duplicates-from-sorted-array-ii) |
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0167-two-sum-ii-input-array-is-sorted) |
@@ -76,5 +78,6 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 ## Sorting
 |  |
 | ------- |
+| [0015-3sum](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0015-3sum) |
 | [0977-squares-of-a-sorted-array](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0977-squares-of-a-sorted-array) |
 <!---LeetCode Topics End-->
