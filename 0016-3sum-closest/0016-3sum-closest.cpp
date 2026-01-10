@@ -11,6 +11,8 @@ public:
 
         for (int i = 0; i < n; i++) {
 
+            if(i > 0 && nums[i] == nums[i - 1]) continue;
+
             int left = i + 1, right = n - 1;
 
             while (left < right) {
