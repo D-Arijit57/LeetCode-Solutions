@@ -2,29 +2,27 @@ class Solution {
 public:
     vector<vector<int>> fourSum(vector<int>& nums, int target) {
         int n = nums.size();
+        sort(nums.begin(), nums.end());
         vector<vector<int>>ans;
-        sort(nums.begin(),nums.end());
-        for(int i = 0 ; i<n ; i++){
-            if(i>0 && nums[i] == nums[i-1]) continue;
-            for(int j = i+1 ; j<n ; j++ ){
-                if(j != i+1 && nums[j] == nums[j-1]) continue ;
-                int k = j+1;
-                int l = n-1;
-                while(k<l){
-                    long long sum = nums[i];
-                    sum += nums[j];
-                    sum += nums[k];
-                    sum += nums[l];
+        // we iterate i < n - 3 and j < n - 2 since we need quadruplets
+        for(int i = 0 ; i < n-3 ; i++){ 
+            if(i > 0 && nums[i] == nums[i -1]) continue;
+            for(int j = i + 1 ; j < n-2 ; j++){
+                if(j > i+1 && nums[j] == nums[j-1]) continue;
+                int left = j+1 , right = n - 1;
+                while(left < right){
+                    long long sum =  (long long)nums[i] + nums[j] + nums[left] + nums[right];
                     if(sum == target){
-                        vector<int>temp  = {nums[i],nums[j],nums[k],nums[l]};
-                        ans.push_back(temp);
-                        l--;
-                        k++;
-                        while(k<l && nums[k] == nums[k-1]) k++;
-                        while(k<l && nums[l] == nums[l+1]) l--; 
+                     ans.push_back({nums[i],nums[j],nums[left],nums[right]});
+                     // avoiding duplicates
+                     while(left < right && nums[left] == nums[left + 1])left++;
+                     while(left < right && nums[right] == nums[right - 1])right--;
+                     // moving to the new unique element 
+                     left++;
+                     right--;
                     }
-                    else if(sum<target) k++;
-                    else l--;
+                    else if(sum > target) right--;
+                    else left++;
                 }
             }
         }
