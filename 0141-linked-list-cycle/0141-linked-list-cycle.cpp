@@ -12,7 +12,7 @@ public:
         if(head == nullptr) return false;
         ListNode *slow = head;
         ListNode *fast = head;
-        while(fast && fast -> next){
+        while(slow && fast && fast -> next){
             slow = slow -> next;
             fast = fast->next->next;
             if(slow == fast) return true;
