@@ -10,6 +10,11 @@ public:
         return sum;
     }
     bool isHappy(int n) {
+        // fast moves +2 ahead and checks if its 1 or same as fast 
+        // if its not a happy number it's bound to repeat 
+        // it creates a cyclic structure 
+        // so we visualize it as a linkedlist to find out using slow and fast pointers
+        // if there's a cycle (not a happy number) slow and fast are bound to meet each other
         int slow = n,fast = n;
         while(true){
          slow = calculate_sumOfdigits(slow);
