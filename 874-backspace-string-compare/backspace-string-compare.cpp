@@ -32,6 +32,7 @@ public:
                 if(s[i] != t[j]) return false;
             }
             // incase one pointer finishes first means both string are not of same length 
+            // XOR condition -> only when one is valid 
             if((i >= 0)  !=  (j >= 0)) return false;
             i--;
             j--;
