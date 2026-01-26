@@ -17,6 +17,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0080-remove-duplicates-from-sorted-array-ii](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0080-remove-duplicates-from-sorted-array-ii) |
 | [0120-triangle](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0120-triangle) |
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0167-two-sum-ii-input-array-is-sorted) |
+| [0287-find-the-duplicate-number](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0287-find-the-duplicate-number) |
 | [0485-max-consecutive-ones](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0485-max-consecutive-ones) |
 | [0581-shortest-unsorted-continuous-subarray](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0581-shortest-unsorted-continuous-subarray) |
 | [0713-subarray-product-less-than-k](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0713-subarray-product-less-than-k) |
@@ -47,6 +48,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0004-median-of-two-sorted-arrays](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0004-median-of-two-sorted-arrays) |
 | [0033-search-in-rotated-sorted-array](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0033-search-in-rotated-sorted-array) |
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0167-two-sum-ii-input-array-is-sorted) |
+| [0287-find-the-duplicate-number](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0287-find-the-duplicate-number) |
 | [0713-subarray-product-less-than-k](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0713-subarray-product-less-than-k) |
 ## Divide and Conquer
 |  |
@@ -93,6 +95,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0142-linked-list-cycle-ii](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0142-linked-list-cycle-ii) |
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0167-two-sum-ii-input-array-is-sorted) |
 | [0202-happy-number](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0202-happy-number) |
+| [0287-find-the-duplicate-number](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0287-find-the-duplicate-number) |
 | [0581-shortest-unsorted-continuous-subarray](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0581-shortest-unsorted-continuous-subarray) |
 | [0844-backspace-string-compare](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0844-backspace-string-compare) |
 | [0977-squares-of-a-sorted-array](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0977-squares-of-a-sorted-array) |
@@ -130,4 +133,8 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 |  |
 | ------- |
 | [0202-happy-number](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0202-happy-number) |
+## Bit Manipulation
+|  |
+| ------- |
+| [0287-find-the-duplicate-number](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0287-find-the-duplicate-number) |
 <!---LeetCode Topics End-->
