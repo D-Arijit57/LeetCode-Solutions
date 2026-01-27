@@ -10,35 +10,34 @@
  */
 class Solution {
 public:
-    ListNode* reverseList(ListNode* ptr){
-        ListNode* pre =NULL;
-    ListNode* nex= NULL;
-    while(ptr != NULL) {
-        nex = ptr->next;
-        ptr->next = pre;
-        pre=ptr;
-        ptr=nex;
-    }
-    return pre;
-    }
     bool isPalindrome(ListNode* head) {
-        if(head == NULL || head -> next == NULL){
-            return true;
+     ListNode* slow = head;
+     ListNode* fast = head;
+     // first phase finding the middle of the linked list
+     while(fast && fast->next){
+        slow = slow->next;
+        fast = fast->next->next;
         }
-        ListNode* slow = head ;
-        ListNode* fast = head;
-        while(fast -> next != NULL && fast -> next -> next != NULL){
-            slow = slow -> next;
-            fast = fast -> next -> next;
+        // if its a odd position skip it 
+        if(fast != nullptr) slow = slow->next;
+        // since we need to reverse the ll in place we are going to use curr, prev and next
+        // reversing before the middle part
+        ListNode* curr = slow;
+        ListNode* prev = nullptr; 
+        ListNode* next;
+        while(curr != nullptr){
+            next = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = next;
         }
-        slow -> next = reverseList(slow -> next);
-        slow = slow -> next;
-        while(slow != NULL){
-            if(head -> val != slow -> val){
-                return false ;
-            }
-            head = head -> next;
-            slow = slow -> next;
+        // comparing the first half with the second half 
+        ListNode* first = head;
+        ListNode* second = prev;
+        while(second != nullptr){
+            if(first->val != second->val) return false;
+            first = first->next;
+            second = second->next;
         }
         return true;
     }
