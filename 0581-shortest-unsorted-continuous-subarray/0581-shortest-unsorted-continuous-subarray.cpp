@@ -8,7 +8,6 @@ public:
          int maxSeen = nums[0];
          int minSeen = nums[n-1];
          // setting the boundary for the right side 
-         // checking if its strictly increasing
          // for each element first update the maxSeen
          // since we are checking for global anomaly 
          // check if its lesser than the maxSeen
@@ -17,7 +16,6 @@ public:
             if(maxSeen > nums[i]) right = i;            
         }
         // setting the boundary for the left side
-        // checking if its strictly decreasing
         // for each element update the minSeen
         // check if the current element is greater than the minSeen
         for(int j = n - 2 ; j >= 0 ; j--){
