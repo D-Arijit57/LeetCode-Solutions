@@ -29,14 +29,23 @@ public:
         // sliding window approach 
         for(int i = k ; i < n ; i++){
             int right = s[i] - 'a';
-            int left = s[i- k] - 'a';
-            // Add right characters 
+            int left = s[i - k] - 'a';
+
+            // Right -> expand the window add new characters
+            // Left -> Shrink the window removing the characters
+
+            // --- Add right characters ---
+            // Before adding check if this character was matching before
             if(freqP[right] == freqW[right]) matches--;
             freqW[right]++;
+            // Does the character match now after adding
             if(freqP[right] == freqW[right]) matches++;
-            // Remove left characters
+
+            // --- Remove left characters ---
+            // Before Removing the character check was the character matching before
             if(freqP[left] == freqW[left]) matches--;
             freqW[left]--;
+            // Does the character match now 
             if(freqP[left] == freqW[left]) matches++;
 
             if(matches == 26){
