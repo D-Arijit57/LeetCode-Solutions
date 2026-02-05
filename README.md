@@ -22,6 +22,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0485-max-consecutive-ones](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0485-max-consecutive-ones) |
 | [0581-shortest-unsorted-continuous-subarray](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0581-shortest-unsorted-continuous-subarray) |
 | [0713-subarray-product-less-than-k](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0713-subarray-product-less-than-k) |
+| [0904-fruit-into-baskets](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0904-fruit-into-baskets) |
 | [0977-squares-of-a-sorted-array](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0977-squares-of-a-sorted-array) |
 | [1470-shuffle-the-array](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1470-shuffle-the-array) |
 | [1929-concatenation-of-array](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1929-concatenation-of-array) |
@@ -39,6 +40,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0202-happy-number](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0202-happy-number) |
 | [0438-find-all-anagrams-in-a-string](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0438-find-all-anagrams-in-a-string) |
 | [0457-circular-array-loop](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0457-circular-array-loop) |
+| [0904-fruit-into-baskets](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0904-fruit-into-baskets) |
 | [3242-count-elements-with-maximum-frequency](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/3242-count-elements-with-maximum-frequency) |
 | [3797-design-spreadsheet](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/3797-design-spreadsheet) |
 ## Counting
@@ -126,6 +128,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | ------- |
 | [0438-find-all-anagrams-in-a-string](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0438-find-all-anagrams-in-a-string) |
 | [0713-subarray-product-less-than-k](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0713-subarray-product-less-than-k) |
+| [0904-fruit-into-baskets](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0904-fruit-into-baskets) |
 ## Prefix Sum
 |  |
 | ------- |
