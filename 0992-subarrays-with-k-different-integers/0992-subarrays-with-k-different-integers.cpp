@@ -20,6 +20,7 @@ public:
         return cnt;
     }
     int subarraysWithKDistinct(vector<int>& nums, int k) {
+        // Exactly K = atMost(K) - atMost(K- 1)
         return atMost(nums,k) - atMost(nums, k - 1);
     }
 };
