@@ -14,7 +14,8 @@ public:
                     minDiff = currDiff;
                     ans = sum;
                  }
-                 if(sum < target) left++;
+                 if(sum == target) return sum;
+                 else if(sum < target) left++;
                  else right--;
             }
         }
