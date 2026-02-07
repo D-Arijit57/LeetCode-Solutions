@@ -19,6 +19,8 @@ public:
                 else{
                     swap(nums[mid],nums[right]);
                     right--;
+                    // since we don't know what we got from the right
+                    // right after swapping we shouldn't move the mid yet
                 }
             } 
     }
