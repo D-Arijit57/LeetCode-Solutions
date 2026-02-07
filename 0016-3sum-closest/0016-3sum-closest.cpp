@@ -9,6 +9,8 @@ public:
             int left = i + 1, right = n - 1;
             while(left < right){
                  int sum = nums[i]+nums[left]+nums[right];
+                // track the minimum difference
+                // track the closest sum
                  int currDiff = abs(sum - target);
                  if(currDiff < minDiff){
                     minDiff = currDiff;
