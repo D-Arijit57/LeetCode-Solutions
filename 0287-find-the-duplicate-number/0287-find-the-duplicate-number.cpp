@@ -1,6 +1,7 @@
 class Solution {
 public:
     int findDuplicate(vector<int>& nums) {
+        // floyd's cycle detection + finding the start of the cycle
         int n = nums.size();
         int slow = 0, fast = 0;
         while(true){
