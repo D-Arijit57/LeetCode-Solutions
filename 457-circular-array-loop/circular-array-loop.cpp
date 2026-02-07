@@ -1,48 +1,47 @@
 class Solution {
 public:
-    // function to calculate the next
-    // % make sures we are inside a single cycle
-    int getNext(int curr,vector<int>&nums){
+    int getNext(vector<int>&nums, int curr){
         int n = nums.size();
-        return ((curr + nums[curr]) % n + n ) % n ;
+        return ((curr+nums[curr]) % n + n) % n; 
     }
     bool circularArrayLoop(vector<int>& nums) {
+        // Loop detection + direction sense       
+        // i -> each node 
+        // nums[i] -> number of steps to jump
         int n = nums.size();
-        // we need to use two loops 
-        // outer loop for starting index 
-        // while loop for cycle detection 
-        for(int i = 0 ; i < n ; i++){
+        for(int i = 0 ; i < n ; i++) {
             if(nums[i] == 0) continue;
+            int dir = nums[i];
             int slow = i, fast = i;
-            // initial direction 
-            int iniDir = nums[i];
-            while(true){
-                // before moving slow and fast check its direction
-                // move only if its positive 
-                if(nums[slow] * iniDir <= 0) break;
-                if(nums[fast] * iniDir <= 0) break;
-                // since fast moves two times check the next fast's direction
-                int nextFast = getNext(fast,nums);
-                if(nums[nextFast] * iniDir <= 0) break;
-                slow = getNext(slow,nums);
-                fast = getNext(nextFast,nums);
-                // if slow and fast ever meets
-                // make sure the current index doesn't have a self loop (invalid)
-                if(slow == fast){
-                    if(slow == getNext(slow,nums)) break;
-                    else return true;
-                } 
+            // if at any point the direction becomes negative 
+            // since there is no point to check the direction if the loop is going to be invalid
+            // due to opposite direction
+           while(true){
+            // check all at once if one of them has a opposite direction 
+            if(nums[slow] * dir <= 0) break;
+            if(nums[fast] * dir <= 0) break;
+            int nextFast = getNext(nums,fast);
+            if(nums[nextFast] * dir <= 0) break;
+            
+            // move fast and slow 
+            slow = getNext(nums,slow);
+            fast = getNext(nums,getNext(nums,fast));
+
+           // if slow and fast ever meet
+            if(slow == fast) {
+                // check for the self loop first
+                if(slow == getNext(nums,slow)) break;
+                else return true ;
+              }
+           }
+            // marking all the paths as zero which are invalid
+            int curr = i;
+            while(nums[curr] * dir > 0){
+                int next = getNext(nums,curr);
+                nums[curr] = 0;
+                curr = next;
             }
-            // since we aren't using any extra space (list or something)
-            // make sure to mark the current index as 0 
-            // since we don't need to calculate it again 
-             int curr = i;
-                while(nums[curr] * iniDir > 0){
-                    int next = getNext(curr,nums);
-                    nums[curr] = 0 ;
-                    curr = next;
-                }
         }
-        return false;
+    return false ;
     }
 };
