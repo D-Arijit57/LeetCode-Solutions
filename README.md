@@ -36,6 +36,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 ## Hash Table
 |  |
 | ------- |
+| [0003-longest-substring-without-repeating-characters](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0003-longest-substring-without-repeating-characters) |
 | [0141-linked-list-cycle](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0141-linked-list-cycle) |
 | [0142-linked-list-cycle-ii](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0142-linked-list-cycle-ii) |
 | [0202-happy-number](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0202-happy-number) |
@@ -66,6 +67,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 ## String
 |  |
 | ------- |
+| [0003-longest-substring-without-repeating-characters](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0003-longest-substring-without-repeating-characters) |
 | [0424-longest-repeating-character-replacement](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0424-longest-repeating-character-replacement) |
 | [0438-find-all-anagrams-in-a-string](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0438-find-all-anagrams-in-a-string) |
 | [0844-backspace-string-compare](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0844-backspace-string-compare) |
@@ -131,6 +133,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 ## Sliding Window
 |  |
 | ------- |
+| [0003-longest-substring-without-repeating-characters](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0003-longest-substring-without-repeating-characters) |
 | [0424-longest-repeating-character-replacement](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0424-longest-repeating-character-replacement) |
 | [0438-find-all-anagrams-in-a-string](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0438-find-all-anagrams-in-a-string) |
 | [0713-subarray-product-less-than-k](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0713-subarray-product-less-than-k) |
