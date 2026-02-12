@@ -17,6 +17,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0080-remove-duplicates-from-sorted-array-ii](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0080-remove-duplicates-from-sorted-array-ii) |
 | [0120-triangle](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0120-triangle) |
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0167-two-sum-ii-input-array-is-sorted) |
+| [0209-minimum-size-subarray-sum](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0209-minimum-size-subarray-sum) |
 | [0287-find-the-duplicate-number](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0287-find-the-duplicate-number) |
 | [0457-circular-array-loop](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0457-circular-array-loop) |
 | [0485-max-consecutive-ones](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0485-max-consecutive-ones) |
@@ -59,6 +60,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0004-median-of-two-sorted-arrays](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0004-median-of-two-sorted-arrays) |
 | [0033-search-in-rotated-sorted-array](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0033-search-in-rotated-sorted-array) |
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0167-two-sum-ii-input-array-is-sorted) |
+| [0209-minimum-size-subarray-sum](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0209-minimum-size-subarray-sum) |
 | [0287-find-the-duplicate-number](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0287-find-the-duplicate-number) |
 | [0713-subarray-product-less-than-k](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0713-subarray-product-less-than-k) |
 | [1004-max-consecutive-ones-iii](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1004-max-consecutive-ones-iii) |
@@ -136,6 +138,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 |  |
 | ------- |
 | [0003-longest-substring-without-repeating-characters](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0003-longest-substring-without-repeating-characters) |
+| [0209-minimum-size-subarray-sum](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0209-minimum-size-subarray-sum) |
 | [0424-longest-repeating-character-replacement](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0424-longest-repeating-character-replacement) |
 | [0438-find-all-anagrams-in-a-string](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0438-find-all-anagrams-in-a-string) |
 | [0713-subarray-product-less-than-k](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0713-subarray-product-less-than-k) |
@@ -145,6 +148,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 ## Prefix Sum
 |  |
 | ------- |
+| [0209-minimum-size-subarray-sum](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0209-minimum-size-subarray-sum) |
 | [0713-subarray-product-less-than-k](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0713-subarray-product-less-than-k) |
 | [1004-max-consecutive-ones-iii](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1004-max-consecutive-ones-iii) |
 ## Stack
