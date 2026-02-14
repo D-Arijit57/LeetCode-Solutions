@@ -1,5 +1,5 @@
 class Solution {
-public:
+public: // ---  REVISION 2 --- 
     // calculate the getNext
     int getNext(vector<int>&nums,int curr){
         int n = nums.size();
@@ -8,6 +8,7 @@ public:
     bool circularArrayLoop(vector<int>& nums) {
         int n = nums.size();
         for(int i = 0 ; i < n ; i++){
+            // MISTAKE 1. -> missed this invalid path checking 
             if(nums[i] == 0) continue;
             int slow = i, fast = i;
             int dir = nums[i];
@@ -32,7 +33,10 @@ public:
             // marking all the invalid paths as 0
             // so that we don't check them again
             // since its  unecessary overhead for re-checking 
+
+            // MISTAKE 2. set curr = slow earlier, that is not the starting point of the entire invalid path
             int curr = i ;
+            // MISTAKE 3. set dir * nums[curr] >= 0 , it should > 0 since if = 0 its already invalid 
             while(dir * nums[curr] > 0){
                 nums[curr] = 0;
                 curr = getNext(nums,curr);
