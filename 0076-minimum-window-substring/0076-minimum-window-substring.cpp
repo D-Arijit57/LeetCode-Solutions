@@ -24,7 +24,6 @@ public:
         int startIndex = 0;
         // expand the window 
         for(int right = 0 ; right < n ; right++){
-            s[right];
             freqW[s[right]]++;
 
             if(freqW[s[right]] == freqT[s[right]]){
