@@ -39,22 +39,28 @@ public:
                     minLen = windowLen;
                     startIndex = left;
                 }
-                // remove the character from the left inside the window 
-                freqW[s[left]]--;
-                // check after removing
-                if(freqW[s[left]] == freqT[s[left]] - 1){
+                // Method 1 : check after removing
+                // // remove the character from the left inside the window 
+                // freqW[s[left]]--;
+                // // check after removing
+                // if(freqW[s[left]] == freqT[s[left]] - 1){
+                //     formed--;
+                // }
+
+                // Method 2 : Check before removing : 
+                // if the count was the exact same with t
+                // for sure removing it will break the satisfactory condition 
+                if(freqW[s[left]] == freqT[s[left]]){
                     formed--;
                 }
+
+                freqW[s[left]]--;
 
                 left++;
             }
         }
+        // if there is no window substring that satisfies the frequency return empty string 
+        // otherwise return the substring of the size of minLen from the starting index
         return minLen == INT_MAX ? "" : s.substr(startIndex,minLen) ;
-
-        
-
-            
-        
-         
     }
 };
