@@ -1,54 +1,47 @@
 class Solution {
-public:
+public: // REVISION 1 : 
     vector<int> findAnagrams(string s, string p) {
-        vector<int>freqP(26,0); // frequency of the characters in the given string p
-        vector<int>freqW(26,0); // frequency of the characters in the current window
+        vector<int>freqP(26,0);
+        vector<int>freqW(26,0);
         vector<int>ans;
-        int k = p.size();
-        int n = s.size();
+        int n = s.size(), k = p.size();
+        // MISTAKE 1 :  Forgot about the edge case
         if(k > n) return ans;
+        // setting up the frequency array for string p
         for(char c : p){
             freqP[c - 'a']++;
         }
+        // setting up the frequency for the first window
         for(int i = 0 ; i < k ; i++){
             freqW[s[i] - 'a']++;
         }
-        // check for matches
-        // we are itrating over 26 values (26 alphabets)
-        // we are checking both of the arrays has the count of same characters 
-        // e.g freqP[b] =1 , freqW[b] = 1 then matches++
-        // e.g freqP[b] =1 , freqW[b] = 2 then matches--
         int matches = 0;
         for(int i = 0 ; i < 26 ; i++){
             if(freqP[i] == freqW[i]) matches++;
         }
-        // checking the first window
-        if(matches == 26){
-            ans.push_back(0);
-        }
-        // sliding window approach 
-        for(int i = k ; i < n ; i++){
-            int right = s[i] - 'a';
+        if(matches == 26) ans.push_back(0);
+        // sliding window for the rest of the string
+        for(int i = k ; i < s.size() ; i++){
+            // setting up the pointers
             int left = s[i - k] - 'a';
+            int right = s[i] - 'a';
 
-            // Right -> expand the window add new characters
-            // Left -> Shrink the window removing the characters
-
-            // --- Add right characters ---
-            // Before adding check if this character was matching before
+            // expanding the window 
+            // check before adding the window 
             if(freqP[right] == freqW[right]) matches--;
             freqW[right]++;
-            // Does the character match now after adding
+            // check after adding the window 
             if(freqP[right] == freqW[right]) matches++;
 
-            // --- Remove left characters ---
-            // Before Removing the character check was the character matching before
+            // shrinking the window
+            // check before shrinking the window 
             if(freqP[left] == freqW[left]) matches--;
             freqW[left]--;
-            // Does the character match now 
+            // check after shrinking the window
             if(freqP[left] == freqW[left]) matches++;
 
             if(matches == 26){
+                // MISTAKE 2 : instead of the right index you were pushing length using right - left + 1
                 ans.push_back(i - k + 1);
             }
         }
