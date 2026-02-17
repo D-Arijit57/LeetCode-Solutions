@@ -46,6 +46,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0424-longest-repeating-character-replacement](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0424-longest-repeating-character-replacement) |
 | [0438-find-all-anagrams-in-a-string](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0438-find-all-anagrams-in-a-string) |
 | [0457-circular-array-loop](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0457-circular-array-loop) |
+| [0567-permutation-in-string](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0567-permutation-in-string) |
 | [0904-fruit-into-baskets](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0904-fruit-into-baskets) |
 | [0992-subarrays-with-k-different-integers](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0992-subarrays-with-k-different-integers) |
 | [3242-count-elements-with-maximum-frequency](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/3242-count-elements-with-maximum-frequency) |
@@ -76,6 +77,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0076-minimum-window-substring](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0076-minimum-window-substring) |
 | [0424-longest-repeating-character-replacement](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0424-longest-repeating-character-replacement) |
 | [0438-find-all-anagrams-in-a-string](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0438-find-all-anagrams-in-a-string) |
+| [0567-permutation-in-string](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0567-permutation-in-string) |
 | [0844-backspace-string-compare](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0844-backspace-string-compare) |
 | [3797-design-spreadsheet](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/3797-design-spreadsheet) |
 ## Design
@@ -123,6 +125,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0234-palindrome-linked-list](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0234-palindrome-linked-list) |
 | [0287-find-the-duplicate-number](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0287-find-the-duplicate-number) |
 | [0457-circular-array-loop](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0457-circular-array-loop) |
+| [0567-permutation-in-string](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0567-permutation-in-string) |
 | [0581-shortest-unsorted-continuous-subarray](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0581-shortest-unsorted-continuous-subarray) |
 | [0844-backspace-string-compare](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0844-backspace-string-compare) |
 | [0876-middle-of-the-linked-list](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0876-middle-of-the-linked-list) |
@@ -144,6 +147,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0209-minimum-size-subarray-sum](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0209-minimum-size-subarray-sum) |
 | [0424-longest-repeating-character-replacement](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0424-longest-repeating-character-replacement) |
 | [0438-find-all-anagrams-in-a-string](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0438-find-all-anagrams-in-a-string) |
+| [0567-permutation-in-string](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0567-permutation-in-string) |
 | [0713-subarray-product-less-than-k](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0713-subarray-product-less-than-k) |
 | [0904-fruit-into-baskets](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0904-fruit-into-baskets) |
 | [0992-subarrays-with-k-different-integers](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0992-subarrays-with-k-different-integers) |
