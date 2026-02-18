@@ -1,30 +1,33 @@
+#define v vector
 class Solution {
 public:
     vector<int> findSubstring(string s, vector<string>& words) {
-        vector<int> ans;
-        // frequency map for words
-        unordered_map<string, int> target;
+        v<int> ans;
+
+        // we have to check for word frequency
+        // since a word should exactly appear once in the substring
+        // frequency map for the words
+        unordered_map<string, int> targetFreq;
         for (string& s : words) {
-            target[s]++;
+            targetFreq[s]++;
         }
-        int totalWords = words.size();
-        int wordlen = words[0].length();
-        int windowSize = wordlen * totalWords;
+
         int n = s.size();
-        
+        int wordlen = words[0].length();
+        int totalWords = words.size();
         for (int offset = 0; offset < wordlen; offset++) {
-            unordered_map<string, int> window;
             int left = offset;
             int cnt = 0;
-            for (int right = offset; right + wordlen <= n; right+=wordlen) {
+            unordered_map<string, int> windowFreq;
+            for (int right = offset; right + wordlen <= n; right += wordlen) {
                 string word = s.substr(right, wordlen);
-                if (target.count(word)) {
-                    window[word]++;
-                    cnt++;
 
-                    while (window[word] > target[word]) {
+                if (targetFreq.count(word)) {
+                    windowFreq[word]++;
+                    cnt++;
+                    while (windowFreq[word] > targetFreq[word]) {
                         string leftWord = s.substr(left, wordlen);
-                        window[leftWord]--;
+                        windowFreq[leftWord]--;
                         left += wordlen;
                         cnt--;
                     }
@@ -32,8 +35,9 @@ public:
                     if (cnt == totalWords) {
                         ans.push_back(left);
                     }
+
                 } else {
-                    window.clear();
+                    windowFreq.clear();
                     cnt = 0;
                     left = right + wordlen;
                 }
