@@ -17,6 +17,15 @@ public:
         int totalWords = words.size();
 
         // setting the offset
+        // offset is required since we only want to iterate to the next valid index 
+        // for example , if wordlen = 3 then iteration should be like i,i+3.i+6,....
+        // so when the wordlen is 3 
+        /*
+        0 we go like 0,3,6,9,12
+        1 we go like 1,4,7,10
+        2 we go like 2,5,8,11
+        */
+
         for (int offset = 0; offset < wordlen; offset++) {
             int left = offset;
             int cnt = 0;
