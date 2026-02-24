@@ -7,6 +7,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 ## Array
 |  |
 | ------- |
+| [0001-two-sum](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0001-two-sum) |
 | [0004-median-of-two-sorted-arrays](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0004-median-of-two-sorted-arrays) |
 | [0015-3sum](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0015-3sum) |
 | [0016-3sum-closest](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0016-3sum-closest) |
@@ -38,6 +39,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 ## Hash Table
 |  |
 | ------- |
+| [0001-two-sum](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0001-two-sum) |
 | [0003-longest-substring-without-repeating-characters](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0003-longest-substring-without-repeating-characters) |
 | [0030-substring-with-concatenation-of-all-words](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0030-substring-with-concatenation-of-all-words) |
 | [0076-minimum-window-substring](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0076-minimum-window-substring) |
