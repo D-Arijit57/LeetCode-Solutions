@@ -1,27 +1,26 @@
 class Solution {
 public:
     int maxAbsoluteSum(vector<int>& nums) {
-        // Kadane's Algorithm 
-        // At each index i check :
-        // if we can extend the previous subarray
-        // or should we start a new one 
-        // since if the sum is negative then there's no point of extendng the current subarray 
-
         int n = nums.size();
-        int currMaxSum = nums[0];
         int maxSum = nums[0];
-        int currMinSum = nums[0];
-        int minSum = nums[0];
-        int maximum_sum = INT_MIN;
-        for(int i = 1; i < n ; i++){
-           currMaxSum = max(nums[i] , currMaxSum + nums[i]);
-           maxSum = max(currMaxSum,maxSum);
+        int currMax = nums[0];
+        int minSum =  nums[0];
+        int currMin = nums[0];
+        int maximum_abs_sum = INT_MIN;
+        for(int i = 1 ; i < n ; i++){
+            // for each index i :
+            // either extend the prev subarray if the current sum is greater 
+            // or start a new one since there is no point of adding a element if its reduces the sum 
+            // we calculate it for both the maximum and minimum since we are finding absolute sum
+            // the maximum could be negative 
+            // for example : maximumAbs = max(abs(3) , abs(-8)) = 8
+            currMax = max(nums[i],currMax + nums[i]);
+            maxSum = max(maxSum ,currMax);
 
-           currMinSum = min(nums[i], currMinSum + nums[i]);
-           minSum = min(currMinSum , minSum); 
-
+            currMin = min(nums[i],currMin + nums[i]);
+            minSum = min(minSum ,currMin);
         }
-        maximum_sum = max(abs(maxSum),abs(minSum));
-        return maximum_sum;
+        maximum_abs_sum = max(abs(maxSum) , abs(minSum));
+        return maximum_abs_sum;
     }
 };
