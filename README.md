@@ -185,6 +185,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 ## Math
 |  |
 | ------- |
+| [0009-palindrome-number](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0009-palindrome-number) |
 | [0202-happy-number](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0202-happy-number) |
 ## Bit Manipulation
 |  |
