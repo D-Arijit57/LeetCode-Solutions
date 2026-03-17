@@ -1,16 +1,16 @@
 class Solution {
 public:
     bool isPalindrome(int x) {
-        int duplicate = x;
-        long long rev = 0 ;
-        while(x>0){
-            int r = x%10;
-            rev = rev * 10 + r;
-            x = x/10;
+        string s = to_string(x);
+        int n = s.size();
+        int left = 0, right = n - 1;
+        while(left < right){
+            if(s[left] == s[right]) {
+                left++;
+                right--;
+            }
+            else return false;
         }
-        if(rev == duplicate )return true ;
-        return false;
-
-
+        return true;
     }
 };
