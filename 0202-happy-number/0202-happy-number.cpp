@@ -10,14 +10,19 @@ public:
         return sum;
     }
     bool isHappy(int n) {
-        if(n == 1) return true;
-        int slow = n , fast = n;
+        int slow = n, fast = n;
         while(true){
             slow = next(slow);
             fast = next(next(fast));
-            if(fast == 1) break;
-            if(slow == fast) return false;
+            // if slow ever becomes 1 then there's no cycle
+            if(slow == 1){
+                return true;
+            }
+            // in case a number repeats , there is a cycle
+            if(slow == fast){
+                break;
+            }
         }
-        return true;
+        return false;
     }
 };
