@@ -1,5 +1,6 @@
 class Solution {
 public:
+    // calculating the sum of square of digits
     int next(int n){
         int sum = 0;
         while(n > 0){
