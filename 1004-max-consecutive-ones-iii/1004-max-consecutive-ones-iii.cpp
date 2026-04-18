@@ -10,6 +10,7 @@ public:
                 zeroCount++;
             }
             // shrinking logic
+            // since there could be zeros in the left as well , we need to decrease the zeroCount in that case
             while(zeroCount > k){
                if(nums[left] == 0) zeroCount--;
                 left++;
