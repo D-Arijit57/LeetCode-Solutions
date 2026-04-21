@@ -11,43 +11,45 @@
 class Solution {
 public:
     void reorderList(ListNode* head) {
-        // find the middle
-        // reverse the second half 
-        // start after the middle 
-        // one by one connect the first one with the one from the second half
-        // keep doing till you reach the end
-        ListNode *slow = head;
-        ListNode *fast = head;
-        // Phase 1 : Find the middle of the linkedlist
+        if(!head || !head->next) return;
+        ListNode* slow = head;
+        ListNode* fast = head;
+        // find the middle of the linkedlist
         while(fast && fast->next){
             slow = slow->next;
             fast = fast->next->next;
         }
-        // incase of a odd length linkedlist
+        // move the slow to the next node of the middle
         ListNode* second = slow->next;
         slow->next = nullptr;
-        // Phase 2 : Reverse the second half
+
+        // reverse the linkedlist
         ListNode* curr = second;
         ListNode* prev = nullptr;
+        ListNode* next;
         while(curr){
-            ListNode* next = curr->next;
+            next = curr->next;
             curr->next = prev;
             prev = curr;
             curr = next;
         }
-        // Phase 3 : Re-ordering conecting to L0 to Ln and then so on
-        ListNode* first = head;
-        second = prev;
-        while(second){
-            // storing the next so that we can move on after swapping
-            ListNode* temp1 = first->next;
-            ListNode* temp2 = second->next;
-            // connecting the first with the next
-            first->next = second;
-            second->next = temp1;
-            // moving to the next node
-            first = temp1;
-            second = temp2;
+
+        // split into two heads
+        ListNode* head1 = head;
+        ListNode* head2 = prev;
+
+        // until head2 reaches the end 
+        // we have to run the algorithm 
+        while(head2){
+            ListNode* temp1 = head1->next;
+            ListNode* temp2 = head2->next;
+
+            // building the pattern
+            head1->next = head2;
+            head2->next = temp1;
+            head1 = temp1;
+            head2 = temp2;
         }
+
     }
 };
