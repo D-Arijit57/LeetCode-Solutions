@@ -1,21 +1,22 @@
 class Solution {
 public:
     int minSubArrayLen(int target, vector<int>& nums) {
-        // we shrink it when it is valid to find a smaller window
-        // rather than when it is invalid
         int n = nums.size();
-        int left = 0, minLen = INT_MAX, currSum = 0;
-        for(int right = 0 ; right < n ; right++){
-            currSum += nums[right];
-            while(currSum >= target){
-                // We update inside the loop because 
-                // every intermediate shrink still represents a valid window
-                // and we want the smallest among them.
+        int left = 0, minLen = INT_MAX, sum = 0;
+        for(int right = 0 ; right < n ; right++){  
+            // add the number to the sum  
+            sum += nums[right];
+
+            // since we already found a sum greater than the target
+            // we need to find a closer one 
+            // the lesser the size of the subarray the lesser to the sum
+            while(sum >= target){
+                // update first or else you'll miss the valid windows
                 minLen = min(minLen, right - left + 1);
-                currSum -= nums[left];
-                left++;
+                sum -= nums[left];
+                left++; 
             }
-        } 
-        return minLen == INT_MAX ? 0 : minLen; 
+        }
+        return minLen == INT_MAX ? 0 : minLen;
     }
 };
