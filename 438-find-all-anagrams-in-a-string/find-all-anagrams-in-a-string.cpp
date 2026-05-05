@@ -22,21 +22,21 @@ public:
         if(matches == 26) ans.push_back(0);
 
         // for the rest of the window
-        for(int right = m ; right < n ; right++){
-            int add = s[right] - 'a';
-            int remove = s[right - m] - 'a';
+        for(int i = m ; i < n ; i++){
+            int left = s[i] - 'a';
+            int right = s[i - m] - 'a';
             // transition mechanism
             // check if the count before and after the window before updating 
-            if(windowFreq[add] == targetFreq[add]) matches--;
-            windowFreq[add]++;
-            if(windowFreq[add] == targetFreq[add]) matches++;
+            if(windowFreq[left] == targetFreq[left]) matches--;
+            windowFreq[left]++;
+            if(windowFreq[left] == targetFreq[left]) matches++;
 
             // check if the count before and after window before removing a character
-            if(windowFreq[remove] == targetFreq[remove]) matches--;
-            windowFreq[remove]--;
-            if(windowFreq[remove] == targetFreq[remove]) matches++;
+            if(windowFreq[right] == targetFreq[right]) matches--;
+            windowFreq[right]--;
+            if(windowFreq[right] == targetFreq[right]) matches++;
 
-            if(matches == 26 ) ans.push_back(right - m + 1);
+            if(matches == 26 ) ans.push_back(i - m + 1);
         }
         return ans;
     }
