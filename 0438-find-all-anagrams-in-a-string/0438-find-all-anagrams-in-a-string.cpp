@@ -1,49 +1,42 @@
 class Solution {
-public: // REVISION 1 : 
+public:
     vector<int> findAnagrams(string s, string p) {
-        vector<int>freqP(26,0);
-        vector<int>freqW(26,0);
-        vector<int>ans;
-        int n = s.size(), k = p.size();
-        // MISTAKE 1 :  Forgot about the edge case
-        if(k > n) return ans;
-        // setting up the frequency array for string p
-        for(char c : p){
-            freqP[c - 'a']++;
-        }
-        // setting up the frequency for the first window
-        for(int i = 0 ; i < k ; i++){
-            freqW[s[i] - 'a']++;
-        }
+        int n = s.size();
+        int m = p.size();
+        if(m > n) return {};
         int matches = 0;
-        for(int i = 0 ; i < 26 ; i++){
-            if(freqP[i] == freqW[i]) matches++;
+        vector<int>windowFreq(26,0);
+        vector<int>targetFreq(26,0);
+        vector<int>ans;
+        // updating the target freq
+        for(int i = 0 ; i < m ; i++){
+            targetFreq[p[i] - 'a']++;
+            windowFreq[s[i] - 'a']++;
         }
+
+        // checking for the first window 
+        for(int i = 0 ; i < 26 ; i++){
+            if(windowFreq[i] == targetFreq[i]) matches++;
+        }
+        
         if(matches == 26) ans.push_back(0);
-        // sliding window for the rest of the string
-        for(int i = k ; i < s.size() ; i++){
-            // setting up the pointers
-            int left = s[i - k] - 'a';
-            int right = s[i] - 'a';
 
-            // expanding the window 
-            // check before adding the window 
-            if(freqP[right] == freqW[right]) matches--;
-            freqW[right]++;
-            // check after adding the window 
-            if(freqP[right] == freqW[right]) matches++;
+        // for the rest of the window
+        for(int right = m ; right < n ; right++){
+            int add = s[right] - 'a';
+            int remove = s[right - m] - 'a';
+            // transition mechanism
+            // check if the count before and after the window before updating 
+            if(windowFreq[add] == targetFreq[add]) matches--;
+            windowFreq[add]++;
+            if(windowFreq[add] == targetFreq[add]) matches++;
 
-            // shrinking the window
-            // check before shrinking the window 
-            if(freqP[left] == freqW[left]) matches--;
-            freqW[left]--;
-            // check after shrinking the window
-            if(freqP[left] == freqW[left]) matches++;
+            // check if the count before and after window before removing a character
+            if(windowFreq[remove] == targetFreq[remove]) matches--;
+            windowFreq[remove]--;
+            if(windowFreq[remove] == targetFreq[remove]) matches++;
 
-            if(matches == 26){
-                // MISTAKE 2 : instead of the right index you were pushing length using right - left + 1
-                ans.push_back(i - k + 1);
-            }
+            if(matches == 26 ) ans.push_back(right - m + 1);
         }
         return ans;
     }
