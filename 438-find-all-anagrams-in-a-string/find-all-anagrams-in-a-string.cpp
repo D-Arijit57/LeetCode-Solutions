@@ -1,56 +1,42 @@
 class Solution {
 public:
     vector<int> findAnagrams(string s, string p) {
-        vector<int>freqP(26,0); // frequency of the characters in the given string p
-        vector<int>freqW(26,0); // frequency of the characters in the current window
-        vector<int>ans;
-        int k = p.size();
         int n = s.size();
-        if(k > n) return ans;
-        for(char c : p){
-            freqP[c - 'a']++;
-        }
-        for(int i = 0 ; i < k ; i++){
-            freqW[s[i] - 'a']++;
-        }
-        // check for matches
-        // we are itrating over 26 values (26 alphabets)
-        // we are checking both of the arrays has the count of same characters 
-        // e.g freqP[b] =1 , freqW[b] = 1 then matches++
-        // e.g freqP[b] =1 , freqW[b] = 2 then matches--
+        int m = p.size();
+        if(m > n) return {};
         int matches = 0;
+        vector<int>windowFreq(26,0);
+        vector<int>targetFreq(26,0);
+        vector<int>ans;
+        // updating the target freq
+        for(int i = 0 ; i < m ; i++){
+            targetFreq[p[i] - 'a']++;
+            windowFreq[s[i] - 'a']++;
+        }
+
+        // checking for the first window 
         for(int i = 0 ; i < 26 ; i++){
-            if(freqP[i] == freqW[i]) matches++;
+            if(windowFreq[i] == targetFreq[i]) matches++;
         }
-        // checking the first window
-        if(matches == 26){
-            ans.push_back(0);
-        }
-        // sliding window approach 
-        for(int i = k ; i < n ; i++){
-            int right = s[i] - 'a';
-            int left = s[i - k] - 'a';
+        
+        if(matches == 26) ans.push_back(0);
 
-            // Right -> expand the window add new characters
-            // Left -> Shrink the window removing the characters
+        // for the rest of the window
+        for(int right = m ; right < n ; right++){
+            int add = s[right] - 'a';
+            int remove = s[right - m] - 'a';
+            // transition mechanism
+            // check if the count before and after the window before updating 
+            if(windowFreq[add] == targetFreq[add]) matches--;
+            windowFreq[add]++;
+            if(windowFreq[add] == targetFreq[add]) matches++;
 
-            // --- Add right characters ---
-            // Before adding check if this character was matching before
-            if(freqP[right] == freqW[right]) matches--;
-            freqW[right]++;
-            // Does the character match now after adding
-            if(freqP[right] == freqW[right]) matches++;
+            // check if the count before and after window before removing a character
+            if(windowFreq[remove] == targetFreq[remove]) matches--;
+            windowFreq[remove]--;
+            if(windowFreq[remove] == targetFreq[remove]) matches++;
 
-            // --- Remove left characters ---
-            // Before Removing the character check was the character matching before
-            if(freqP[left] == freqW[left]) matches--;
-            freqW[left]--;
-            // Does the character match now 
-            if(freqP[left] == freqW[left]) matches++;
-
-            if(matches == 26){
-                ans.push_back(i - k + 1);
-            }
+            if(matches == 26 ) ans.push_back(right - m + 1);
         }
         return ans;
     }
