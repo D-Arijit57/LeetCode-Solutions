@@ -2,25 +2,15 @@ class Solution {
 public:
     int maxAbsoluteSum(vector<int>& nums) {
         int n = nums.size();
-        int maxSum = nums[0];
-        int currMax = nums[0];
-        int minSum =  nums[0];
-        int currMin = nums[0];
-        int maximum_abs_sum = INT_MIN;
-        for(int i = 1 ; i < n ; i++){
-            // for each index i :
-            // either extend the prev subarray if the current sum is greater 
-            // or start a new one since there is no point of adding a element if its reduces the sum 
-            // we calculate it for both the maximum and minimum since we are finding absolute sum
-            // the maximum could be negative 
-            // for example : maximumAbs = max(abs(3) , abs(-8)) = 8
-            currMax = max(nums[i],currMax + nums[i]);
-            maxSum = max(maxSum ,currMax);
+        int currMax = nums[0], maxi = nums[0] , currMin = nums[0], mini = nums[0];
+        // keep the track of the negatives as well
+        for(int i = 1 ; i < n; i++){
+            currMax = max(currMax + nums[i], nums[i]);
+            maxi = max(currMax, maxi);
 
-            currMin = min(nums[i],currMin + nums[i]);
-            minSum = min(minSum ,currMin);
+            currMin = min(currMin + nums[i], nums[i]);
+            mini = min(currMin, mini);
         }
-        maximum_abs_sum = max(abs(maxSum) , abs(minSum));
-        return maximum_abs_sum;
+        return max(abs(maxi),abs(mini));
     }
 };
