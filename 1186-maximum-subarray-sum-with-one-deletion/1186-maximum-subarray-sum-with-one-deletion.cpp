@@ -4,7 +4,7 @@ public:
         int n = arr.size();
         int keep = arr[0];
         // to keep track of the deleted elements
-        // either delete the current one or extend by adding it
+        // either use deletion on current element, or continue a chain where deletion was already used earlier
         int deleted = 0;
         int ans = arr[0];
         for(int i = 1 ; i < n ; i++){
