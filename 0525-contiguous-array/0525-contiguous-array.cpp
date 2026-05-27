@@ -8,6 +8,7 @@ public:
        // to store the indices where sum = 0 occured we will use a map
        unordered_map<int, int>mp;
        
+       // prefixSum = 0 occured before array started
        mp[0] = -1;
 
        // prefix -> to keep the track of the sum
