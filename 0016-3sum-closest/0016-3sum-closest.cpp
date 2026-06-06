@@ -9,6 +9,7 @@ public:
             int left = i + 1, right = n - 1;
             while(left < right){
                 int sum = nums[i] + nums[left] + nums[right];
+                // MISTAKE 1. Forgot to use the absolute difference
                 int diff = abs(target - sum);
                 if(diff < minDiff){
                     minDiff = min(diff, minDiff);
