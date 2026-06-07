@@ -14,17 +14,16 @@ public:
         if(!head || !head->next) return;
         ListNode* slow = head;
         ListNode* fast = head;
-        // find the middle of the linkedlist
+        // Phase 1 : find the middle of the linkedlist
         while(fast && fast->next){
             slow = slow->next;
             fast = fast->next->next;
         }
-        // move the slow to the next node of the middle
-        ListNode* second = slow->next;
+        ListNode* mid = slow->next;
+        // Remove slow or there would be a dangling pointer issue 
         slow->next = nullptr;
-
-        // reverse the linkedlist
-        ListNode* curr = second;
+        // Phase 2 : Reverse the second half 
+        ListNode* curr = mid;
         ListNode* prev = nullptr;
         ListNode* next;
         while(curr){
@@ -33,23 +32,17 @@ public:
             prev = curr;
             curr = next;
         }
-
-        // split into two heads
+        // Phase 3 : Create the re order of the linkedlist
         ListNode* head1 = head;
         ListNode* head2 = prev;
-
-        // until head2 reaches the end 
-        // we have to run the algorithm 
         while(head2){
             ListNode* temp1 = head1->next;
             ListNode* temp2 = head2->next;
 
-            // building the pattern
             head1->next = head2;
             head2->next = temp1;
             head1 = temp1;
             head2 = temp2;
         }
-
     }
 };
