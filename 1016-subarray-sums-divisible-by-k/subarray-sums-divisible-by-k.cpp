@@ -19,7 +19,7 @@ public:
                  cnt += mp[remainder];
                 }
 
-            // if it doesn't exist then store the remainder
+            // if it doesn't exist then store and update the frequency of the remainder
             mp[remainder]++;
          }
         return cnt;
