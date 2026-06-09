@@ -14,10 +14,8 @@ public:
             // normalization to tackle the negative numbers
             remainder = ((prefix % k) + k) % k;
 
-            // if the remainder exists then add up its frequency to the count
-                if(mp.count(remainder)){
-                 cnt += mp[remainder];
-                }
+            cnt += mp[remainder];
+                
 
             // if it doesn't exist then store and update the frequency of the remainder
             mp[remainder]++;
