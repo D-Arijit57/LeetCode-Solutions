@@ -11,8 +11,9 @@ public:
         int prefix = 0, rem = 0, cnt = 0;
         for(int i = 0 ; i < n ; i++){
             prefix += nums[i];
-            if(mp.count(prefix - goal)){
-                cnt += mp[prefix - goal];
+            int required = prefix - goal;
+            if(mp.count(required)){
+                cnt += mp[required];
             }
             // mistake : mp[prefix - goal]++, it should update the frequency of current prefix
             mp[prefix]++;
