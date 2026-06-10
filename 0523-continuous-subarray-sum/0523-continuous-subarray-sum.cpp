@@ -3,10 +3,9 @@ public:
     bool checkSubarraySum(vector<int>& nums, int k) {
         // since we need to keep the track of the subarray length 
         // we need to store indices instead of frequencies
-
         int n = nums.size();
         unordered_map<int, int> mp;
-        mp[0] = -1;
+        mp[0] = -1; // before the array starts 
         int prefix = 0, rem = 0;
         for (int i = 0; i < n; i++) {
             prefix += nums[i];
