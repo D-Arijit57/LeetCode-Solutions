@@ -14,6 +14,7 @@ public:
             if(mp.count(prefix - goal)){
                 cnt += mp[prefix - goal];
             }
+            // mistake : mp[prefix - goal]++, it should update the frequency of current prefix
             mp[prefix]++;
         }
         return cnt;
