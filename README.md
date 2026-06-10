@@ -24,6 +24,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0287-find-the-duplicate-number](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0287-find-the-duplicate-number) |
 | [0457-circular-array-loop](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0457-circular-array-loop) |
 | [0485-max-consecutive-ones](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0485-max-consecutive-ones) |
+| [0523-continuous-subarray-sum](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0523-continuous-subarray-sum) |
 | [0525-contiguous-array](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0525-contiguous-array) |
 | [0560-subarray-sum-equals-k](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0560-subarray-sum-equals-k) |
 | [0581-shortest-unsorted-continuous-subarray](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0581-shortest-unsorted-continuous-subarray) |
@@ -63,6 +64,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0424-longest-repeating-character-replacement](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0424-longest-repeating-character-replacement) |
 | [0438-find-all-anagrams-in-a-string](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0438-find-all-anagrams-in-a-string) |
 | [0457-circular-array-loop](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0457-circular-array-loop) |
+| [0523-continuous-subarray-sum](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0523-continuous-subarray-sum) |
 | [0525-contiguous-array](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0525-contiguous-array) |
 | [0560-subarray-sum-equals-k](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0560-subarray-sum-equals-k) |
 | [0567-permutation-in-string](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0567-permutation-in-string) |
@@ -182,6 +184,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 |  |
 | ------- |
 | [0209-minimum-size-subarray-sum](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0209-minimum-size-subarray-sum) |
+| [0523-continuous-subarray-sum](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0523-continuous-subarray-sum) |
 | [0525-contiguous-array](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0525-contiguous-array) |
 | [0560-subarray-sum-equals-k](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0560-subarray-sum-equals-k) |
 | [0713-subarray-product-less-than-k](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0713-subarray-product-less-than-k) |
@@ -208,6 +211,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | ------- |
 | [0009-palindrome-number](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0009-palindrome-number) |
 | [0202-happy-number](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0202-happy-number) |
+| [0523-continuous-subarray-sum](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0523-continuous-subarray-sum) |
 ## Bit Manipulation
 |  |
 | ------- |
