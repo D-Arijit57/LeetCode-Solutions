@@ -38,6 +38,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0992-subarrays-with-k-different-integers](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0992-subarrays-with-k-different-integers) |
 | [1004-max-consecutive-ones-iii](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1004-max-consecutive-ones-iii) |
 | [1186-maximum-subarray-sum-with-one-deletion](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1186-maximum-subarray-sum-with-one-deletion) |
+| [1248-count-number-of-nice-subarrays](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1248-count-number-of-nice-subarrays) |
 | [1470-shuffle-the-array](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1470-shuffle-the-array) |
 | [1749-maximum-absolute-sum-of-any-subarray](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1749-maximum-absolute-sum-of-any-subarray) |
 | [1929-concatenation-of-array](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1929-concatenation-of-array) |
@@ -73,6 +74,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0930-binary-subarrays-with-sum](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0930-binary-subarrays-with-sum) |
 | [0974-subarray-sums-divisible-by-k](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0974-subarray-sums-divisible-by-k) |
 | [0992-subarrays-with-k-different-integers](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0992-subarrays-with-k-different-integers) |
+| [1248-count-number-of-nice-subarrays](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1248-count-number-of-nice-subarrays) |
 | [3242-count-elements-with-maximum-frequency](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/3242-count-elements-with-maximum-frequency) |
 | [3797-design-spreadsheet](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/3797-design-spreadsheet) |
 ## Counting
@@ -183,6 +185,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0930-binary-subarrays-with-sum](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0930-binary-subarrays-with-sum) |
 | [0992-subarrays-with-k-different-integers](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0992-subarrays-with-k-different-integers) |
 | [1004-max-consecutive-ones-iii](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1004-max-consecutive-ones-iii) |
+| [1248-count-number-of-nice-subarrays](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1248-count-number-of-nice-subarrays) |
 ## Prefix Sum
 |  |
 | ------- |
@@ -195,6 +198,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0930-binary-subarrays-with-sum](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0930-binary-subarrays-with-sum) |
 | [0974-subarray-sums-divisible-by-k](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0974-subarray-sums-divisible-by-k) |
 | [1004-max-consecutive-ones-iii](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1004-max-consecutive-ones-iii) |
+| [1248-count-number-of-nice-subarrays](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1248-count-number-of-nice-subarrays) |
 ## Stack
 |  |
 | ------- |
@@ -216,6 +220,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0009-palindrome-number](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0009-palindrome-number) |
 | [0202-happy-number](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0202-happy-number) |
 | [0523-continuous-subarray-sum](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0523-continuous-subarray-sum) |
+| [1248-count-number-of-nice-subarrays](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1248-count-number-of-nice-subarrays) |
 ## Bit Manipulation
 |  |
 | ------- |
