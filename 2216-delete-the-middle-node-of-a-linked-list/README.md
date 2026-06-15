@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/">2216. Delete the Middle Node of a Linked List</a></h2><h3>Medium</h3><hr><p>You are given the <code>head</code> of a linked list. <strong>Delete</strong> the <strong>middle node</strong>, and return <em>the</em> <code>head</code> <em>of the modified linked list</em>.</p>
+<h2><a href="https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list">Delete the Middle Node of a Linked List</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>You are given the <code>head</code> of a linked list. <strong>Delete</strong> the <strong>middle node</strong>, and return <em>the</em> <code>head</code> <em>of the modified linked list</em>.</p>
 
 <p>The <strong>middle node</strong> of a linked list of size <code>n</code> is the <code>&lfloor;n / 2&rfloor;<sup>th</sup></code> node from the <b>start</b> using <strong>0-based indexing</strong>, where <code>&lfloor;x&rfloor;</code> denotes the largest integer less than or equal to <code>x</code>.</p>
 
