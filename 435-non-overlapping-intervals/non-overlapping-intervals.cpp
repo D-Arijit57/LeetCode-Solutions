@@ -7,6 +7,8 @@ public:
         sort(intervals.begin(), intervals.end());
         int n = intervals.size();
         int cnt = 0;
+        // keeping the track of previous end
+        // because that's all we need to check if the interval overlaps and which interval to keep
         int prevEnd = intervals[0][1];
         for(int i = 1 ; i < n ; i++){
             int currentStart = intervals[i][0];
