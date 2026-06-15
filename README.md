@@ -37,6 +37,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0930-binary-subarrays-with-sum](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0930-binary-subarrays-with-sum) |
 | [0974-subarray-sums-divisible-by-k](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0974-subarray-sums-divisible-by-k) |
 | [0977-squares-of-a-sorted-array](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0977-squares-of-a-sorted-array) |
+| [0986-interval-list-intersections](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0986-interval-list-intersections) |
 | [0992-subarrays-with-k-different-integers](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0992-subarrays-with-k-different-integers) |
 | [1004-max-consecutive-ones-iii](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1004-max-consecutive-ones-iii) |
 | [1186-maximum-subarray-sum-with-one-deletion](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1186-maximum-subarray-sum-with-one-deletion) |
@@ -163,6 +164,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0844-backspace-string-compare](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0844-backspace-string-compare) |
 | [0876-middle-of-the-linked-list](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0876-middle-of-the-linked-list) |
 | [0977-squares-of-a-sorted-array](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0977-squares-of-a-sorted-array) |
+| [0986-interval-list-intersections](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0986-interval-list-intersections) |
 ## Sorting
 |  |
 | ------- |
@@ -236,4 +238,8 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 |  |
 | ------- |
 | [0918-maximum-sum-circular-subarray](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0918-maximum-sum-circular-subarray) |
+## Sweep Line
+|  |
+| ------- |
+| [0986-interval-list-intersections](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0986-interval-list-intersections) |
 <!---LeetCode Topics End-->
