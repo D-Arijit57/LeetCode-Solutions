@@ -24,6 +24,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0167-two-sum-ii-input-array-is-sorted) |
 | [0209-minimum-size-subarray-sum](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0209-minimum-size-subarray-sum) |
 | [0287-find-the-duplicate-number](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0287-find-the-duplicate-number) |
+| [0435-non-overlapping-intervals](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0435-non-overlapping-intervals) |
 | [0457-circular-array-loop](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0457-circular-array-loop) |
 | [0485-max-consecutive-ones](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0485-max-consecutive-ones) |
 | [0523-continuous-subarray-sum](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0523-continuous-subarray-sum) |
@@ -53,6 +54,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0053-maximum-subarray](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0053-maximum-subarray) |
 | [0120-triangle](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0120-triangle) |
 | [0152-maximum-product-subarray](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0152-maximum-product-subarray) |
+| [0435-non-overlapping-intervals](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0435-non-overlapping-intervals) |
 | [0918-maximum-sum-circular-subarray](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0918-maximum-sum-circular-subarray) |
 | [1186-maximum-subarray-sum-with-one-deletion](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1186-maximum-subarray-sum-with-one-deletion) |
 | [1749-maximum-absolute-sum-of-any-subarray](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1749-maximum-absolute-sum-of-any-subarray) |
@@ -175,6 +177,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0018-4sum](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0018-4sum) |
 | [0056-merge-intervals](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0056-merge-intervals) |
 | [0075-sort-colors](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0075-sort-colors) |
+| [0435-non-overlapping-intervals](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0435-non-overlapping-intervals) |
 | [0581-shortest-unsorted-continuous-subarray](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0581-shortest-unsorted-continuous-subarray) |
 | [0977-squares-of-a-sorted-array](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0977-squares-of-a-sorted-array) |
 ## Sliding Window
@@ -216,6 +219,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 ## Greedy
 |  |
 | ------- |
+| [0435-non-overlapping-intervals](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0435-non-overlapping-intervals) |
 | [0581-shortest-unsorted-continuous-subarray](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0581-shortest-unsorted-continuous-subarray) |
 ## Monotonic Stack
 |  |
