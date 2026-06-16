@@ -13,7 +13,11 @@ public:
             else i++;
         }
         // find the duplicates
-        // since range is 1 to n and there are n+1 numbers there are atleast one duplicate garaunteed
+        // since the value x should at x-1
+        // If nums[i]-1 != i, then the correct value for this position is missing.
+        // The value currently sitting here must be a duplicate,
+        // because its correct position is already occupied by
+        // another copy of the same value.
         for(int i = 0; i < n ; i++){
             if(i != nums[i]-1) ans.push_back(nums[i]);
         }
