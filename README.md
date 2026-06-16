@@ -119,6 +119,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0438-find-all-anagrams-in-a-string](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0438-find-all-anagrams-in-a-string) |
 | [0567-permutation-in-string](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0567-permutation-in-string) |
 | [0844-backspace-string-compare](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0844-backspace-string-compare) |
+| [3612-process-string-with-special-operations-i](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/3612-process-string-with-special-operations-i) |
 | [3797-design-spreadsheet](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/3797-design-spreadsheet) |
 ## Design
 |  |
@@ -133,6 +134,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | ------- |
 | [0844-backspace-string-compare](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0844-backspace-string-compare) |
 | [1929-concatenation-of-array](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1929-concatenation-of-array) |
+| [3612-process-string-with-special-operations-i](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/3612-process-string-with-special-operations-i) |
 ## Linked List
 |  |
 | ------- |
