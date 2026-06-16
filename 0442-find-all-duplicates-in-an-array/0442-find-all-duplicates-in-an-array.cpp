@@ -1,6 +1,8 @@
 class Solution {
 public:
     vector<int> findDuplicates(vector<int>& nums) {
+        // the problem explicity mentions there are duplicates in the array 
+        // " each integer appears at most twice, return an array of all the integers that appears twice"
         int n = nums.size();
         int i = 0; 
         vector<int>ans;
@@ -12,7 +14,7 @@ public:
             }
             else i++;
         }
-        // find the duplicates
+        // After Cyclic sort 
         // since the value x should at x-1
         // If nums[i]-1 != i, then the correct value for this position is missing.
         // The value currently sitting here must be a duplicate,
