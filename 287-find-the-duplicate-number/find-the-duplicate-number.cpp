@@ -14,6 +14,7 @@ public:
         // re-check
         // for a range 1 to N, 
         // the value x should be at index x-1
+        // so 
         for(int i = 0 ; i < n ; i++){
             if(i != nums[i] - 1) return nums[i];
         }
