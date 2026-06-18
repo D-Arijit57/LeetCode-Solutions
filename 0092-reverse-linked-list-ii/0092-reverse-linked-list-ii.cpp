@@ -11,6 +11,7 @@
 class Solution {
 public:
     ListNode* reverseBetween(ListNode* head, int left, int right) {
+        // edge case : range is only 1 node 
         if(left == right) return head;
         // find out the leftNode and the node before the left
         ListNode dummy(0);
