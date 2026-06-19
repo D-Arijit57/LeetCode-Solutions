@@ -27,6 +27,8 @@ public:
         // find the new tail 
         // reduce k (normlization)
         k %= n;
+        // if it is n = 7 we need three rotations that's same as n = 3
+        // so we normalize it by % N 
         int newHead = n - k + 1;
         int newTail = n - k;
         ListNode* nh = head;
@@ -35,6 +37,7 @@ public:
         for(int i = 1 ; i < newTail ; i++){
             nt = nt->next;
         }
+        // find the new head
         for(int i = 1; i < newHead ; i++){
             nh = nh->next;
         }
