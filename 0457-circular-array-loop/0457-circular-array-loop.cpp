@@ -1,45 +1,57 @@
 class Solution {
-public: // ---  REVISION 2 --- 
-    // calculate the getNext
-    int getNext(vector<int>&nums,int curr){
+public:
+    int getNext(vector<int>& nums, int curr) {
         int n = nums.size();
-        return ((curr+nums[curr]) % n + n ) % n;
+        return ((curr + nums[curr]) % n + n) % n;
     }
     bool circularArrayLoop(vector<int>& nums) {
         int n = nums.size();
-        for(int i = 0 ; i < n ; i++){
-            // MISTAKE 1. -> missed this invalid path checking 
-            if(nums[i] == 0) continue;
-            int slow = i, fast = i;
-            int dir = nums[i];
-            while(true){
-                // check direction before moving slow and fast
-                // direction logic -
-                // if direction is same (both positive / both negative) then the product will be positive
-                if(dir * nums[slow] <= 0) break;
-                slow = getNext(nums,slow);
-                if(dir * nums[fast] <= 0) break;
-                int getNextFast = getNext(nums,fast);
-                if(dir * nums[getNextFast] <= 0) break;
-                fast = getNext(nums,getNextFast);
+        for (int i = 0; i < n; i++) {
 
-                // if slow and fast ever meet
-                if(slow == fast){
-                    // check for the self loops
-                    if(slow == getNext(nums,slow)) break;
-                    else return true;
+            // already processed paths
+            if (nums[i] == 0)
+                continue;
+
+            bool forward = nums[i] > 0;
+            int slow = i, fast = i;
+
+            // Floyd's cycle detection
+            while (true) {
+                int next_slow = getNext(nums, slow);
+                if ((nums[next_slow] > 0) != forward)
+                    break;
+                int next_fast = getNext(nums, fast);
+                if ((nums[next_fast] > 0) != forward)
+                    break;
+                next_fast = getNext(nums, next_fast);
+                if ((nums[next_fast] > 0) != forward)
+                    break;
+
+                slow = next_slow;
+                fast = next_fast;
+
+                // if slow and fast meets
+                if (slow == fast) {
+                    // if self-loop length = 1
+                    if (slow == getNext(nums, slow))
+                        break;
+
+                    return true;
                 }
             }
-            // marking all the invalid paths as 0
-            // so that we don't check them again
-            // since its  unecessary overhead for re-checking 
+            // no valid cycle found from i
+            // mark all nodes in this path as visited
+            int curr = i;
+            while ((nums[curr] > 0) == forward) {
+                int nxt = getNext(nums, curr);
 
-            // MISTAKE 2. set curr = slow earlier, that is not the starting point of the entire invalid path
-            int curr = i ;
-            // MISTAKE 3. set dir * nums[curr] >= 0 , it should > 0 since if = 0 its already invalid 
-            while(dir * nums[curr] > 0){
                 nums[curr] = 0;
-                curr = getNext(nums,curr);
+
+                if (nxt == curr)
+
+                    break;
+
+                curr = nxt;
             }
         }
         return false;
