@@ -1,5 +1,6 @@
-
-
+// Rev 20th June : 
+// Mistakes : 
+// 1. Forgot the invariant, which regions defines what which cause the confused pointer movements 
 class Solution {
 public:
     void sortColors(vector<int>& nums) {
