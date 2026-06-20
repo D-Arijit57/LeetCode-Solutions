@@ -32,7 +32,7 @@ public:
 
                 // if slow and fast meets
                 if (slow == fast) {
-                    // if self-loop length = 1
+                    // if self-loop length = 1, but we need length > 1
                     if (slow == getNext(nums, slow))
                         break;
 
@@ -44,13 +44,9 @@ public:
             int curr = i;
             while ((nums[curr] > 0) == forward) {
                 int nxt = getNext(nums, curr);
-
                 nums[curr] = 0;
-
                 if (nxt == curr)
-
                     break;
-
                 curr = nxt;
             }
         }
