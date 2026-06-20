@@ -1,5 +1,6 @@
 // Revision June 20th : 
-// Mistake :  Storing wrong difference instead of the sum
+// Mistakes :
+// 1. Storing wrong difference instead of the sum
 class Solution {
 public:
     int threeSumClosest(vector<int>& nums, int target) {
