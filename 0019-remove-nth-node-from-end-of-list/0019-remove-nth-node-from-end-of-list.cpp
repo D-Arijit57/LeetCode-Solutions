@@ -11,24 +11,28 @@
 class Solution {
 public:
     ListNode* removeNthFromEnd(ListNode* head, int n) {
-        // Two pointer approach :
-        // slow and fast pointer initialization 
-        ListNode* slow = head , *fast = head;
-        // until we reach the nth posisiton move the fast pointer 
-        while(n--){ 
-            fast = fast -> next;
+        // incase of head there is no node before 
+        // so we are using a dummy node to simplify it
+        // it makes sure every node in the list has a node before
+        ListNode dummy(0);
+        dummy.next = head;
+        // we need the node before the nth node from the end
+        ListNode* temp = head;
+        int len = 0;
+        while(temp){
+            temp = temp->next;
+            len++;
         }
-        // if the fast pointer is now pointing the null pointer move the slow pointer 
-        if(fast == NULL){
-            return slow -> next;
+        int pos = len - n;
+        ListNode* before = &dummy;
+        while(pos--){
+            before = before->next;
         }
-        // until fast reaches NULL move fast and slow pointer 
-        while( fast -> next != NULL){
-            slow = slow -> next;
-            fast = fast -> next;
-        }
-        // initialize the slow's next as the next of next of slow 
-        slow -> next = slow -> next -> next;
-        return head;
+        ListNode* target = before->next;
+        // connect before's next to the node after nth node's next
+        before->next = target->next;
+        target->next = nullptr;
+        delete target;
+        return dummy.next;
     }
 };
