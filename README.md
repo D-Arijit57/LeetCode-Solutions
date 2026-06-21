@@ -49,6 +49,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [1248-count-number-of-nice-subarrays](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1248-count-number-of-nice-subarrays) |
 | [1470-shuffle-the-array](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1470-shuffle-the-array) |
 | [1749-maximum-absolute-sum-of-any-subarray](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1749-maximum-absolute-sum-of-any-subarray) |
+| [1833-maximum-ice-cream-bars](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1833-maximum-ice-cream-bars) |
 | [1929-concatenation-of-array](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1929-concatenation-of-array) |
 | [3242-count-elements-with-maximum-frequency](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/3242-count-elements-with-maximum-frequency) |
 | [3797-design-spreadsheet](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/3797-design-spreadsheet) |
@@ -196,6 +197,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0442-find-all-duplicates-in-an-array](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0442-find-all-duplicates-in-an-array) |
 | [0581-shortest-unsorted-continuous-subarray](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0581-shortest-unsorted-continuous-subarray) |
 | [0977-squares-of-a-sorted-array](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0977-squares-of-a-sorted-array) |
+| [1833-maximum-ice-cream-bars](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1833-maximum-ice-cream-bars) |
 ## Sliding Window
 |  |
 | ------- |
@@ -237,6 +239,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | ------- |
 | [0435-non-overlapping-intervals](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0435-non-overlapping-intervals) |
 | [0581-shortest-unsorted-continuous-subarray](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0581-shortest-unsorted-continuous-subarray) |
+| [1833-maximum-ice-cream-bars](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1833-maximum-ice-cream-bars) |
 ## Monotonic Stack
 |  |
 | ------- |
@@ -266,4 +269,8 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 |  |
 | ------- |
 | [0986-interval-list-intersections](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0986-interval-list-intersections) |
+## Counting Sort
+|  |
+| ------- |
+| [1833-maximum-ice-cream-bars](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1833-maximum-ice-cream-bars) |
 <!---LeetCode Topics End-->
