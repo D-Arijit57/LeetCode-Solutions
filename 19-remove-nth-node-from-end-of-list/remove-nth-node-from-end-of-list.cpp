@@ -11,28 +11,26 @@
 class Solution {
 public:
     ListNode* removeNthFromEnd(ListNode* head, int n) {
-        // incase of head there is no node before 
-        // so we are using a dummy node to simplify it
-        // it makes sure every node in the list has a node before
-        ListNode dummy(0);
-        dummy.next = head;
-        // we need the node before the nth node from the end
-        ListNode* temp = head;
-        int len = 0;
-        while(temp){
-            temp = temp->next;
-            len++;
-        }
-        int pos = len - n;
-        ListNode* before = &dummy;
-        while(pos--){
-            before = before->next;
-        }
-        ListNode* target = before->next;
-        // connect before's next to the node after nth node's next
-        before->next = target->next;
-        target->next = nullptr;
-        delete target;
-        return dummy.next;
+       // solve it up with two pointers
+       ListNode dummy(0);
+       dummy.next = head;
+       ListNode* slow = &dummy;
+       ListNode* fast = &dummy;
+       // set fast n+1 nodes ahead of slow
+       for(int i = 0 ; i < n + 1 ; i++){
+        fast = fast->next;
+       }
+       // now move slow and fast together
+       while(fast){
+        slow = slow->next;
+        fast = fast->next;
+       }
+       // when fast reaches null 
+       // slow will be the pointer just before the target
+       ListNode* target = slow->next;
+       slow->next = target->next;
+       target->next = nullptr;
+       delete target;
+       return dummy.next;
     }
 };
