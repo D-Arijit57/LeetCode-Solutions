@@ -11,8 +11,11 @@
 class Solution {
 public:
     ListNode* swapPairs(ListNode* head) {
+        // in case the list is empty or there is only one element return it
         if(!head || !head->next) return head;
 
+        // the dummy nodes makes sure every node in the list has a node before
+        // simplifying it so that can place our prev/before pointer before the head
         ListNode dummy(0);
         dummy.next = head;
 
