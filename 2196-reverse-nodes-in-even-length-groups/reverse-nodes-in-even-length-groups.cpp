@@ -37,8 +37,7 @@ public:
             }
             // starting group of the next is just right after the groupEnd node
             ListNode* nextGroup = groupEnd->next;
-            // reverse if the actual size if even
-            // cuz then its even group with even number of nodes
+            // reverse the group if it has even length 
             if(actualSize % 2 == 0){
                 ListNode* prev = nextGroup;
                 ListNode* curr = groupStart;
