@@ -156,6 +156,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0206-reverse-linked-list](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0206-reverse-linked-list) |
 | [0234-palindrome-linked-list](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0234-palindrome-linked-list) |
 | [0876-middle-of-the-linked-list](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0876-middle-of-the-linked-list) |
+| [2074-reverse-nodes-in-even-length-groups](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/2074-reverse-nodes-in-even-length-groups) |
 | [2095-delete-the-middle-node-of-a-linked-list](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/2095-delete-the-middle-node-of-a-linked-list) |
 ## Recursion
 |  |
