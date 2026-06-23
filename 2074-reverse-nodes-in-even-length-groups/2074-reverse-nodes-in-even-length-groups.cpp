@@ -35,7 +35,7 @@ public:
                 }
                 groupEnd = groupEnd->next;
             }
-
+            // starting group of the next is just right after the groupEnd node
             ListNode* nextGroup = groupEnd->next;
             // reverse if the actual size if even
             // cuz then its even group with even number of nodes
