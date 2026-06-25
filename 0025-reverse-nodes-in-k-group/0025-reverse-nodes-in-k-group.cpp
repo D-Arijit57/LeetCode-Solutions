@@ -31,6 +31,7 @@ public:
                 if(actualLen == k) break;
                 groupEnd = groupEnd->next;
             }
+            // in case groupEnd doesn't exist
             if(actualLen < k) break;
             // set the nextStart
             ListNode* nextStart = groupEnd->next;
