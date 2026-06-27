@@ -3,7 +3,7 @@ public:
     int subarraySum(vector<int>& nums, int k) {
         // Currprefix - oldprefix = k
         // currprefix = oldprefix + k or,
-        // oldPrefix = k - currPrefix
+        // oldPrefix = currPrefix - k
          int n = nums.size();
          unordered_map<int,int>mp;
          int prefixSum = 0;
