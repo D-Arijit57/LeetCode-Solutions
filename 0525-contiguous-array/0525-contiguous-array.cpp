@@ -1,33 +1,31 @@
 class Solution {
 public:
     int findMaxLength(vector<int>& nums) {
-       // the main trick is thinking 0 as -1 and 1 as +1 
-       // so if the subarray has equal number 0 and 1s
-       // for the sum will stay 0
-       int n = nums.size();
-       // to store the indices where sum = 0 occured we will use a map
-       unordered_map<int, int>mp;
-       
-       // prefixSum = 0 occured before array started
-       mp[0] = -1;
+        // curr - old = 0
+        // curr = old
+        // 0 -> negative, 1 -> positive 
+        // if the subarray has equal number of 0s and 1s
+        // the subarray sum would be 0
+        // target here is 0
+        int n = nums.size();
+        unordered_map<int, int>mp;
+        // before the array starts
+        // 0 -> negative
+        mp[0] = -1;
+        int prefix = 0;
+        int maxlen = 0;
+        for(int i = 0 ; i < n ; i++){
+            // if its positive add, else subtract
+            prefix += (nums[i] == 1 ? 1 : -1);
 
-       // prefix -> to keep the track of the sum
-       int prefix = 0;
-       int maxLen = 0;
-       for(int i = 0 ; i < nums.size() ; i++){
-         if(nums[i] == 0){
-            prefix -= 1;
-         }
-         else {
-            prefix += 1; 
-         }
+            // store the index, if it doesn't exist in the map
+            if(mp.find(prefix) == mp.end())
+            mp[prefix] = i;
 
-         if(mp.count(prefix)){
-            maxLen = max(maxLen, i - mp[prefix]); // i - mp[prefix] -> currentIndex - firstOccurence
-         }
-         else mp[prefix] = i; // incase it doesn't exist then store it in the map 
-       }
-       
-    return maxLen;
+            // update the maxlen
+            // currentIndex - lastwhereyousaw
+            maxlen = max(maxlen, i - mp[prefix]);
+        }
+        return maxlen;
     }
 };
