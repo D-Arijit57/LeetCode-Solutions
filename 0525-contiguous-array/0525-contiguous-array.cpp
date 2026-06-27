@@ -17,7 +17,9 @@ public:
         for(int i = 0 ; i < n ; i++){
             // if its positive add, else subtract
             prefix += (nums[i] == 1 ? 1 : -1);
-
+            
+            // we need the index where we saw it last 
+            // to calculate the length of the subarray 
             // store the index, if it doesn't exist in the map
             if(mp.find(prefix) == mp.end())
             mp[prefix] = i;
