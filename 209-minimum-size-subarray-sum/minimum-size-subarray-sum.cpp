@@ -2,21 +2,22 @@ class Solution {
 public:
     int minSubArrayLen(int target, vector<int>& nums) {
         int n = nums.size();
-        int left = 0, minLen = INT_MAX, sum = 0;
-        for(int right = 0 ; right < n ; right++){  
-            // add the number to the sum  
+        int sum = 0;
+        int minLen = INT_MAX;
+        int left = 0;
+        for(int right = 0 ; right < n ; right++){
+            // add new elements and increase the sum
             sum += nums[right];
 
-            // since we already found a sum greater than the target
-            // we need to find a closer one 
-            // the lesser the size of the subarray the lesser to the sum
+            // if the sum is already greater than or equal to the target
+            // we'll try to find a subarray where the length is lesser 
             while(sum >= target){
-                // update first or else you'll miss the valid windows
+                // update first since this is a valid subarray 
                 minLen = min(minLen, right - left + 1);
                 sum -= nums[left];
-                left++; 
+                left++;
             }
         }
-        return minLen == INT_MAX ? 0 : minLen;
+        return minLen == INT_MAX ? 0 : minLen ;
     }
 };
