@@ -1,6 +1,8 @@
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
+        // make sure to skip duplicates by checking neighbours
+        // the same element we have seen before can contribute to a duplicate triplet
         sort(nums.begin(),nums.end());
         int n = nums.size();
         vector<vector<int>>ans;
