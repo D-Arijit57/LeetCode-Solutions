@@ -21,7 +21,7 @@ public:
             minSum = min(minSum, currMin);
 
             // update the absolute maximum
-            ans = max(abs(maxSum),abs(minSum));
+            ans = max(ans,max(abs(maxSum),abs(minSum)));
         }
         return ans;
     }
