@@ -1,16 +1,28 @@
 class Solution {
 public:
     int maxAbsoluteSum(vector<int>& nums) {
+        if(nums.size() == 1) return abs(nums[0]);
+        // since the abs(-x) = x 
+        // means at each point i we have two choices
+        // 1.positive maximum
+        // 2.negative minimum 
+        // negative minimum can become tomorrow's maximum because
+        // we are talking about absolute values
         int n = nums.size();
-        int currMax = nums[0], maxi = nums[0] , currMin = nums[0], mini = nums[0];
-        // keep the track of the negatives as well
-        for(int i = 1 ; i < n; i++){
-            currMax = max(currMax + nums[i], nums[i]);
-            maxi = max(currMax, maxi);
-
+        int currMin = nums[0], currMax = nums[0];
+        int maxSum = nums[0],minSum = nums[0];
+        int ans = nums[0];
+        for(int i = 1 ; i < n ; i++){
+            // update the current max and min
+            currMax = max(currMax + nums[i],nums[i]);
             currMin = min(currMin + nums[i], nums[i]);
-            mini = min(currMin, mini);
+
+            maxSum = max(maxSum, currMax);
+            minSum = min(minSum, currMin);
+
+            // update the absolute maximum
+            ans = max(abs(maxSum),abs(minSum));
         }
-        return max(abs(maxi),abs(mini));
+        return ans;
     }
 };
