@@ -18,6 +18,9 @@ public:
             while(!st.empty() && temperatures[st.top()] < current){
                 lastIndex = st.top();
                 st.pop();
+                // we are finding out the warmth day after lastIndex
+                // so store the next warmth day at lastIndex 
+                // distance = currentIndex - lastIndex
                 ans[lastIndex] = i - lastIndex;
             }
             st.push(i);
