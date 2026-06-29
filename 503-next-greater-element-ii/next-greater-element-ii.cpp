@@ -4,6 +4,7 @@ public:
         // instead of simulating the next
         // and circling around the array physically
         // we can pretend that the array is 121121 instead of being 121
+        /// 1 2 1 | 1 2 1 the first half is for pushing indices , second half is for re-checking 
         int n = nums.size();
         stack<int>st;
         st.push(0);
