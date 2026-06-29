@@ -29,7 +29,8 @@ public:
                 st.pop();
                 ans[prev] = nums[i%n];
             }
-            st.push(i % n);
+            // avoid pushing duplicating indices in the second pass
+            if(i < n ) st.push(i);
         }
         return ans;
     }
