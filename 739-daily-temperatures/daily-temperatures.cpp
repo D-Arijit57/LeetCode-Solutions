@@ -1,31 +1,27 @@
 class Solution {
-    /*
-    Key Insight : for the ith temperature if we can find a jth temperature 
-    while iterating from left to right such that ,
-    j > i (means future day)
-    temperatures[j] > temperatures[i] (warmer day)
-    we can say we got solution for all the previous days 
-    we can just find the days required by subtracting the (current day - prev day)
-
-
-    we are going to store the indices (days) in the stack and whenever a warmer day in future comes 
-    then we are going to find the difference between the current day and the previous days for the answers 
-    */
 public:
     vector<int> dailyTemperatures(vector<int>& temperatures) {
+        // in the stack each element should represent the indices
+        // since we need the distances between the last and next warmth day
+        // invariant : temperatures[prev] > temperatures[current]
+        // if we find a temperature that is warmer than the previous
+        // the previous one becomes useless
         int n = temperatures.size();
-        stack<int>ind ; // to store the indices 
-        vector<int>res(n,0); // to store the results for each day 
-
-        for(int i = 0 ; i < n ; i++){
-            // for the next warmer day it solves the problem for all previous days 
-            while(!ind.empty() && temperatures[i] > temperatures[ind.top()]){
-                int prev = ind.top();
-                ind.pop(); // make sures each day is solved exactly once 
-                res[prev] = i - prev;
+        stack<int>st;
+        st.push(0);
+        vector<int>ans(n, 0);
+        int lastIndex = st.top();
+        for(int i = 1 ; i < n ; i++){
+            int current  = temperatures[i];
+            // st.top() < current -> next warmth day
+            // pop out the ones violating the invariant
+            while(!st.empty() && temperatures[st.top()] < current){
+                lastIndex = st.top();
+                st.pop();
+                ans[lastIndex] = i - lastIndex;
             }
-            ind.push(i);
+            st.push(i);
         }
-        return res;
+        return ans;
     }
 };
