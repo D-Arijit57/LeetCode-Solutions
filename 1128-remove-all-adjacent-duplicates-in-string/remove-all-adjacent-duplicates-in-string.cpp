@@ -9,7 +9,7 @@ public:
         string ans = "";
         for(int i = 1 ; i < n ; i++){
             // Remove exactly one adjacent pair.
-            // do not use a while it'll keep popping
+            // do won't use a while it'll keep popping
             // we are doing it for a pair so. a single 'if' is enough
             if(!st.empty() && st.top() == s[i]){
                 st.pop();
