@@ -5,6 +5,7 @@ public:
         // till s no longer consists the duplicate characters
         // we need to pop the element when it matches with the top
         // because it is the duplicate of the element we last saw
+        // The stack will always represent the string after removing all adjacent duplicates processed so far.
         int n = s.size();
         stack<char>st;
         st.push(s[0]);
