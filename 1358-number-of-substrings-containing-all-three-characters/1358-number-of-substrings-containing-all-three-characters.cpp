@@ -15,6 +15,12 @@ public:
         freq[s[right]]++;
 
         // shrink the window
+        // the key observation is 
+        // once the window becomes valid [l ... r]
+        // r+1,r+2....r+n is also valid because we have already satisfied the required frequency
+        // so irrespective of the characters in the future our substring will be valid
+        // so right now to find out the current valid substrings we need to do
+        // current Valid substrings = total - right
         while(freq.size() == 3){
             cnt += n - right;
             freq[s[left]]--;
