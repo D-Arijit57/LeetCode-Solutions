@@ -5,19 +5,18 @@ public:
         // till s no longer consists the duplicate characters
         // we need to pop the element when it matches with the top
         // because it is the duplicate of the element we last saw
-        int n = s.size();
+        // The stack will always represent the string after removing all adjacent duplicates processed so far.
         stack<char>st;
-        st.push(s[0]);
         string ans = "";
-        for(int i = 1 ; i < n ; i++){
+        for(char c : s){
             // Remove exactly one adjacent pair.
             // do won't use a while it'll keep popping
             // we are doing it for a pair so. a single 'if' is enough
-            if(!st.empty() && st.top() == s[i]){
+            if(!st.empty() && st.top() == c){
                 st.pop();
             }
             // otherwise push the character
-            else st.push(s[i]);
+            else st.push(c);
         }
         // build the string from the stack
         while(!st.empty()){
