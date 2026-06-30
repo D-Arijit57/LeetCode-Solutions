@@ -8,6 +8,14 @@ public:
         // single substring there would multiple substrings which are valid for
         // example, if the substring in the window is abca valid substrings are
         // abca,bca
+
+        // for the counting we won't count the substrings inside the window
+        // as it might lead to count of duplicate strings 
+        // rather we would partition the valid strings based the left boundary
+        // for example since we know that if [l...r] is valid, then it'll be valid r+n
+        // so we would count all the valid substrings starting from left to right and n-1
+        // e.g - abcabc, left = 0, right = 3, cnt += n - right
+        // it counts abca, abcab, abcabc
         int n = s.size();
         unordered_map<int, int> freq;
         int left = 0, cnt = 0;
