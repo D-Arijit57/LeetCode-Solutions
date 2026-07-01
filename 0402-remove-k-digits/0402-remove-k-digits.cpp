@@ -30,10 +30,10 @@ public:
         // means that the digits in the left will be eventually smaller
         if(k > 0){
             // remove the k digits from the right end
+            // right now the right end elements are the the top
             while(k--){
                 st.pop();
             }
-
         }
         // build the string
         while(!st.empty()){
