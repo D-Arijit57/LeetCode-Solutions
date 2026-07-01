@@ -30,8 +30,7 @@ public:
         // means that the digits in the left will be eventually smaller
         if(k > 0){
             // remove the k digits from the right end
-            int i = 0;
-            while(i < st.size() && k--){
+            while(k--){
                 st.pop();
             }
 
