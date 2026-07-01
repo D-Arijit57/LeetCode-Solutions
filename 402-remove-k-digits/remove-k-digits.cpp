@@ -48,8 +48,10 @@ public:
         while(i < ans.size() && ans[i] == '0'){
             i++;
         }
+        // take the substring after skipping the zeros
         ans = ans.substr(i);
 
+        // if no digits are left then return 0
         return ans == "" ? "0" : ans;
        
     }
