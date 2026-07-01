@@ -31,8 +31,9 @@ public:
         if(k > 0){
             // remove the k digits from the right end
             // right now the right end elements are the the top
-            while(k--){
+            while(k > 0 && !st.empty()){
                 st.pop();
+                k--;
             }
         }
         // build the string
