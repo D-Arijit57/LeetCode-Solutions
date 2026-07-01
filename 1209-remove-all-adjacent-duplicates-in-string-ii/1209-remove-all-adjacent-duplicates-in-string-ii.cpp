@@ -34,7 +34,7 @@ public:
         while(!st.empty()){
             // make sure you remember the frequency of each character
             // do not just add them once
-            for(int i = 0 ; i < st.top().second ; i++) ans += st.top().first;
+            ans.append(st.top().second, st.top().first);
             st.pop();
         }
         // reverse since the order is reversed in the stack
