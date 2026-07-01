@@ -125,6 +125,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0030-substring-with-concatenation-of-all-words](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0030-substring-with-concatenation-of-all-words) |
 | [0076-minimum-window-substring](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0076-minimum-window-substring) |
 | [0344-reverse-string](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0344-reverse-string) |
+| [0402-remove-k-digits](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0402-remove-k-digits) |
 | [0424-longest-repeating-character-replacement](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0424-longest-repeating-character-replacement) |
 | [0438-find-all-anagrams-in-a-string](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0438-find-all-anagrams-in-a-string) |
 | [0567-permutation-in-string](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0567-permutation-in-string) |
@@ -249,6 +250,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | ------- |
 | [0143-reorder-list](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0143-reorder-list) |
 | [0234-palindrome-linked-list](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0234-palindrome-linked-list) |
+| [0402-remove-k-digits](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0402-remove-k-digits) |
 | [0503-next-greater-element-ii](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0503-next-greater-element-ii) |
 | [0581-shortest-unsorted-continuous-subarray](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0581-shortest-unsorted-continuous-subarray) |
 | [0739-daily-temperatures](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0739-daily-temperatures) |
@@ -258,12 +260,14 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 ## Greedy
 |  |
 | ------- |
+| [0402-remove-k-digits](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0402-remove-k-digits) |
 | [0435-non-overlapping-intervals](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0435-non-overlapping-intervals) |
 | [0581-shortest-unsorted-continuous-subarray](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0581-shortest-unsorted-continuous-subarray) |
 | [1833-maximum-ice-cream-bars](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1833-maximum-ice-cream-bars) |
 ## Monotonic Stack
 |  |
 | ------- |
+| [0402-remove-k-digits](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0402-remove-k-digits) |
 | [0503-next-greater-element-ii](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0503-next-greater-element-ii) |
 | [0581-shortest-unsorted-continuous-subarray](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0581-shortest-unsorted-continuous-subarray) |
 | [0739-daily-temperatures](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0739-daily-temperatures) |
