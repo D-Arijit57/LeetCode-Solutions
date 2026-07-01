@@ -19,7 +19,7 @@ public:
                // update the frequency first since we have found it again
                 st.top().second++;
 
-               // if the count is exaclty equal to k
+               // if the count is exactly equal to k
                // pop the element
                if(st.top().second == k){
                 st.pop();
