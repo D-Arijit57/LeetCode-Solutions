@@ -1,6 +1,7 @@
 class Solution {
 public:
     string removeDuplicates(string s, int k) {
+        if(s.size() <= 1) return s;
         // unlike an adjacent pair we need to store consecutive groups of each character
         // to track how many times each character appeared in the string
         // stack will store the current reduced string with the count of the consecutive group at the end
