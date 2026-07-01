@@ -53,7 +53,7 @@ public:
         ans = ans.substr(i);
 
         // if no digits are left then return 0
-        return ans == "" ? "0" : ans;
+        return ans.empty() ? "0" : ans;
        
     }
 };
