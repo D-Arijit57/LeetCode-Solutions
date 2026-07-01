@@ -1,6 +1,7 @@
 class Solution {
 public:
     string removeDuplicates(string s, int k) {
+        // each incoming character either extends the previous group or starts a new one
         if(s.size() <= 1) return s;
         // unlike an adjacent pair we need to store consecutive groups of each character
         // to track how many times each character appeared in the string
@@ -18,13 +19,14 @@ public:
                // update the frequency first since we have found it again
                 st.top().second++;
 
-               // if the count is exaclty equal to k
+               // if the count is exactly equal to k
                // pop the element
                if(st.top().second == k){
                 st.pop();
                }
                
             }
+            // if the incoming character doesn't extend the previous group
             // push the new group
             else st.push({s[i],1});
         }
