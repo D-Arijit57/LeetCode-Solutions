@@ -1,3 +1,4 @@
+// parse , process, build the string
 class Solution {
 public:
     string simplifyPath(string path) {
