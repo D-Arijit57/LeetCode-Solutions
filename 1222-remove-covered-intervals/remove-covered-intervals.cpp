@@ -16,23 +16,26 @@ public:
         // since the starts are in ascending order
         // there is no way the current start, is covered by any interval later in the list
         // since the current start will always be <= the next one
-        // so we need to just take care of the ends, as they are in descending order
+        // so we need to just take care of the ends
+        // Since starts are already processed in ascending order,
+        // the only remaining condition for coverage is whether the
+        // current interval extends beyond the farthest end seen so far.
         int n = intervals.size();
         int removed = 0;
         // we just need the interval that has been farthest seen so far
         // we can represent the end with just one vaiable
-        int current_end_max = INT_MIN;
-        current_end_max = intervals[0][1];
+        int maxEnd = INT_MIN;
+        maxEnd = intervals[0][1];
         for (int i = 1; i < n; i++) {
             // check if the current intervals covered the last one
-            if (current_end_max >= intervals[i][1]){
+            if (maxEnd >= intervals[i][1]){
                 // counts the removed one
                 removed++;
             }
             // if the interval is not covered then it adds up in the remaining one
             // so we need to remember this ones
             // update the variable representing the farthest we have seen so far
-            else current_end_max = max(current_end_max, intervals[i][1]);
+            else maxEnd = max(maxEnd, intervals[i][1]);
         }
         // intervals remaining = total - removed
         int remaining = n - removed;
