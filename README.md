@@ -123,6 +123,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 |  |
 | ------- |
 | [0003-longest-substring-without-repeating-characters](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0003-longest-substring-without-repeating-characters) |
+| [0020-valid-parentheses](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0020-valid-parentheses) |
 | [0030-substring-with-concatenation-of-all-words](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0030-substring-with-concatenation-of-all-words) |
 | [0071-simplify-path](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0071-simplify-path) |
 | [0076-minimum-window-substring](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0076-minimum-window-substring) |
@@ -253,6 +254,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 ## Stack
 |  |
 | ------- |
+| [0020-valid-parentheses](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0020-valid-parentheses) |
 | [0071-simplify-path](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0071-simplify-path) |
 | [0143-reorder-list](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0143-reorder-list) |
 | [0234-palindrome-linked-list](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0234-palindrome-linked-list) |
