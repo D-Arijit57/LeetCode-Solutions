@@ -24,8 +24,7 @@ public:
         int removed = 0;
         // we just need the interval that has been farthest seen so far
         // we can represent the end with just one vaiable
-        int maxEnd = INT_MIN;
-        maxEnd = intervals[0][1];
+        int maxEnd = intervals[0][1];
         for (int i = 1; i < n; i++) {
             // check if the current intervals covered the last one
             if (maxEnd >= intervals[i][1]){
