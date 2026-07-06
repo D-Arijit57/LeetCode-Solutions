@@ -50,7 +50,7 @@ public:
         reverse(directories.begin(), directories.end());
 
         // build the simplified path, directories separated by a path
-        for(string str : directories){
+        for(const string &str : directories){
             simplified_path += "/";
             simplified_path += str;
         }
