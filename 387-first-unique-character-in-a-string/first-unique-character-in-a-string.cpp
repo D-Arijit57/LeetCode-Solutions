@@ -14,9 +14,8 @@ public:
         for (char c : s) {
             freq[c]++;
         }
-        // re-iterate the map
-        // starting from the left and find the character with frequency == 1
         // since we are using a unordered_map, iterating over the map won't work
+        // starting from the left and find the character with frequency == 1
         // so we'll iterate over the string from left to right and compare each
         // character's frequency
         for (int i = 0; i < n; i++) {
