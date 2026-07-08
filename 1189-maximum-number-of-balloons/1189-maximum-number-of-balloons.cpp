@@ -23,6 +23,5 @@ public:
         freq['o']/2,
         freq['n']
     }) ;
-      
     }
 };
