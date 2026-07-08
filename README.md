@@ -78,6 +78,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0142-linked-list-cycle-ii](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0142-linked-list-cycle-ii) |
 | [0202-happy-number](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0202-happy-number) |
 | [0268-missing-number](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0268-missing-number) |
+| [0383-ransom-note](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0383-ransom-note) |
 | [0387-first-unique-character-in-a-string](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0387-first-unique-character-in-a-string) |
 | [0409-longest-palindrome](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0409-longest-palindrome) |
 | [0424-longest-repeating-character-replacement](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0424-longest-repeating-character-replacement) |
@@ -101,6 +102,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 ## Counting
 |  |
 | ------- |
+| [0383-ransom-note](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0383-ransom-note) |
 | [0387-first-unique-character-in-a-string](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0387-first-unique-character-in-a-string) |
 | [0992-subarrays-with-k-different-integers](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0992-subarrays-with-k-different-integers) |
 | [1189-maximum-number-of-balloons](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1189-maximum-number-of-balloons) |
@@ -131,6 +133,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0071-simplify-path](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0071-simplify-path) |
 | [0076-minimum-window-substring](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0076-minimum-window-substring) |
 | [0344-reverse-string](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0344-reverse-string) |
+| [0383-ransom-note](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0383-ransom-note) |
 | [0387-first-unique-character-in-a-string](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0387-first-unique-character-in-a-string) |
 | [0402-remove-k-digits](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0402-remove-k-digits) |
 | [0409-longest-palindrome](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0409-longest-palindrome) |
