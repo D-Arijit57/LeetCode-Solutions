@@ -6,7 +6,9 @@ public:
         int low = 0 , high = n - 1;
         while(low <= high){
             int mid = low + (high - low) / 2;
+            // eliminate the right search space
             if(nums[mid] > target) high--;
+            // eliminate the left search space 
             else if(nums[mid] < target) low++;
             else return mid;
         }
