@@ -19,7 +19,7 @@ public:
 
         for(const auto& it : ransomNoteFreq){
             // check if the count is sufficient for the ransomNote
-            if(magazineFreq[it.first] < ransomNoteFreq[it.first]) return false;
+            if(magazineFreq[it.first] < it.second) return false;
         }
         return true;
     }
