@@ -7,9 +7,9 @@ public:
         while(low <= high){
             int mid = low + (high - low) / 2;
             // eliminate the right search space
-            if(nums[mid] > target) high--;
+            if(nums[mid] > target) high = mid - 1;
             // eliminate the left search space 
-            else if(nums[mid] < target) low++;
+            else if(nums[mid] < target) low = mid + 1;
             else return mid;
         }
         return -1;
