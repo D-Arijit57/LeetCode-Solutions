@@ -33,7 +33,7 @@ public:
         // find the node just after the right
         ListNode* after_right = right_boundary->next;
         // reverse the segment left to right
-        ListNode* prev = right_boundary;
+        ListNode* prev = after_right;
         ListNode* curr = left_boundary;
         // reverse till the cnt
         int reverse_cnt = original_right - original_left + 1;
