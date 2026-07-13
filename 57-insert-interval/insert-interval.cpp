@@ -16,6 +16,9 @@ public:
             }
             // case 2. its a overlapping interval
             // merge it 
+            // why do need to only check intervals[i][0] <= newInterval[1]
+            // because we have already handled the case of the intervals[i] starting before newInterval
+            // means if the first 'if' fails we already know that intervals[i][1] >= newInterval[0]
             else if(intervals[i][0] <= newInterval[1]){
                 // take the minimum start and the maximum end comparatively to the current interval
                 // and update the new interval
