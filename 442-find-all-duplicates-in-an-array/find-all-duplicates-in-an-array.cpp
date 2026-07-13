@@ -1,28 +1,31 @@
+// Mistake : In placing the elements, moving forward everytime without placing the correct element in its correct place
 class Solution {
 public:
     vector<int> findDuplicates(vector<int>& nums) {
-        // the problem explicity mentions there are duplicates in the array 
-        // " each integer appears at most twice, return an array of all the integers that appears twice"
+        // place the elements in its correct place
+        // the ones which are mistplaced are the duplicates
         int n = nums.size();
-        int i = 0; 
-        vector<int>ans;
-        // sort it up first using cyclic sort
-        while(i < n){
+        vector<int>duplicates;
+        // 1. place the elements in its correct place
+        int i = 0;
+        while(i<n){
+            // value x belongs to x - 1
             int correctIndex = nums[i] - 1;
             if(nums[i] != nums[correctIndex]){
                 swap(nums[i],nums[correctIndex]);
             }
+            // we can't move forward until the current number in its correct place
             else i++;
         }
-        // After Cyclic sort 
-        // since the value x should at x-1
-        // If nums[i]-1 != i, then the correct value for this position is missing.
-        // The value currently sitting here must be a duplicate,
-        // because its correct position is already occupied by
-        // another copy of the same value.
-        for(int i = 0; i < n ; i++){
-            if(i != nums[i]-1) ans.push_back(nums[i]);
+
+        // 2. re-iterate and check if everything's at the right place
+        // the ones occupying the wrong index are the duplicates
+        // add them to the answer array
+        for(int i = 0 ; i < n ; i++){
+            // check if the value x is at the index to x-1
+            // e,g : 0->1 , 1->2, 2->3 
+        if(nums[i] - 1 != i ) duplicates.push_back(nums[i]);
         }
-        return ans;
+        return duplicates;
     }
 };
