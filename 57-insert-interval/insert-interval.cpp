@@ -22,11 +22,7 @@ public:
             // starting before newInterval means if the first 'if' fails we
             // already know that intervals[i][1] >= newInterval[0] Since the
             // first case has already been handled, we know the current interval
-
             // doesn't end before the new interval starts.
-
-            //
-
             // Now there are only two possibilities:
             // 1. CurrentStart <= NewEnd
             //    -> They overlap, so merge.
