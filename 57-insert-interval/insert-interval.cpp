@@ -19,6 +19,10 @@ public:
             // why do need to only check intervals[i][0] <= newInterval[1]
             // because we have already handled the case of the intervals[i] starting before newInterval
             // means if the first 'if' fails we already know that intervals[i][1] >= newInterval[0]
+            // now since we already know that 
+            // there are two subcases 
+            // 1. if the newStart <= CurrentEnd (else if)
+            // 2. or else newStart > currentEnd (else)
             else if(intervals[i][0] <= newInterval[1]){
                 // take the minimum start and the maximum end comparatively to the current interval
                 // and update the new interval
