@@ -13,7 +13,7 @@ public:
         }
         // if at any point
         // left and right sum becomes equal 
-        // 
+        // return the index 
         int left_sum = 0, right_sum = 0;
         for(int i = 0 ; i < n ; i++){
             // left sum will be prefix[i] 
