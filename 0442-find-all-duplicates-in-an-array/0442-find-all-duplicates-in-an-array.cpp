@@ -1,3 +1,4 @@
+// Mistake : In placing the elements, moving forward everytime without placing the correct element in its correct place
 class Solution {
 public:
     vector<int> findDuplicates(vector<int>& nums) {
