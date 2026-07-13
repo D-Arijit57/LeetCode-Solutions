@@ -14,39 +14,31 @@ public:
         // use a dummy node so that every node in this list has previous node
         ListNode dummy(0);
         dummy.next = head;
-        int original_left = left;
-        int original_right = right;
-        ListNode* before_left = &dummy;
-        ListNode* left_boundary = &dummy;
-        // find the left and the pointer just before the left
-        while(left_boundary && left--){
-            before_left = left_boundary;
-            left_boundary = left_boundary->next;
+        ListNode* before = &dummy;
+        for(int i = 1 ; i < left ; i++){
+            before = before->next;
         }
-        ListNode* right_boundary = left_boundary;
-        // steps we need to move after left to find right 
-        int steps = original_right - original_left;
-        // find the right boundary and the pointer just after the right
-        while(right_boundary && steps--){
-            right_boundary = right_boundary->next;
-        }
-        // find the node just after the right
-        ListNode* after_right = right_boundary->next;
+        ListNode* leftNode = before->next;
+
         // reverse the segment left to right
-        ListNode* prev = after_right;
-        ListNode* curr = left_boundary;
-        // reverse till the cnt
-        int reverse_cnt = original_right - original_left + 1;
+        // process exactly right - left + 1 nodes
+        int reverse_cnt = right - left + 1;
+        ListNode* curr = leftNode;
+        ListNode* prev = nullptr;
         while(reverse_cnt--){
             ListNode* next = curr->next;
             curr->next = prev;
             prev = curr;
             curr = next;
         }
-        // connect the new head to the before_left 
-        before_left->next = prev;
-        // connect the new end with the after_right
-        left_boundary->next = after_right;
+        // prev is the new head
+        // we need to connect the end points right and left
+        // connect the new head to the before
+        before->next = prev;
+        // left_boundary is the tail of the reversed segment
+        // or you can say the right end point
+        // we need to connect with the node just after it
+        leftNode->next = curr;
 
         return dummy.next;
     }
