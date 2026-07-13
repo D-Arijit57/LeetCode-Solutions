@@ -37,7 +37,9 @@ public:
         before->next = prev;
         // left_boundary is the tail of the reversed segment
         // or you can say the right end point
-        // we need to connect with the node just after it
+        // we need to connect with the node just after 
+        // which one should we connect to? its curr
+        // curr becomes the node just after the right after the reversal 
         leftNode->next = curr;
 
         return dummy.next;
