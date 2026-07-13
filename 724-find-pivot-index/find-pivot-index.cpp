@@ -3,14 +3,17 @@ public:
     int pivotIndex(vector<int>& nums) {
         // for an index to be pivot index
         // at index i, currPrefix - oldPrefix = 0
-        // since the same is same
+        // or we can simplify it as currPrefix = oldPrefix
+        // means that the left and right sum should be the same
         int n = nums.size();
         vector<int>prefix(n+1,0);
         // store the prefix sum
         for(int i = 0 ; i < n ; i++){
             prefix[i+1] = prefix[i] + nums[i];
         }
-        
+        // if at any point
+        // left and right sum becomes equal 
+        // 
         int left_sum = 0, right_sum = 0;
         for(int i = 0 ; i < n ; i++){
             // left sum will be prefix[i] 
