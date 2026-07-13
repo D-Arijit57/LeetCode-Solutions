@@ -11,6 +11,12 @@
 class Solution {
 public:
     ListNode* reverseBetween(ListNode* head, int left, int right) {
+        // brute force : assign left and right , reverse , connect the ends
+        // in reality we don't need right 
+        // since we exactly know how many nodes to process for the reversal
+        // or you can say have the length of the segment that is supposed to be revsersed
+        // edge case
+        if(left == right) return head;
         // use a dummy node so that every node in this list has previous node
         ListNode dummy(0);
         dummy.next = head;
