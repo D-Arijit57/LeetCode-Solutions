@@ -11,36 +11,44 @@
 class Solution {
 public:
     ListNode* reverseBetween(ListNode* head, int left, int right) {
-        // edge case : range is only 1 node 
-        if(left == right) return head;
-        // find out the leftNode and the node before the left
+        // use a dummy node so that every node in this list has previous node
         ListNode dummy(0);
         dummy.next = head;
-        ListNode* beforeLeft = &dummy;
-        for (int i = 1; i < left; i++) {
-            beforeLeft = beforeLeft->next;
+        int original_left = left;
+        int original_right = right;
+        ListNode* before_left = &dummy;
+        ListNode* left_boundary = &dummy;
+        // find the left and the pointer just before the left
+        while(left_boundary && left--){
+            before_left = left_boundary;
+            left_boundary = left_boundary->next;
         }
-        ListNode* leftNode = beforeLeft->next;
-
-        // reverse till right - left + 1
-        int cnt = right - left + 1;
-        ListNode* curr = leftNode;
-        ListNode* prev = nullptr;
-        ListNode* next;
-        while (cnt--) {
-            next = curr->next;
+        ListNode* right_boundary = left_boundary;
+        // steps we need to move after left to find right 
+        int steps = original_right - original_left;
+        // find the right boundary and the pointer just after the right
+        while(right_boundary && steps--){
+            right_boundary = right_boundary->next;
+        }
+        // find the node just after the right
+        ListNode* after_right = right_boundary->next;
+        // reverse the segment left to right
+        ListNode* prev = right_boundary;
+        ListNode* curr = left_boundary;
+        // reverse till the cnt
+        int reverse_cnt = original_right - original_left + 1;
+        while(reverse_cnt--){
+            ListNode* next = curr->next;
             curr->next = prev;
             prev = curr;
             curr = next;
         }
-
-        // connect the two ends
-        // after the reversal
-        // prev becomes the new head of the reversed section
-        // curr becomes the node right after the end of the section
-        beforeLeft->next = prev;
-        leftNode->next = curr;
+        // connect the new head to the before_left 
+        before_left->next = prev;
+        // connect the new end with the after_right
+        left_boundary->next = after_right;
 
         return dummy.next;
     }
+
 };
