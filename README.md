@@ -58,6 +58,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [1929-concatenation-of-array](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1929-concatenation-of-array) |
 | [3242-count-elements-with-maximum-frequency](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/3242-count-elements-with-maximum-frequency) |
 | [3797-design-spreadsheet](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/3797-design-spreadsheet) |
+| [3975-filter-occupied-intervals](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/3975-filter-occupied-intervals) |
 ## Dynamic Programming
 |  |
 | ------- |
@@ -233,6 +234,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0977-squares-of-a-sorted-array](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0977-squares-of-a-sorted-array) |
 | [1288-remove-covered-intervals](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1288-remove-covered-intervals) |
 | [1833-maximum-ice-cream-bars](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1833-maximum-ice-cream-bars) |
+| [3975-filter-occupied-intervals](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/3975-filter-occupied-intervals) |
 ## Sliding Window
 |  |
 | ------- |
