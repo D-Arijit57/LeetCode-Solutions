@@ -6,9 +6,9 @@ public:
         // we're looking for the element that is greater than or equal to the target
         // finding the closest to the target won't work here because if the difference is the same 
         // we don't have any parameters to determine where it should be inserted
-        // we know that [0...low - 1] is where the elements < target
-        // [0...low] is unknown to us
-        // [0...high] is unknown and [high+1...] is where the elements are >= target
+        // [0 ... low-1] < target
+        // [low ... high]    Unknown
+        // [high+1 ... n-1]  >= target
         // so we need the index exactly high+1 that is the exact insert position
         // so with each iteration we make sure we eliminate the unknown space to find out the high + 1 index
         // why we do ? high = mid - 1 whenever we see nums[mid] >= target
