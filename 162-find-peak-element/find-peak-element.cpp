@@ -18,9 +18,15 @@ public:
         // there is an increasing trend / slope towards left
         // nums[mid] > nums[mid + 1]
         else{
+            // because mid could itself be a peak according to the condition 
             high = mid;
         }
     }
-    return low;
+    // at the eventually low will be pointing towards a peak
+    // since for this problem we aren't supposed to justify a peak's identity
+    // but a peak's existence 
+    // and by all the operations we are making sure we are eliminating the space
+    // where we don't have a peak
+    return high;
     }
 };
