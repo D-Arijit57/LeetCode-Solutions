@@ -24,6 +24,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0080-remove-duplicates-from-sorted-array-ii](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0080-remove-duplicates-from-sorted-array-ii) |
 | [0120-triangle](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0120-triangle) |
 | [0152-maximum-product-subarray](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0152-maximum-product-subarray) |
+| [0162-find-peak-element](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0162-find-peak-element) |
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0167-two-sum-ii-input-array-is-sorted) |
 | [0209-minimum-size-subarray-sum](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0209-minimum-size-subarray-sum) |
 | [0268-missing-number](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0268-missing-number) |
@@ -118,6 +119,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0033-search-in-rotated-sorted-array](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0033-search-in-rotated-sorted-array) |
 | [0034-find-first-and-last-position-of-element-in-sorted-array](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0034-find-first-and-last-position-of-element-in-sorted-array) |
 | [0035-search-insert-position](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0035-search-insert-position) |
+| [0162-find-peak-element](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0162-find-peak-element) |
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0167-two-sum-ii-input-array-is-sorted) |
 | [0209-minimum-size-subarray-sum](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0209-minimum-size-subarray-sum) |
 | [0268-missing-number](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0268-missing-number) |
