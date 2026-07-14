@@ -15,18 +15,18 @@ public:
         if(nums[mid] < nums[mid + 1]){
             low = mid + 1;
         }
-        // there is an increasing trend / slope towards left
+        // there is an decreasing trend / slope towards right
         // nums[mid] > nums[mid + 1]
         else{
             // because mid could itself be a peak according to the condition 
             high = mid;
         }
     }
-    // at the eventually low will be pointing towards a peak
+    // Eventually the search space shrinks to a single index (low == high). Since every elimination preserves the guarantee that at least one peak exists in the remaining search space, that remaining index must be a peak.
     // since for this problem we aren't supposed to justify a peak's identity
     // but a peak's existence 
     // and by all the operations we are making sure we are eliminating the space
     // where we don't have a peak
-    return high;
+    return low;
     }
 };
