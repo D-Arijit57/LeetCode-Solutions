@@ -14,12 +14,13 @@ public:
         int low = 0, high = n - 1;
         while(low < high){
             int mid = low + (high - low) / 2;
-            // eliminate the half where [mid....high] where the rotation point cannot exist
-            // if its strictly increasing
+            // If the right half is sorted, then the minimum is either
+            // at mid itself or somewhere in the left half.
             if(nums[mid] <= nums[high]){
                 high = mid;
             }
-            // if nums[mid] > nums[high] the rotation point exists somewhere between [mid...high]
+            // The right half is not sorted,
+            // so the rotation point must lie in (mid, high].
             else low = mid + 1;
         }
         return nums[low];
