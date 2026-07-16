@@ -1,12 +1,8 @@
 class Solution {
 public:
     int search(vector<int>& nums, int target) {
-        // we can find the rotations point 
-        // as well as how many times it was rotated by low + 1
-        // if we are outside the rotation point boundary that is mid <= high
-        // and high > target the it cannot exist in that boundary
-        // similary if we are inside the rotation point if nums[mid] > nums[high]
-        // and low > target it cannot be on the left side 
+        // while being inside [mid...high] determine if the target can exist in that interval
+        // same with [low...mid]
         int n = nums.size();
         int low = 0, high = n - 1;
         while(low <= high){
