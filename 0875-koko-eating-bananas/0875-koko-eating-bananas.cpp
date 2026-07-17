@@ -3,6 +3,7 @@ public:
     bool canFinish(vector<int>&piles,int k,int h){
         int curr_hours = 0;
         for(int i = 0 ; i < piles.size() ; i++){
+            // we need to ceil value because each remaining banana takes an extra hour to consume 
             curr_hours += (piles[i] + k - 1) / k;
         }
         return curr_hours <= h;
