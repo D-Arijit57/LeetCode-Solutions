@@ -12,8 +12,8 @@ public:
             // each incoming element can pop out multiple characters 
             // so we need a while
             while(!st.empty() && temperatures[st.top()] < temperatures[i]){
-                // we need to store the distance in the array before popping it out
-                // distance = currentWarmthDayIndex - lastWarmthdayIndex
+                // The current day is the next warmer day for the index on top.
+                // Distance = current index - previous day's index.
                 // and since we are resolving it for the last warmth day
                 // use the st.top() -> index
                 ans[st.top()] = i - st.top();
