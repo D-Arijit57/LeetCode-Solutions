@@ -22,6 +22,8 @@ public:
         ListNode* before = &dummy;
         ListNode* first = dummy.next;
         ListNode* second = first->next;
+        // we need first and second to exist to swap a pair everytime 
+        // both of them are necessary 
         while(first && second){
             // we are reversing each pair at a time
             first->next = second->next;
