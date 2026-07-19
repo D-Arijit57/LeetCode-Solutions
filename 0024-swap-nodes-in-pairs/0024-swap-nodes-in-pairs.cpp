@@ -33,6 +33,7 @@ public:
             // set the new first after before
             first = before->next;
             // set the new second after first (if it exists)
+            // check if first exists in the first place then only
             second = first ? first->next : nullptr;
         }
         return dummy.next;
