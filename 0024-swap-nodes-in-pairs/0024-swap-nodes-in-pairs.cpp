@@ -11,39 +11,29 @@
 class Solution {
 public:
     ListNode* swapPairs(ListNode* head) {
-        // in case the list is empty or there is only one element return it
         if(!head || !head->next) return head;
-
-        // the dummy nodes makes sure every node in the list has a node before
-        // simplifying it so that can place our prev/before pointer before the head
+        // creating a dummy node so that every node in the list has a node before
         ListNode dummy(0);
         dummy.next = head;
 
+        // we need to remember before after every reversal
+        // for reconnection and setting up the first pointer 
+        // right next to before
         ListNode* before = &dummy;
-        ListNode* p1 = before->next;
-        ListNode* p2 = p1->next;
-        
-        // swap pairs till p1 and p2 exists
-        while(p1 && p2){
-            // precompute the nexts before swapping to move forward 
-            // after swapping before should p1 
-            // or else this is how would look like
-            // structure before swapping : before->p1->p2
-            // structure after swapping : before->p2->p1
-            ListNode* nextBefore = p1;
-            ListNode* nextP1 = p2->next;
+        ListNode* first = dummy.next;
+        ListNode* second = first->next;
+        while(first && second){
+            // we are reversing each pair at a time
+            first->next = second->next;
+            second->next = first;
+            before->next = second;
 
-            // swap the pair
-            before->next = p2;
-            p1->next = p2->next;
-            p2->next = p1;
-
-            //after swapping move forward
-            before = nextBefore;
-            p1 = nextP1;
-            // if p1 exists then only p1->next othewise if p1 is already at nullptr
-            // the p1->next would cause a crash
-            p2 = p1 ? p1->next : nullptr;
+            // set the new before after the reversal
+            before = first;
+            // set the new first after before
+            first = before->next;
+            // set the new second after first (if it exists)
+            second = first ? first->next : nullptr;
         }
         return dummy.next;
     }
