@@ -1,6 +1,7 @@
 class Solution {
 public:
     vector<int> dailyTemperatures(vector<int>& temperatures) {
+        //Each incoming element resolves zero or more previously unresolved elements. The stack stores exactly those unresolved candidates.
         int n = temperatures.size();
         // since want distance
         // we need the indices
