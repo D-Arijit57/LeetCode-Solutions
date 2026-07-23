@@ -63,6 +63,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [1749-maximum-absolute-sum-of-any-subarray](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1749-maximum-absolute-sum-of-any-subarray) |
 | [1833-maximum-ice-cream-bars](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1833-maximum-ice-cream-bars) |
 | [1929-concatenation-of-array](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1929-concatenation-of-array) |
+| [2226-maximum-candies-allocated-to-k-children](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/2226-maximum-candies-allocated-to-k-children) |
 | [3242-count-elements-with-maximum-frequency](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/3242-count-elements-with-maximum-frequency) |
 | [3797-design-spreadsheet](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/3797-design-spreadsheet) |
 | [3975-filter-occupied-intervals](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/3975-filter-occupied-intervals) |
@@ -137,6 +138,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0875-koko-eating-bananas](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0875-koko-eating-bananas) |
 | [1004-max-consecutive-ones-iii](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1004-max-consecutive-ones-iii) |
 | [1482-minimum-number-of-days-to-make-m-bouquets](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1482-minimum-number-of-days-to-make-m-bouquets) |
+| [2226-maximum-candies-allocated-to-k-children](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/2226-maximum-candies-allocated-to-k-children) |
 ## Divide and Conquer
 |  |
 | ------- |
