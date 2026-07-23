@@ -1,11 +1,13 @@
 class Solution {
 public:
     bool canDistribute(vector<int>& candies, int p, long long k) {
+        // how many complete groups we can make of group size k
+        // that determines how many children we can distribute the current number of candies to from the current candies[i] pile
         int n = candies.size();
         long long cnt = 0;
         for (int i = 0; i < n; i++) {
-            // can we atleast have p piles from each candies[i]
-            // count the number of complete groups  
+            // can we atleast have p candies from each candies[i] pile
+            // count the number of complete groups 
             cnt += floor(candies[i] / p);
         }
         return cnt >= k;
