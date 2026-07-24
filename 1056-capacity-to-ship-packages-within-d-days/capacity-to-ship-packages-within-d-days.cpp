@@ -17,7 +17,8 @@ public:
     }
     int shipWithinDays(vector<int>& weights, int days) {
         // the search space is the capacity
-        // atleast we can ship a package of weight 1 
+        // for a certain number weights if you want to ship all the weights you need to choose atleast the maximum weight
+        // because inidividually it won't be possible for you to ship it without choosing the capacity as same as it
         // at max the capacity can be sum of all the weights
         int low = *max_element(weights.begin(), weights.end());
         int high = accumulate(weights.begin(), weights.end(), 0);
