@@ -18,6 +18,8 @@ public:
         // we all the nodes have a node before that helps in reconnection 
         // until we reach the end
         while(beforeStart){
+            // the node right next to before becomes the new tail after reversing
+            // so we need to remember it, for later reconnection
             ListNode* newStart = beforeStart->next;
             ListNode* groupEnd = beforeStart;
             int actualLen = 0;
