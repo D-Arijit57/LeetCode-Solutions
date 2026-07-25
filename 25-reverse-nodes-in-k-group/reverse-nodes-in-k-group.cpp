@@ -11,32 +11,32 @@
 class Solution {
 public:
     ListNode* reverseKGroup(ListNode* head, int k) {
-        if(!head || !head->next) return head;
+        if (!head || !head->next)
+            return head;
         ListNode dummy(0);
         dummy.next = head;
         ListNode* beforeStart = &dummy;
-        // we all the nodes have a node before that helps in reconnection 
+        // we all the nodes have a node before that helps in reconnection
         // until we reach the end
-        while(beforeStart){
-            // the node right next to before becomes the new tail after reversing
-            // so we need to remember it, for later reconnection
+        while (beforeStart) {
+            // the node right next to before becomes the new tail after
+            // reversing so we need to remember it, for later reconnection
             ListNode* newStart = beforeStart->next;
             ListNode* groupEnd = beforeStart;
-            int actualLen = 0;
             // count the nodes of k group
-            while(groupEnd && actualLen < k){
+            for (int i = 0; i < k; i++) {
                 groupEnd = groupEnd->next;
-                actualLen++;
+                if (groupEnd == nullptr)
+                    return dummy.next;
             }
             // if we don't have sufficient nodes then break out of the loop
-            // the remaining nodes remain as it is 
-            if(groupEnd == nullptr) break;
+            // the remaining nodes remain as it is
             ListNode* nextGroup = groupEnd->next;
             // we start reversing after the beforeStart
             ListNode* curr = beforeStart->next;
             ListNode* prev = nextGroup;
             // reverse the group
-            while(actualLen--){
+           for(int i  = 0 ; i < k ; i++){
                 ListNode* next = curr->next;
                 curr->next = prev;
                 prev = curr;
