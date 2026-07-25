@@ -5,7 +5,7 @@ public:
         // then currPrefifx % k = oldPrefix % k
         int n = nums.size();
         unordered_map<int,int>mp;
-        // before the array started the sum is 0
+        // before the array started the sum is 0 as well as the remainder
         // how many times you have seen 0 till now ?  its 1 
         // we are storing the frequency so we need to store the frequency of prefix remainder 0 as 1
         mp[0] = 1;
