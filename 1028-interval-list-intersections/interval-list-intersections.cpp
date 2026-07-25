@@ -1,7 +1,7 @@
 class Solution {
 public:
     vector<vector<int>> intervalIntersection(vector<vector<int>>& firstList, vector<vector<int>>& secondList) {
-        // intersection is defined by :
+        // intersection is defined by : a part which belong to both intervals
         // {max(start), min(end)}
         // we can only find the intersection if two intervals overlap otherwise we can't
         // two intervals overlap when first.end >= second.start
@@ -11,14 +11,14 @@ public:
         vector<vector<int>>ans;
         int left = 0, right = 0;
         while( left < n && right < m){
-            int start1 = firstList[left][0];
-            int start2 = secondList[right][0];
-            int end1 = firstList[left][1];
-            int end2 = secondList[right][1];
+            // the intersection cannot start before the minEnd that is the later of two parts
+            // the intersection cannot end after the maxEnd, it ends at the earlier of two ends
+            int start = max(firstList[left][0], secondList[right][0]);
+            int end = min(firstList[left][1], secondList[right][1]);
             // if they overlap
             // one interval might have intersections with multiple intervals
-            // overlap condition only when start1 <= end2 && start2 <= end1
-            if(start1 <= end2 && start2 <= end1){
+            // overlap condition only when max(start) <= min(ends)
+            if(start <= end){
                 // find the intersection and push it in the ans
                 int intersection_start = max(firstList[left][0], secondList[right][0]);
                 int intersection_end = min(firstList[left][1], secondList[right][1]);
@@ -26,7 +26,7 @@ public:
             }
             // move the pointer which interval end's first
             // because the interval which ends earlier has no chance of overlapping in future as the array is already sorted
-            if(end1 <= end2) left++;
+            if(firstList[left][1] <= secondList[right][1]) left++;
             else right++;
         }
         return ans;
