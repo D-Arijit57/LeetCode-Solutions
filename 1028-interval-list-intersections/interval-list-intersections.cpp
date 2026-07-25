@@ -25,6 +25,7 @@ public:
                 ans.push_back({intersection_start,intersection_end});
             }
             // move the pointer which interval end's first
+            // because the interval which ends earlier has no chance of overlapping in future as the array is already sorted
             if(end1 <= end2) left++;
             else right++;
         }
