@@ -11,46 +11,39 @@
 class Solution {
 public:
     ListNode* reverseKGroup(ListNode* head, int k) {
-        // we can't reverse a single node
-        if(k == 1) return head;
-        // set a dummy node
+        if(!head || !head->next) return head;
         ListNode dummy(0);
         dummy.next = head;
-
-        // set the groupStart and groupEnd (this will help us to set the boundaries)
-        ListNode* beforeGroup = &dummy;
-        ListNode* groupStart = dummy.next;
-        ListNode* groupEnd = dummy.next;
-
-        while(groupStart){
+        ListNode* beforeStart = &dummy;
+        // we all the nodes have a node before that helps in reconnection 
+        // until we reach the end
+        while(beforeStart){
+            ListNode* newStart = beforeStart->next;
+            ListNode* groupEnd = beforeStart;
             int actualLen = 0;
-            // increase the groupEnd to set the boundary 
-            // where the number of nodes between groupStart and groupEnd would be multiple of k 
+            // count the nodes of k group
             while(groupEnd && actualLen < k){
-                actualLen++;
-                if(actualLen == k) break;
                 groupEnd = groupEnd->next;
+                actualLen++;
             }
-            // in case groupEnd doesn't exist
-            if(actualLen < k) break;
-            // set the nextStart
-            ListNode* nextStart = groupEnd->next;
-            // since we have the range we can reverse the nodes in that range 
-            ListNode* curr = groupStart;
-            ListNode* prev = nextStart;
+            // if we don't have sufficient nodes then break out of the loop
+            // the remaining nodes remain as it is 
+            if(groupEnd == nullptr) break;
+            ListNode* nextGroup = groupEnd->next;
+            // we start reversing after the beforeStart
+            ListNode* curr = beforeStart->next;
+            ListNode* prev = nextGroup;
+            // reverse the group
             while(actualLen--){
-                ListNode* getNext = curr->next;
+                ListNode* next = curr->next;
                 curr->next = prev;
                 prev = curr;
-                curr = getNext;
+                curr = next;
             }
-            // after reversing prev is the new head
-            // re-connect the new head with beforeGroup
-            beforeGroup->next = prev;
-            // set the new before Group as well next groupStart
-            beforeGroup = groupStart;
-            groupStart = nextStart;
-            groupEnd = groupStart;
+            // reconnect the beforeStart with the new reversed head
+            beforeStart->next = prev;
+            // move forward to next group
+            beforeStart = newStart;
         }
         return dummy.next;
     }
