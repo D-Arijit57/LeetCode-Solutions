@@ -16,9 +16,11 @@ public:
             int req =(( sum % k )+ k) % k;
             // if you find the required other half then count the frequency 
             if(mp.count(req)){
+                // Every previous prefix with the same remainder
+                // forms a valid subarray ending here
                 cnt += mp[req];
             }
-            // else store it in the map
+            
             mp[req]++;
         }
         return cnt;
