@@ -7,7 +7,7 @@ public:
         unordered_map<int,int>mp;
         // before the array started the sum is 0
         // how many times you have seen 0 till now ?  its 1 
-        // we are storing the frequency so we need to store the frequency of sum 0 as 1
+        // we are storing the frequency so we need to store the frequency of prefix remainder 0 as 1
         mp[0] = 1;
         int sum = 0, cnt = 0;
         for(int i = 0 ; i < n ; i++){
