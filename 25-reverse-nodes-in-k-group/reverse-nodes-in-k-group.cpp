@@ -35,7 +35,7 @@ public:
             // we start reversing after the beforeStart
             ListNode* curr = beforeStart->next;
             ListNode* prev = nextGroup;
-            // reverse the group
+            // reverse the k group
            for(int i  = 0 ; i < k ; i++){
                 ListNode* next = curr->next;
                 curr->next = prev;
