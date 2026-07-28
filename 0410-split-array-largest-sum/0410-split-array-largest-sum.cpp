@@ -35,7 +35,8 @@ public:
             if(canSplit(nums, mid, k)){
                high = mid;
             }
-            // if its not then its too small to create the k splits, find a larger sum
+           // The candidate maximum sum is too small.
+           // It requires more than k subarrays.
             else{
                 low = mid + 1;
             }
