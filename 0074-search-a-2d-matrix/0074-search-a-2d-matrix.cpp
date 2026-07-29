@@ -24,11 +24,8 @@ public:
             // It measures the offset from the beginning of the current row,
             // effectively resetting each row's indexing to start from 0.
             int curr_col = mid % cols;
-
-            if (matrix[curr_row][curr_col] > target)
-                high = mid - 1;
-            else if (matrix[curr_row][curr_col] < target)
-                low = mid + 1;
+            if (matrix[curr_row][curr_col] > target) high = mid - 1;
+            else if (matrix[curr_row][curr_col] < target) low = mid + 1;
             else
                 return true;
         }
