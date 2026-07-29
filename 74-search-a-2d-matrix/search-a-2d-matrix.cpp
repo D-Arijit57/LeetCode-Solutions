@@ -1,16 +1,25 @@
 class Solution {
-    // Recursive Version
 public:
-    bool bs(vector<vector<int>>&matrix , int low, int high , int target, int m){
-        if(low > high) return false;
-        int mid = low + (high - low) / 2;
-        int row = mid / m , col = mid % m;
-        if(matrix[row][col] == target) return true;
-        else if(matrix[row][col] > target) return bs(matrix , low , mid - 1 ,target,m);
-        else return bs(matrix, mid+1, high, target,m);
-    }
     bool searchMatrix(vector<vector<int>>& matrix, int target) {
-        int n = matrix.size() , m = matrix[0].size();
-        return bs(matrix,0,(n*m - 1),target,m);
+        // the search space is the entire matrix
+        // it starts from first element of the first row till last element of the last row 
+        // since the matrix is sorted in non-decreasing order
+        // it already has monotonicity
+        int rows = matrix.size();
+        int cols = matrix[0].size();
+        int low = 0, high = rows * cols  - 1;
+        while(low <= high){
+            // mid represents the index of the candidate element
+            // but it doesn't in which row it is it
+            int mid = low + (high - low) / 2;
+            // to calculate that we have flatten the indices
+            // we can do that by dividing the index by the no of cols
+            // it simply tanslates how many complete rows have I passed 
+            int curr_row = mid / cols;
+            if(matrix[curr_row][mid % cols] > target) high = mid - 1;
+            else if(matrix[curr_row][mid % cols] < target) low = mid + 1;
+            else return true;
+        }
+        return false;
     }
 };
