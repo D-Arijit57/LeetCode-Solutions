@@ -16,7 +16,6 @@ public:
             int mid = low + (high - low) / 2;
 
             // Convert the global (flattened) index back into matrix coordinates.
-            //
             // Division tells us how many complete rows have been crossed,
             // which gives the row containing the element.
             int curr_row = mid / cols;
