@@ -1,6 +1,7 @@
 class Solution {
 public:
     bool doExists(vector<int>& row, int target) {
+        // perform binary search in the specific row
         int n = row.size();
         int low = 0, high = n - 1;
         while (low <= high) {
