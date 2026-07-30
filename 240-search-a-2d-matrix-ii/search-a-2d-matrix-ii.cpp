@@ -19,6 +19,8 @@ public:
         // A row is worth binary searching only if the target lies
         // within the row's value range [first, last].
         for (vector<int>& row : matrix) {
+            // a target can only lie inside the row
+            // if row.front() <= target <= row.back()
             if (row.front() <= target && target <= row.back()) {
                 if (doExists(row, target))
                     return true;
