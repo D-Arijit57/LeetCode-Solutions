@@ -15,9 +15,9 @@ public:
         return false;
     }
     bool searchMatrix(vector<vector<int>>& matrix, int target) {
-        // Search each row individually using binary search.
-        // A row is worth searching only if the target lies within
-        // the row's minimum and maximum values.
+        // Every row is individually sorted.
+        // A row is worth binary searching only if the target lies
+        // within the row's value range [first, last].
         for (vector<int>& row : matrix) {
             if (row.front() <= target && target <= row.back()) {
                 if (doExists(row, target))
