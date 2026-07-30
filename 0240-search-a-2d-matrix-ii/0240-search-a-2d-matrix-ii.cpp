@@ -18,8 +18,6 @@ public:
         // Search each row individually using binary search.
         // A row is worth searching only if the target lies within
         // the row's minimum and maximum values.
-        int rows = matrix.size();
-        int row = 0;
         for (vector<int>& row : matrix) {
             if (row.front() <= target && target <= row.back()) {
                 if (doExists(row, target))
