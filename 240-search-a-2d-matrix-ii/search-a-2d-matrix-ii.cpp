@@ -12,6 +12,7 @@ public:
         return false;
     }
     bool searchMatrix(vector<vector<int>>& matrix, int target) {
+        // take each row, search in it individually using binary search
         int rows = matrix.size();
         int row = 0;
         while(row < rows){
@@ -20,6 +21,6 @@ public:
             }
             else row++;
         }
-    return false;
+        return false;
     }
 };
