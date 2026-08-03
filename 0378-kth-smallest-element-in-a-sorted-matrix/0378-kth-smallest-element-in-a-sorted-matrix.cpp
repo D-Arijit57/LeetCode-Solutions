@@ -2,15 +2,15 @@ class Solution {
 public:
 // Tc : n^2 log (minVal - maxVal) or n^2 log (range)
     int countLessEqual(vector<int>&row, int x){
-        int n = row.size();
-        int cnt = 0 ;
-        // count how many elements are smaller or equal to the candidate
-        for(int i = 0 ; i < n ; i++){
-            if(row[i] <= x){
-                cnt++;
-            }
-        }
-        return cnt;
+       int low = 0, high = row.size();
+       while(low < high){
+        int mid = low + (high - low) / 2;
+        if(row[mid] > x)high = mid;
+        // when its <= x, move the low just after the smallest or equal element 
+        else low = mid + 1;
+       }
+       // at the end low represents the element > x 
+       return low;
     }
     int kthSmallest(vector<vector<int>>& matrix, int k) {
         // A value x is large enough to be the kth smallest
