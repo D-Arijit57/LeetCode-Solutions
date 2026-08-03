@@ -1,30 +1,18 @@
 class Solution {
 public:
     int countLessEqual(vector<int>&row, int x){
-        // since each row is sorted, we can use a binary search instead of a linear one
-        int low = 0, high = row.size();
-        while(low < high){
-            int mid = low + (high - low) / 2;
-            // if current element is greater than the candidate
-            // all the elements after it would be greater than it
-            // so remove the right half
-            if(row[mid] > x){
-                high = mid;
+        int n = row.size();
+        int cnt = 0 ;
+        for(int i = 0 ; i < n ; i++){
+            if(row[i] <= x){
+                cnt++;
             }
-            // if its smaller than candidate, all the elements before it would be smaller as well
-            // so we should remove the left half
-            else low = mid + 1;
         }
-        // at the end low will be the number of elements that is atleast greater than x
-        // >= x
-        return low;
+        return cnt;
     }
     int kthSmallest(vector<vector<int>>& matrix, int k) {
-        // a element is called the kth smallest element
-        // if it has exactly k - 1 smaller elements before it
-        // or atleast k smaller elements before it
-        // it translates to either >= k , < k
-        // or <= k , > k
+        // A value x is large enough to be the kth smallest
+        // if at least k elements are <= x.
         if(matrix.size() <= 1) return matrix[0][0];
         int n = matrix.size();
         // the search space belongs from the first element to the last element
