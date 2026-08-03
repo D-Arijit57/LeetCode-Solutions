@@ -17,13 +17,13 @@ public:
         // if at least k elements are <= x.
         if(matrix.size() <= 1) return matrix[0][0];
         int n = matrix.size();
-        // the search space belongs from the first element to the last element
+        // the search space belongs from the minimum element to the maximum element
         int low = matrix[0][0], high = matrix[n-1][n-1];
         while(low < high){
             // mid represents the candidate element index for the kth smallest
             long long mid = low + (high - low) / 2;
             // check in total how many elements are smaller than mid
-           
+        
             int totalCnt = 0 ;
             // for each row, check how many elements are smaller than x 
             for(auto row : matrix){
