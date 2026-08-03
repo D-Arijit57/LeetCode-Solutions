@@ -3,6 +3,7 @@ public:
     int countLessEqual(vector<int>&row, int x){
         int n = row.size();
         int cnt = 0 ;
+        // count how many elements are smaller or equal to the candidate
         for(int i = 0 ; i < n ; i++){
             if(row[i] <= x){
                 cnt++;
