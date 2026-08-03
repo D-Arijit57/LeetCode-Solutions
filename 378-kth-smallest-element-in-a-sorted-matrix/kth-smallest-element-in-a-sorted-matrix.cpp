@@ -23,6 +23,8 @@ public:
         // a element is called the kth smallest element
         // if it has exactly k - 1 smaller elements before it
         // or atleast k smaller elements before it
+        // it translates to either >= k , < k
+        // or <= k , > k
         if(matrix.size() <= 1) return matrix[0][0];
         int n = matrix.size();
         // the search space belongs from the first element to the last element
