@@ -3,9 +3,12 @@ public:
 // Tc : n * (log n) * log(range)
     int countLessEqual(vector<int>&row, int x){
        int low = 0, high = row.size();
+       // lower bound property
        while(low < high){
         int mid = low + (high - low) / 2;
-        if(row[mid] > x)high = mid;
+        // if its greater than the mid, we point high to mid eliminating the search space on the right
+        // also because the mid is still an candidate here
+        if(row[mid] > x) high = mid;
         // when its <= x, move the low just after the smallest or equal element 
         else low = mid + 1;
        }
@@ -17,15 +20,17 @@ public:
         // if at least k elements are <= x.
         if(matrix.size() <= 1) return matrix[0][0];
         int n = matrix.size();
-        // the search space belongs from the first element to the last element
+        // the search space belongs from the minimum element to the maximum element
         int low = matrix[0][0], high = matrix[n-1][n-1];
         while(low < high){
             // mid represents the candidate element index for the kth smallest
             long long mid = low + (high - low) / 2;
             // check in total how many elements are smaller than mid
-           
+        
             int totalCnt = 0 ;
             // for each row, check how many elements are smaller than x 
+            // reason we check every row because lets say a row = {1,5,9}, mid = 13
+            // there could be more elements in the next rows, if we don't check we miss out on them 
             for(auto row : matrix){
                 totalCnt +=  countLessEqual(row, mid);
             }
@@ -33,7 +38,8 @@ public:
             if(totalCnt < k){
                 low = mid + 1;
             }
-            // if its greater than k then the mid should be smaller
+            // using the lowerbound property
+            // if its greater than or equal to k then the mid should be smaller
             else{
                 high = mid;
             }
