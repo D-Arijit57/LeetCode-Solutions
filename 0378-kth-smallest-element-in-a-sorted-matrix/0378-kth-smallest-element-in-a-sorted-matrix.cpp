@@ -3,7 +3,8 @@ public:
 // Tc : n * (log n) * log(range)
     int countLessEqual(vector<int>&row, int x){
        int low = 0, high = row.size();
-       // lower bound property
+       // Find the first element > x (upper bound).
+       // Its index equals the number of elements <= x.
        while(low < high){
         int mid = low + (high - low) / 2;
         // if its greater than the mid, we point high to mid eliminating the search space on the right
@@ -12,7 +13,8 @@ public:
         // when its <= x, move the low just after the smallest or equal element 
         else low = mid + 1;
        }
-       // at the end low represents the element > x 
+       // at the end low represents the index of the element > x 
+       // which the count of how many elements are <= x
        return low;
     }
     int kthSmallest(vector<vector<int>>& matrix, int k) {
@@ -23,14 +25,14 @@ public:
         // the search space belongs from the minimum element to the maximum element
         int low = matrix[0][0], high = matrix[n-1][n-1];
         while(low < high){
-            // mid represents the candidate element index for the kth smallest
+            // mid is the candidate VALUE for the kth smallest element.
             long long mid = low + (high - low) / 2;
-            // check in total how many elements are smaller than mid
+            // check in total how many elements are smaller or equal to mid (<=)
         
             int totalCnt = 0 ;
-            // for each row, check how many elements are smaller than x 
-            // reason we check every row because lets say a row = {1,5,9}, mid = 13
-            // there could be more elements in the next rows, if we don't check we miss out on them 
+           // Every row contributes independently to the total count.
+           // Even if one row is fully <= mid,
+           // later rows may still contain additional elements <= mid.
             for(auto row : matrix){
                 totalCnt +=  countLessEqual(row, mid);
             }
