@@ -3,7 +3,6 @@ public:
     string removeKdigits(string num, int k) {
         int n = num.size();
         stack<char>st;
-        int cnt = 0;
         for(char c : num){
             // each upcoming digit can be added to the previous sequence
             // or it could cancel a certain number of digits and then added to the sequence
