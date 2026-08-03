@@ -1,6 +1,6 @@
 class Solution {
 public:
-// Tc : n^2 log (minVal - maxVal) or n^2 log (range)
+// Tc : n * (log n) * log(range)
     int countLessEqual(vector<int>&row, int x){
        int low = 0, high = row.size();
        while(low < high){
