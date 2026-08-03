@@ -1,59 +1,49 @@
 class Solution {
 public:
     string removeKdigits(string num, int k) {
-        // remove the digit that gives us maximum benefit
-        // Each incoming digit keeps removing larger previous digits until it can no longer improve the current prefix.
-        // the digits in the left are more significant compared to the digits in the right
-        // so if we iterate from left and look for smaller digits only we'll eventually have the smallest integer string after k digits removal
         int n = num.size();
         stack<char>st;
-        st.push(num[0]);
+        int cnt = 0;
+        for(char c : num){
+            // each upcoming digit can be added to the previous sequence
+            // or it could cancel a certain number of digits and then added to the sequence
+            while(!st.empty() && st.top() > c){
+                // we can only remove k times
+                if(k > 0){
+                    st.pop();
+                    k--;
+                } 
+                else{
+                    break;
+                }
+            }
+            // after removing push the new digit
+            st.push(c);
+        }
+        // if the seuence of the digit is sorted
+        // e.g something like 12345
+        // remove from the last, since the leftmost digit is the most 
+        // significant digit
+        // if count stays the same means that we never popped 
+        // its a sorted sequence
+        while(k > 0){
+            st.pop();
+            k--;
+        }
+        // re-build the string
         string ans = "";
-        for(int i = 1 ; i < n ; i++){
-            
-            // remove the digit in the stack if the incoming digit is smaller compared to this 
-            // 1. remove the left digits since till there are 0 removals left 
-            while(!st.empty() && st.top() > num[i]){
-                // we only have k removals
-                // so make sure we do have available moves for the removal
-                if(k == 0) break;                
-                st.pop();
-                k--;
-                
-            }
-            // 2. extend the previous sequence 
-            st.push(num[i]);
-        }
-        // if k is still greater than 0 
-        // remove the digits from the right
-        // because the digit are in ascending order 
-        // means that the digits in the left will be eventually smaller
-        if(k > 0){
-            // remove the k digits from the right end
-            // right now the right end elements are the the top
-            while(k > 0 && !st.empty()){
-                st.pop();
-                k--;
-            }
-        }
-        // build the string
         while(!st.empty()){
             ans += st.top();
             st.pop();
         }
         reverse(ans.begin(), ans.end());
-        
-        // remove the leading zeros in the string
-        // skip the leading zeros if we say more precisely 
+        // skip the leading zeros
+        int m = ans.size();
         int i = 0;
-        while(i < ans.size() && ans[i] == '0'){
+        while(i < m && ans[i] == '0'){
             i++;
         }
-        // take the substring after skipping the zeros
         ans = ans.substr(i);
-
-        // if no digits are left then return 0
         return ans.empty() ? "0" : ans;
-       
     }
 };
