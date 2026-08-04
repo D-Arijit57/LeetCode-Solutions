@@ -1,6 +1,5 @@
 class Solution {
 public:
-// Tc : n * (log n) * log(range)
     int countLessEqual(vector<int>&row, int x){
        int low = 0, high = row.size();
        // Find the first element > x (upper bound).
