@@ -15,7 +15,11 @@ public:
         // base case : if the node doesn't exist at all then stop exploration
         if(node == nullptr) return ;
 
-        // inorder traversal:
+        // inorder traversal: 
+        // start from left subtree, explore till you reach the end
+        // process the current node
+        // go for the right once done with left and the current node
+
         // explore left till you reach end of the left subtree
         inorder_dfs(node->left,ans);
 
