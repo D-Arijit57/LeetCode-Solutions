@@ -11,25 +11,29 @@
  */
 class Solution {
 public:
-    vector<int>ans;
-    void inorder_dfs(TreeNode* node){
-        // base case :
-        // does this node even exist ? if not then stop
-        if(node == nullptr) return;
-
-        // process left
-        inorder_dfs(node->left);
-        
-        // process the current node
-        ans.push_back(node->val);
-
-        // process right
-        inorder_dfs(node->right);
-    }
     vector<int> inorderTraversal(TreeNode* root) {
-        // Inorder traversal :  left -> node -> right
-        // first explore the left subtree first, then go for the current node then the right
-        inorder_dfs(root);
+        // iterative approach
+        vector<int>ans;
+        // the stack represents the root node of the current subtree we are processing
+        stack<TreeNode*>st;
+        // we start from the root
+        TreeNode* curr = root;
+        // while we are not at the end or the stack is not empty
+        while(!st.empty() || curr != nullptr){
+            // go till the end of the left subtree
+            while(curr != nullptr){
+                st.push(curr);
+                curr = curr->left;
+                }
+            // the left subtree is processed
+            curr = st.top();
+            st.pop();
+            // process the current node
+            ans.push_back(curr->val);
+            // go for the right since left is already being processed
+            curr = curr->right;
+        }   
         return ans;
+     
     }
 };
