@@ -306,6 +306,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | ------- |
 | [0020-valid-parentheses](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0020-valid-parentheses) |
 | [0071-simplify-path](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0071-simplify-path) |
+| [0094-binary-tree-inorder-traversal](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0094-binary-tree-inorder-traversal) |
 | [0143-reorder-list](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0143-reorder-list) |
 | [0234-palindrome-linked-list](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0234-palindrome-linked-list) |
 | [0402-remove-k-digits](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0402-remove-k-digits) |
@@ -369,4 +370,16 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | ------- |
 | [0378-kth-smallest-element-in-a-sorted-matrix](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0378-kth-smallest-element-in-a-sorted-matrix) |
 | [1464-maximum-product-of-two-elements-in-an-array](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1464-maximum-product-of-two-elements-in-an-array) |
+## Tree
+|  |
+| ------- |
+| [0094-binary-tree-inorder-traversal](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0094-binary-tree-inorder-traversal) |
+## Depth-First Search
+|  |
+| ------- |
+| [0094-binary-tree-inorder-traversal](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0094-binary-tree-inorder-traversal) |
+## Binary Tree
+|  |
+| ------- |
+| [0094-binary-tree-inorder-traversal](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0094-binary-tree-inorder-traversal) |
 <!---LeetCode Topics End-->
