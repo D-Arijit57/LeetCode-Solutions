@@ -14,7 +14,7 @@ public:
     vector<int> inorderTraversal(TreeNode* root) {
         // iterative approach
         vector<int>ans;
-        // the stack represents the root node of the current subtree we are processing
+        // Every node in the stack has had its left path explored, but has not yet been visited.
         stack<TreeNode*>st;
         // we start from the root
         TreeNode* curr = root;
