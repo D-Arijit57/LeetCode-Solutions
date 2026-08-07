@@ -20,17 +20,21 @@ public:
         TreeNode* curr = root;
         // while we are not at the end or the stack is not empty
         while(!st.empty() || curr != nullptr){
-            // go till the end of the left subtree
+            // Keep moving left, saving every ancestor.
+            // We cannot visit them yet because inorder requires
+            // the entire left subtree to be processed first.
             while(curr != nullptr){
                 st.push(curr);
                 curr = curr->left;
                 }
-            // the left subtree is processed
+            // The left subtree has been completely processed.
+            // The current node is now the next inorder node.
             curr = st.top();
             st.pop();
             // process the current node
             ans.push_back(curr->val);
-            // go for the right since left is already being processed
+            // After visiting the current node,
+            // start processing its right subtree
             curr = curr->right;
         }   
         return ans;
