@@ -12,6 +12,8 @@ public:
             if(nums[right] == 0) zeros++;
             // shrink the window if there are more zeros than ks
             while(zeros > k){
+                // since we are shrinking from the left we should decrease the count of zero only if it is zero
+                // otherwise it would miscount and decrease even if the left is 1
                 if(nums[left] == 0) zeros--;
                 left++;                
             }
