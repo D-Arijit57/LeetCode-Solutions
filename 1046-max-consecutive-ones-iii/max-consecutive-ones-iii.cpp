@@ -1,20 +1,23 @@
 class Solution {
 public:
     int longestOnes(vector<int>& nums, int k) {
-        // using maps this time
+        // we need to check only for zeros
+        // the count of zeros inside the window should be always <= k
+        // if it breaks we should shrink the window
         int n = nums.size();
-        unordered_map<int, int>freq;
-        int left = 0, maxLen = 0;
+        int left = 0, zeros = 0;
+        int ans = INT_MIN;
         for(int right = 0 ; right < n ; right++){
-            freq[nums[right]]++;
-            if(nums[right] == 0){
-                while(freq[nums[right]] > k){
-                    freq[nums[left]]--;
-                    left++;
-                }
+            // expand the window
+            if(nums[right] == 0) zeros++;
+            // shrink the window if there are more zeros than ks
+            while(zeros > k){
+                if(nums[left] == 0) zeros--;
+                left++;                
             }
-            maxLen = max(maxLen , right - left + 1);          
-        }
-        return maxLen;
+            // for every valid window, update the maximum length
+            ans = max(ans, right - left + 1);
+        }      
+        return ans;
     }
 };
