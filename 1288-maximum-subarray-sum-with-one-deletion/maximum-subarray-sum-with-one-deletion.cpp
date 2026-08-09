@@ -16,6 +16,8 @@ public:
             // we have to deletion conditions either one delete or no delete
             // so if there's no deletion we can extend the preivous subarray sum
             // if there's deleteion then we can delete the current one and move forward with the previous subarray sum 
+
+            // what we are doing is considering the specific location at each index for that one deletion
             one_delete = max(previous_no_delete, previous_one_delete + arr[i]);
             
             // base kadane's checking if it should start a new sum or extend the previous one
