@@ -4,6 +4,9 @@ public:
         // we need to check only for zeros
         // the count of zeros inside the window should be always <= k
         // if it breaks we should shrink the window
+        // why it works ?
+        // we are maintainig a window where we make sure the number of zeros stays within <= k, every window where the number of zeros <= k is a valid window , and we only update the maximum length for those valid windows
+        // and this also make sure that you don't miss out on any valid window, which means we are sure to find the maximum since we are only updating the maximum number ones (including the flipped one) only for the valid windows
         int n = nums.size();
         int left = 0, zeros = 0;
         int ans = INT_MIN;
