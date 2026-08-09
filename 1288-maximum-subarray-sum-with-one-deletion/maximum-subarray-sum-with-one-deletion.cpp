@@ -1,27 +1,29 @@
 class Solution {
 public:
     int maximumSum(vector<int>& arr) {
+        // the main perspective here is : What is the best subarray sum ending at index i under each deletion condition ?
         int n = arr.size();
-        int keep = arr[0];
-        // to keep track of the deleted elements
-        // either use deletion on current element, or continue a chain where deletion was already used earlier
-        int deleted = 0;
-        int ans = arr[0];
-        for(int i = 1 ; i < n ; i++){
-            int prevKeep = keep;
-            int prevDeleted = deleted;
-            // at each point
-            // 1. if the element is not beneficial do not include / delete 
-            // 2. if we have already deleted the non beneficial element then include the current one and extend
-            deleted = max(prevKeep, prevDeleted + arr[i]);
-            // conventional kadane's
-            keep = max(arr[i], prevKeep + arr[i]);
 
-            // compare which one is has the maximum sum
-            // since we know the optimal deletion might be no deletion at all 
-            // so we need to compare the conventional kadane's subarray sum as well
-            ans = max({ans, keep, deleted});
+        // the deletion is optional, that too is once
+        // we should keep the sum with the highest value
+        int keep = arr[0], ans = arr[0], one_delete = 0;
+        // how can exactly one deletion happen at index i ?
+        // conceptually if the current element gets one_delete we are left with the sum of the previous subarray without the current one
+        // that is the previous_no_delete
+        for(int i = 1 ; i < n ; i++){
+            int previous_no_delete = keep;
+            int previous_one_delete = one_delete;
+            // we have to deletion conditions either one delete or no delete
+            // so if there's no deletion we can extend the preivous subarray sum
+            // if there's deleteion then we can delete the current one and move forward with the previous subarray sum 
+            one_delete = max(previous_no_delete, previous_one_delete + arr[i]);
+            
+            // base kadane's checking if it should start a new sum or extend the previous one
+            keep = max(arr[i],  previous_no_delete + arr[i]);        
+            
+            // check if the maximum sum is with one deletion or no deletion till this index i 
+            ans = max({ans, keep ,one_delete});
         }
         return ans;
-    }
+    } 
 };
