@@ -1,5 +1,6 @@
 class Solution {
 public:
+// We maintain normal Kadane for the 0-deletion state, and a second state for the exactly-1-deletion state. At the end, we take the best result from either state, because the deletion is optional.
     int maximumSum(vector<int>& arr) {
         // the main perspective here is : What is the best subarray sum ending at index i under each deletion condition ?
         int n = arr.size();
