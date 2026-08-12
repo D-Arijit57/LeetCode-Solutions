@@ -70,6 +70,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [1833-maximum-ice-cream-bars](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1833-maximum-ice-cream-bars) |
 | [1929-concatenation-of-array](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1929-concatenation-of-array) |
 | [2226-maximum-candies-allocated-to-k-children](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/2226-maximum-candies-allocated-to-k-children) |
+| [2958-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/2958-length-of-longest-subarray-with-at-most-k-frequency) |
 | [3242-count-elements-with-maximum-frequency](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/3242-count-elements-with-maximum-frequency) |
 | [3797-design-spreadsheet](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/3797-design-spreadsheet) |
 | [3975-filter-occupied-intervals](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/3975-filter-occupied-intervals) |
@@ -115,6 +116,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [1189-maximum-number-of-balloons](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1189-maximum-number-of-balloons) |
 | [1248-count-number-of-nice-subarrays](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1248-count-number-of-nice-subarrays) |
 | [1358-number-of-substrings-containing-all-three-characters](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1358-number-of-substrings-containing-all-three-characters) |
+| [2958-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/2958-length-of-longest-subarray-with-at-most-k-frequency) |
 | [3242-count-elements-with-maximum-frequency](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/3242-count-elements-with-maximum-frequency) |
 | [3797-design-spreadsheet](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/3797-design-spreadsheet) |
 ## Counting
@@ -287,6 +289,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [1004-max-consecutive-ones-iii](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1004-max-consecutive-ones-iii) |
 | [1248-count-number-of-nice-subarrays](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1248-count-number-of-nice-subarrays) |
 | [1358-number-of-substrings-containing-all-three-characters](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1358-number-of-substrings-containing-all-three-characters) |
+| [2958-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/2958-length-of-longest-subarray-with-at-most-k-frequency) |
 ## Prefix Sum
 |  |
 | ------- |
