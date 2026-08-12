@@ -1,8 +1,6 @@
 class Solution {
 public:
     int maxSubarrayLength(vector<int>& nums, int k) {
-        // we don't remove the frequency of the element who violated the condition 
-        // because it would break the contigious window
        // sliding window approach
        // the invariant here is the maximum frequency of each element should stay <= k
        // so we would check each time it we expand the window to include the new element
@@ -16,7 +14,13 @@ public:
             freq[nums[right]]++;
 
             // shrink the window
+           
             while(freq[nums[right]] > k){
+                // we don't remove the frequency of the element who violated the condition 
+                // because it would break the contigious window
+                // the reason it still correctly detects the invalid window because
+                // even after removing the elements which didn't violate the condition 
+                // eventually it'll reach the element that violated the condition
                 freq[nums[left]]--;
                 left++;
             }
