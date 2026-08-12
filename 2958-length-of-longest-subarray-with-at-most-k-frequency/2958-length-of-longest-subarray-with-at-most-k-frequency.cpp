@@ -1,6 +1,8 @@
 class Solution {
 public:
     int maxSubarrayLength(vector<int>& nums, int k) {
+        // we don't remove the frequency of the element who violated the condition 
+        // because it would break the contigious window
        // sliding window approach
        // the invariant here is the maximum frequency of each element should stay <= k
        // so we would check each time it we expand the window to include the new element
