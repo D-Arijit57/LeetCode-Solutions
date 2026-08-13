@@ -12,19 +12,19 @@
 class Solution {
 public:
     vector<int> preorderTraversal(TreeNode* root) {
+        // the stack represents the nodes that we have discovered but we haven't processed yet
         if(root == nullptr) return {};
         // iterative approach
         vector<int>ans;
-        // the stack should only contain the valid nodes
-        // the stack represents the set of un-processed nodes
-        // more precisely the nodes that we have discovered but we haven't processed yet
+        // the top of the stack represents the next un-processed node 
         // pre-order traversal :  node -> left -> right
         stack<TreeNode*>st;
         st.push(root);
         // iterate till all of the nodes are processed
         while(!st.empty()){
+            // pop the top of the stack(the unprocessed node)
+            // Processing the current node and adding its children to the stack as pending work in an order that causes the stack to produce preorder.
             TreeNode* curr = st.top();
-            // pop when you it the nullptr, previous node was a leaf node
             st.pop();
             ans.push_back(curr->val);
             // since stack is LIFO, we need to -
