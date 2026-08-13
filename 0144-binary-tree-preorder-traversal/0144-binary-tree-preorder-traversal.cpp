@@ -23,7 +23,7 @@ public:
         // iterate till all of the nodes are processed
         while(!st.empty()){
             // pop the top of the stack(the unprocessed node)
-            // process it and go for the next one as per the pre order sequence
+            // Processing the current node and adding its children to the stack as pending work in an order that causes the stack to produce preorder.
             TreeNode* curr = st.top();
             st.pop();
             ans.push_back(curr->val);
