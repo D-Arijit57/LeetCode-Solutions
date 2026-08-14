@@ -11,30 +11,30 @@
  */
 class Solution {
 public:
-    void inorder_dfs(TreeNode* node, vector<int>&ans){
-        // base case : if the node doesn't exist at all then stop exploration
-        if(node == nullptr) return ;
-
-        // inorder traversal: 
-        // start from left subtree, explore till you reach the end
-        // process the current node
-        // go for the right once done with left and the current node
-
-        // explore left till you reach end of the left subtree
-        inorder_dfs(node->left,ans);
-
-        // process the current node
-        ans.push_back(node->val);
-
-        // since we already explore left, and the current node as well
-        // explore the right subtree till you reach the end of the right subtree
-        inorder_dfs(node->right, ans);
-    }
-
     vector<int> inorderTraversal(TreeNode* root) {
-        // recursive approach
-        vector<int> ans;
-        inorder_dfs(root, ans);
-        return ans;
+        // edge case: empty tree
+        if(root == nullptr) return {};
+        // inorder traveral :
+        // reach the end of the left subtree, comeback process one node, if there is right go right
+        // left -> node -> right
+        stack<TreeNode*>st;
+        TreeNode* node = root;
+        vector<int>ans;
+        while(!st.empty() || node != nullptr){
+            // while there is a left subtree move left
+            // till you reach the end
+            while(node != nullptr){
+                st.push(node);
+                node = node->left;
+            }
+            // if you reach nullptr means there is no left subtree left
+            // come back and process the last node (top of the stack)
+            node = st.top();
+            st.pop();
+            ans.push_back(node->val);
+            // move to the right subtree
+            node = node->right;
+        }
+    return ans;
     }
 };
