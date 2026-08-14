@@ -18,6 +18,7 @@ public:
         stack<TreeNode*>st;
         TreeNode* node = root;
         vector<int>ans;
+        // keep going till there is either a subtree OR there is a ancestor waiting in the stack to be processed
         while(!st.empty() || node != nullptr){
             // while there is a left subtree move left
             // till you reach the end
