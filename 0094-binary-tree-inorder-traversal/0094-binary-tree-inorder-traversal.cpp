@@ -12,8 +12,6 @@
 class Solution {
 public:
     vector<int> inorderTraversal(TreeNode* root) {
-        // edge case: empty tree
-        if(root == nullptr) return {};
         // inorder traveral :
         // reach the end of the left subtree, comeback process one node, if there is right go right
         // left -> node -> right
@@ -28,7 +26,6 @@ public:
                 node = node->left;
             }
             // if you reach nullptr means there is no left subtree left
-            // come back and process the last node (top of the stack)
             node = st.top();
             st.pop();
             ans.push_back(node->val);
