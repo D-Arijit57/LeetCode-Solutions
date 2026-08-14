@@ -117,6 +117,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [1248-count-number-of-nice-subarrays](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1248-count-number-of-nice-subarrays) |
 | [1358-number-of-substrings-containing-all-three-characters](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1358-number-of-substrings-containing-all-three-characters) |
 | [2958-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/2958-length-of-longest-subarray-with-at-most-k-frequency) |
+| [3090-maximum-length-substring-with-two-occurrences](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/3090-maximum-length-substring-with-two-occurrences) |
 | [3242-count-elements-with-maximum-frequency](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/3242-count-elements-with-maximum-frequency) |
 | [3797-design-spreadsheet](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/3797-design-spreadsheet) |
 ## Counting
@@ -181,6 +182,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [1189-maximum-number-of-balloons](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1189-maximum-number-of-balloons) |
 | [1209-remove-all-adjacent-duplicates-in-string-ii](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1209-remove-all-adjacent-duplicates-in-string-ii) |
 | [1358-number-of-substrings-containing-all-three-characters](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1358-number-of-substrings-containing-all-three-characters) |
+| [3090-maximum-length-substring-with-two-occurrences](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/3090-maximum-length-substring-with-two-occurrences) |
 | [3612-process-string-with-special-operations-i](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/3612-process-string-with-special-operations-i) |
 | [3797-design-spreadsheet](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/3797-design-spreadsheet) |
 ## Design
@@ -290,6 +292,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [1248-count-number-of-nice-subarrays](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1248-count-number-of-nice-subarrays) |
 | [1358-number-of-substrings-containing-all-three-characters](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1358-number-of-substrings-containing-all-three-characters) |
 | [2958-length-of-longest-subarray-with-at-most-k-frequency](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/2958-length-of-longest-subarray-with-at-most-k-frequency) |
+| [3090-maximum-length-substring-with-two-occurrences](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/3090-maximum-length-substring-with-two-occurrences) |
 ## Prefix Sum
 |  |
 | ------- |
