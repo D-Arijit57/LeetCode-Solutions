@@ -15,7 +15,6 @@ public:
         // we are not searching indices, we are searching for possible cuts (partitions)
         // the maximum possible cuts we can make is the total length of nums1
         int low = 0, high = n;
-        int median = 0;
         while(low <= high){
             // mid represents the partition1 candidate
             // find the left partition, or partition1 
