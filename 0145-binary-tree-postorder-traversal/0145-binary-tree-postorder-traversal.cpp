@@ -28,11 +28,12 @@ public:
         // then after exploring right if it hasn't been explored
         // check prev == curr ->right ? process curr : explore right
         stack<TreeNode*>st;
-        TreeNode* curr = root;
         TreeNode* prev = nullptr;
+        st.push(root);
+        TreeNode* curr = root->left ? root->left : root->right;
         vector<int>ans;
         // till all the currs are processed
-        while(!st.empty() || curr){
+        while(!st.empty()){
             // reach the end of the left subtree
             while(curr){
                 st.push(curr);
