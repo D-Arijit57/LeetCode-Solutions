@@ -18,9 +18,9 @@ public:
         // this is BFS traversal problem
         // we are supposed to process the node we discovered at the earliest
         // so we would use a queue because of its FIFO nature
-        // at each nodes the queue represents the nnumber of nodes we have to proces
-        // in that specific nodes 
-        // so we can also use it to determine if we have completely processed the current nodes or not
+        // At the beginning of each level,
+        // the queue contains exactly the nodes belonging to that level.
+        // Its size therefore tells us how many nodes we need to process.
         
         // we start with the root
         // we process it, if it has any childrens push them left then right
@@ -36,12 +36,13 @@ public:
             // we need another list to store those nodes
             vector<int>currentLevel;
 
-            // process every node in that specific nodes
+            // Process exactly the nodes that belonged to this level
+            // when the level started.
             for(int i = 0 ; i < levelSize; i++){
             // mark the node before popping it out
              TreeNode* curr = nodes.front();
              // process the current node and add them to answer
-             currentLevel.push_back(nodes.front()->val);
+             currentLevel.push_back(curr->val);
              nodes.pop();
 
              // if its children (left and right subtree exists) push them
