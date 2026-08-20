@@ -25,12 +25,11 @@ public:
         int levelCnt = 0;
         // until all the levels are processed completely
         while(!levels.empty()){
-            TreeNode* curr = levels.front();
             int levelSize = levels.size();
             vector<int>currLevel;
             // process the current level completely
             for(int i = 0 ; i < levelSize ; i++){
-                curr = levels.front();
+                TreeNode* curr = levels.front();
                 currLevel.push_back(curr->val);
                 levels.pop();
 
