@@ -33,19 +33,15 @@ public:
                 currLevel.push_back(curr->val);
                 levels.pop();
 
-                // check if the nodes have children if they have push them left -> right
+                // discover the childrens of the processed node
                 if(curr->left) levels.push(curr->left);
                 if(curr->right) levels.push(curr->right);
             }
-            // if its odd level the sequence of nodes is supposed to be right to left
-            if(levelCnt % 2 == 1){
-                reverse(currLevel.begin(), currLevel.end());
+            if(levelCnt % 2 == 1 ) {
+                reverse(currLevel.begin(),currLevel.end());
                 ans.push_back(currLevel);
             }
-            // if its even then left to right
-            else{
-                ans.push_back(currLevel);
-            }
+            else  ans.push_back(currLevel);
             // increase the level count once a level is completely processed 
             levelCnt++;
         }
