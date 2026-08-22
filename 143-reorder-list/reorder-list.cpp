@@ -11,33 +11,33 @@
 class Solution {
 public:
     void reorderList(ListNode* head) {
-        if(!head || !head->next) return;
+        if(!head || !head->next) return ;
         ListNode* slow = head;
         ListNode* fast = head;
+        // phase 1: find the middle of the linkedlist
+        // since we know that fast moves twice ahead of slow
+        // by the time fast reaches null, slow will be at the middle
         while(fast && fast->next){
             slow = slow->next;
             fast = fast->next->next;
         }
-        // slow is pointing to the middle node now
-        // point to the second half (just after slow)
-        ListNode* second = slow->next;
-        // remove the slow pointer
+        // now slow is at the middle
+        // phase 2: reverse the second half of the linkedlist
+        ListNode* second_half_start = slow->next;
         slow->next = nullptr;
-        // reverse the second half
-        ListNode* curr = second;
+        ListNode* curr = second_half_start;
         ListNode* prev = nullptr;
-        ListNode* next;
         while(curr){
-            next = curr->next;
-            curr->next = prev;
-            prev = curr;
-            curr = next;
+          ListNode* next = curr->next;
+          curr->next = prev;
+          prev = curr;
+          curr = next;
         }
-        // create new head
-        // keep on connecting old and new nodes 
-        // to form the pattern 
+        // phase 3: start from the two heads 
+        // make the new connections
         ListNode* head1 = head;
-        ListNode* head2 = prev;
+        // since prev is the new head of the second half 
+        ListNode* head2 = prev; 
         while(head2){
             ListNode* temp1 = head1->next;
             ListNode* temp2 = head2->next;
