@@ -351,6 +351,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0523-continuous-subarray-sum](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0523-continuous-subarray-sum) |
 | [1248-count-number-of-nice-subarrays](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1248-count-number-of-nice-subarrays) |
 | [3536-maximum-product-of-two-digits](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/3536-maximum-product-of-two-digits) |
+| [3622-check-divisibility-by-digit-sum-and-product](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/3622-check-divisibility-by-digit-sum-and-product) |
 ## Bit Manipulation
 |  |
 | ------- |
