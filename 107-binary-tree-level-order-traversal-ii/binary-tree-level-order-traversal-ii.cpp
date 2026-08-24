@@ -12,7 +12,7 @@
 class Solution {
 public:
     vector<vector<int>> levelOrderBottom(TreeNode* root) {
-        // normal BFS, but always push the current level nodes at the first after all of them are processed
+        // normal BFS, reverse at the end
         if(root == nullptr) return {};
         vector<vector<int>>ans;
         queue<TreeNode*>level;
@@ -32,10 +32,10 @@ public:
                 if(curr->left) level.push(curr->left);
                 if (curr->right) level.push(curr->right);
             }
-
-            // always push the sublist of the current level nodes at the first of the list
-            ans.insert(ans.begin(),currLevel);
+            ans.push_back(currLevel);
         }
+        // reverse the list 
+        reverse(ans.begin(), ans.end());
         return ans;
     }
 };
