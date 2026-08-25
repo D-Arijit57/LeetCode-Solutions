@@ -24,15 +24,17 @@ public:
             for(int i = 0 ; i < levelSize ; i++){
                 TreeNode* curr = level.front();
                 level.pop();
-               // prepare the next level
-               if(curr->left) level.push(curr->left);
-               if(curr->right) level.push(curr->right);
 
                // swap the left and right subtree
                TreeNode* temp;
                temp = curr->right;
                curr->right = curr->left;
-               curr->left =temp;
+               curr->left = temp;
+
+               // prepare the next level
+               if(curr->left) level.push(curr->left);
+               if(curr->right) level.push(curr->right);
+
             }
         }
         return root;
