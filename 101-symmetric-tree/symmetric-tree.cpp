@@ -24,9 +24,6 @@ public:
         queue<pair<TreeNode*, TreeNode*>>levels;
         levels.push({root->left, root->right});
         while(!levels.empty()){
-            int levelSize = levels.size();
-
-            for(int i = 0 ; i < levelSize ; i++){
                 TreeNode* L = levels.front().first;
                 TreeNode* R = levels.front().second;
                 levels.pop();
@@ -44,7 +41,6 @@ public:
                 // {3,3} , {4,4} in the queue
                 levels.push({L->left, R->right});
                 levels.push({L->right, R->left});
-            }
         }
         return true;
     }
