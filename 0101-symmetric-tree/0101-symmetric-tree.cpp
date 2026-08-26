@@ -24,6 +24,8 @@ public:
         queue<pair<TreeNode*, TreeNode*>>levels;
         levels.push({root->left, root->right});
         while(!levels.empty()){
+            // this isn't a level order problem which would require you to finish the previous level before going for the next one
+            // the queue doesn't represents the current level rather it represents the possible mirror nodes
                 TreeNode* L = levels.front().first;
                 TreeNode* R = levels.front().second;
                 levels.pop();
