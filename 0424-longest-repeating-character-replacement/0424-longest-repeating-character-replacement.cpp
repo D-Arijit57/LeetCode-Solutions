@@ -3,6 +3,11 @@ public:
     int characterReplacement(string s, int k) {
         // invariant : requirement <= k
         // if requiremnet > k shrink the window because that's a invalid one
+        // We want to make every character in the window the same.
+        // The most frequent character is the best one to keep unchanged,
+        // because it minimizes the number of characters we need to replace.
+        // Therefore:
+        // replacements needed = windowSize - maxFreq
         int n = s.size();
         int left = 0;
         unordered_map<char, int>freq;
