@@ -12,8 +12,8 @@
 class Solution {
 public:
     bool isSameTree(TreeNode* p, TreeNode* q) {
-        // the queue represents the pair of nodes
-        // potentially same from the two trees 
+        // the queue represents the pair of nodes from the two trees 
+        // which are potentially same
         queue<pair<TreeNode*, TreeNode*>>same_nodes;
         same_nodes.push({p,q});
         while(!same_nodes.empty()){
