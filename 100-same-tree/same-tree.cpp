@@ -29,7 +29,7 @@ public:
             else {
                 if(P->val != Q->val) return false;
             }
-
+            // push the pairs which we are going to compare
             same_nodes.push({P->left,Q->left});
             same_nodes.push({P->right,Q->right});
         }
