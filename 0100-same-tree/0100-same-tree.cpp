@@ -14,6 +14,9 @@ public:
     bool isSameTree(TreeNode* p, TreeNode* q) {
         // the queue represents the pair of nodes from the two trees 
         // which are potentially same
+
+        // each of these pair in the queue represents the two nodes from the two different trees
+        // which are supposed to be the same 
         queue<pair<TreeNode*, TreeNode*>>same_nodes;
         same_nodes.push({p,q});
         while(!same_nodes.empty()){
@@ -24,8 +27,8 @@ public:
             // if one exists but the other don't exist 
             else if(!P || !Q) return false;
             // if they both exist check the values
-            // leffTree's left child == rightTree's left child
-            // leftTree's right child == rightTree's right child 
+            // Left child's position in P corresponds to left child's position in Q
+            // Right child's position in P corresponds to right child's position in Q
             else {
                 if(P->val != Q->val) return false;
             }
