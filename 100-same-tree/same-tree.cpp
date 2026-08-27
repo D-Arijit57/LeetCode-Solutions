@@ -1,0 +1,38 @@
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    bool isSameTree(TreeNode* p, TreeNode* q) {
+        // the queue represents the pair of nodes
+        // potentially same from the two trees 
+        queue<pair<TreeNode*, TreeNode*>>same_nodes;
+        same_nodes.push({p,q});
+        while(!same_nodes.empty()){
+            auto [P , Q] = same_nodes.front();
+            same_nodes.pop();
+            // if both nodes doesn't exist
+            if(!P && !Q) continue;
+            // if one exists but the other don't exist 
+            else if(!P || !Q) return false;
+            // if they both exist check the values
+            // leffTree's left child == rightTree's left child
+            // leftTree's right child == rightTree's right child 
+            else {
+                if(P->val != Q->val) return false;
+            }
+
+            same_nodes.push({P->left,Q->left});
+            same_nodes.push({P->right,Q->right});
+        }
+    return true;
+    }
+};
