@@ -1,8 +1,9 @@
 class Solution {
 public:
     int minSubArrayLen(int target, vector<int>& nums) {
-        // we keep increasing the window, whenever we meet our target
+        // we keep increasing the window, whenever we meet our target or if the sum is greater than target
         // we shrink the window to find a smaller since our goal is to find the minimal window
+        // we need to keep in mind that since we are shrinking a valid one we need to update the answer during the shrinking since we only need a valid window's length
         int n = nums.size();
         int ans = INT_MAX;
         int left = 0, sum = 0;
