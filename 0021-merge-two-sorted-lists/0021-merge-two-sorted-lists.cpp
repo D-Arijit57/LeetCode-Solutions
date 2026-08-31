@@ -15,6 +15,7 @@ public:
         if(!list2) return list1;
         // the dummy node helps to have a situation where every node has a previous node
         // dummy -> [merged_list]
+        // Dummy handles the “where does the merged list begin?” problem; tail handles the “where does the next node go?” problem.
         ListNode dummy(0);
 
         // curr_tail represents the end of the merged list
