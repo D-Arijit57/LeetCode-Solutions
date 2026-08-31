@@ -11,6 +11,9 @@
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
+        // curr represents first of the portion of the list that is still un-processed
+        // previous represents last of the portion that we just processed
+        // processed == reversed
         ListNode* prev = nullptr;
         ListNode* curr = head;
         while(curr){
