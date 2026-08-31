@@ -15,7 +15,11 @@ public:
         slow = slow->next;
         fast = fast->next->next;
 
+        // when the slow and fast meet 
+        // we set the slow to the head
         if(slow == fast){
+            // since the distance between meeting point inside the cycle to the end of the list and from head to the start of cycle 
+            // the two pointers are bound to meet
             slow = head;
             while(slow != fast){
                 slow = slow->next;
