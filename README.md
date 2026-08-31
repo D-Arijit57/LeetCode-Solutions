@@ -24,6 +24,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0075-sort-colors](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0075-sort-colors) |
 | [0080-remove-duplicates-from-sorted-array-ii](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0080-remove-duplicates-from-sorted-array-ii) |
 | [0120-triangle](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0120-triangle) |
+| [0121-best-time-to-buy-and-sell-stock](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0121-best-time-to-buy-and-sell-stock) |
 | [0152-maximum-product-subarray](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0152-maximum-product-subarray) |
 | [0153-find-minimum-in-rotated-sorted-array](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0153-find-minimum-in-rotated-sorted-array) |
 | [0162-find-peak-element](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0162-find-peak-element) |
@@ -79,6 +80,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | ------- |
 | [0053-maximum-subarray](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0053-maximum-subarray) |
 | [0120-triangle](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0120-triangle) |
+| [0121-best-time-to-buy-and-sell-stock](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0121-best-time-to-buy-and-sell-stock) |
 | [0152-maximum-product-subarray](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0152-maximum-product-subarray) |
 | [0410-split-array-largest-sum](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0410-split-array-largest-sum) |
 | [0435-non-overlapping-intervals](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0435-non-overlapping-intervals) |
