@@ -429,4 +429,8 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0103-binary-tree-zigzag-level-order-traversal](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0103-binary-tree-zigzag-level-order-traversal) |
 | [0107-binary-tree-level-order-traversal-ii](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0107-binary-tree-level-order-traversal-ii) |
 | [0226-invert-binary-tree](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0226-invert-binary-tree) |
+## Floyd's Cycle Finding Algorithm
+|  |
+| ------- |
+| [0142-linked-list-cycle-ii](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0142-linked-list-cycle-ii) |
 <!---LeetCode Topics End-->
