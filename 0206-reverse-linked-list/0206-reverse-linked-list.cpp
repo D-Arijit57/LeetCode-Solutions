@@ -14,10 +14,13 @@ public:
         // curr represents first of the portion of the list that is still un-processed
         // previous represents last of the portion that we just processed
         // processed == reversed
+
+        // so at each portion of the list we make sure that we preserve the next node to be processed
+        // and then only reverse the current node 
         ListNode* prev = nullptr;
         ListNode* curr = head;
         while(curr){
-            // save the next check point, so that we can move to the next after reversal
+            // save the next unprocessed node before going for reversal of the current node
             ListNode* next = curr->next;
             // reconnect the current node 
             curr->next = prev;
