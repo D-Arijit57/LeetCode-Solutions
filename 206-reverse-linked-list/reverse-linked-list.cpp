@@ -14,6 +14,9 @@ public:
         // curr represents first of the portion of the list that is still un-processed
         // previous represents last of the portion that we just processed
         // processed == reversed
+
+        // so at each portion of the list we make sure that we preserve the next node to be processed
+        // and then only reverse the current node 
         ListNode* prev = nullptr;
         ListNode* curr = head;
         while(curr){
