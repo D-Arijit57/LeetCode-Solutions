@@ -22,6 +22,7 @@ public:
 
         // we're starting with group 1, so intended no of nodes are 1
         int groupSize = 1;
+        
         // while groupStart exist
         while(groupStart){
 
