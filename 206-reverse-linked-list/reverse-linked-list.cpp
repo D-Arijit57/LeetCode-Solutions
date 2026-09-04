@@ -20,7 +20,7 @@ public:
         ListNode* prev = nullptr;
         ListNode* curr = head;
         while(curr){
-            // save the next check point, so that we can move to the next after reversal
+            // save the next unprocessed node before going for reversal of the current node
             ListNode* next = curr->next;
             // reconnect the current node 
             curr->next = prev;
