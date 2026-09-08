@@ -21,6 +21,9 @@ public:
             // compare one list's node with every node of the other list
             // if one reaches the the end redirect it to the head of the list
             list1 = list1 ? list1->next : headB;
+            // why check list1 instead of list1->next?
+            // because we have to check is current list1 is valid or not 
+            // if its already a nullptr it makes no sense to do list->next
             list2 = list2 ? list2->next : headA;   
         }
         return nullptr;
