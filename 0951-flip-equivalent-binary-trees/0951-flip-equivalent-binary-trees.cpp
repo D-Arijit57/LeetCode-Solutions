@@ -11,14 +11,14 @@
  */
 class Solution {
 public:
-    // a state represents the pending subtree for verification
-    // We are currently checking whether this subtree of Tree 1 can be made equivalent to this subtree of Tree 2
+    // // a state represents the pending subtree for verification
+    // // We are currently checking whether this subtree of Tree 1 can be made equivalent to this subtree of Tree 2
 
-    // (L, R) is a state :  it means compare the subtree rooted at L and rooted at R
-    struct State{
-            TreeNode* L;
-            TreeNode* R;
-        };
+    // // (L, R) is a state :  it means compare the subtree rooted at L and rooted at R
+    // struct State{
+    //         TreeNode* L;
+    //         TreeNode* R;
+    //     };
     bool isFlippedOrNot(TreeNode* L, TreeNode* R){
         // if both of them are not present
          if (!L && !R)
@@ -37,13 +37,14 @@ public:
         // if only one of them are absent
         if(!root1 || !root2) return false;
         // stack represents the node that we have discovered but yet to process
-        stack<State>st;
+        stack<pair<TreeNode*,TreeNode*>>st;
         st.push({root1,root2});
         // until all the nodes gets processed
         while(!st.empty()){
-        State curr = st.top();
-        TreeNode* L = curr.L;
-        TreeNode* R = curr.R;
+        // State curr = st.top();
+        // TreeNode* L = curr.L;
+        // TreeNode* R = curr.R;
+        auto [L,R] = st.top();
         st.pop();  
 
         // if both nodes doesn't exist
