@@ -11,14 +11,6 @@
  */
 class Solution {
 public:
-    // // a state represents the pending subtree for verification
-    // // We are currently checking whether this subtree of Tree 1 can be made equivalent to this subtree of Tree 2
-
-    // // (L, R) is a state :  it means compare the subtree rooted at L and rooted at R
-    // struct State{
-    //         TreeNode* L;
-    //         TreeNode* R;
-    //     };
     bool isFlippedOrNot(TreeNode* L, TreeNode* R){
         // if both of them are not present
          if (!L && !R)
@@ -41,9 +33,6 @@ public:
         st.push({root1,root2});
         // until all the nodes gets processed
         while(!st.empty()){
-        // State curr = st.top();
-        // TreeNode* L = curr.L;
-        // TreeNode* R = curr.R;
         auto [L,R] = st.top();
         st.pop();  
 
