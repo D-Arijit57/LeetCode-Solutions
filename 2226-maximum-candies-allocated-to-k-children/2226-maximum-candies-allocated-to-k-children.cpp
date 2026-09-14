@@ -1,6 +1,6 @@
 class Solution {
 public:
-    bool canGive(vector<int>& candies, long long mid, long long k){
+    bool canGive(vector<int>& candies, int mid, long long k){
         int n = candies.size();
         long long cnt = 0;
         for(int i = 0; i < n ; i++){
@@ -20,7 +20,7 @@ public:
         long long high = *max_element(candies.begin(), candies.end());
         int ans = 0;
         while(low <= high){
-            long long mid = low + (high - low) / 2;
+            int mid = low + (high - low) / 2;
             // if the candidate works we look for a larger one
             // since we are trying to maximize the answer
             if(canGive(candies, mid, k)){
