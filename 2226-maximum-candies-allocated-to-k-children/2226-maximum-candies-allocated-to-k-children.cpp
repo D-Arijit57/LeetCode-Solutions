@@ -22,6 +22,9 @@ public:
         long long low = 1;
         long long high = *max_element(candies.begin(), candies.end());
         int ans = 0;
+        // If we can give mid candies to k children,
+        // then every smaller value is also feasible.
+        // Therefore feasibility is monotonic and we can binary search.
         while(low <= high){
             int mid = low + (high - low) / 2;
             // if the candidate works we look for a larger one
