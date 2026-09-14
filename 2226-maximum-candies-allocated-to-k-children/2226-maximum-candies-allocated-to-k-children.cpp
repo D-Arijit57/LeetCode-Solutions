@@ -8,9 +8,12 @@ public:
             // for that count the complete groups of that pile while dividing by the mid
             // e.g candies = [10], mid = 3, 10/3 = 3 -> 3+3+3 = almost 10, so we are checking how many children can have exactly 3 candies
             cnt += candies[i] / mid;
-            
+
+            // small optimization: if you find that it already satisfies the count
+            // then return immediately you don't to iterate the entire array
+            if(cnt >= k) return true;
         }
-        return cnt >= k;
+        return false;
     }
     int maximumCandies(vector<int>& candies, long long k) {
         int n = candies.size();
