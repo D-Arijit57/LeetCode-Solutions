@@ -1,6 +1,6 @@
 class Solution {
 public:
-    bool canGive(vector<int>& candies, long long mid, long long k){
+    bool canGive(vector<int>& candies, int mid, long long k){
         int n = candies.size();
         long long cnt = 0;
         for(int i = 0; i < n ; i++){
@@ -8,9 +8,12 @@ public:
             // for that count the complete groups of that pile while dividing by the mid
             // e.g candies = [10], mid = 3, 10/3 = 3 -> 3+3+3 = almost 10, so we are checking how many children can have exactly 3 candies
             cnt += candies[i] / mid;
-            
+
+            // small optimization: if you find that it already satisfies the count
+            // then return immediately you don't to iterate the entire array
+            if(cnt >= k) return true;
         }
-        return cnt >= k;
+        return false;
     }
     int maximumCandies(vector<int>& candies, long long k) {
         int n = candies.size();
@@ -20,7 +23,7 @@ public:
         long long high = *max_element(candies.begin(), candies.end());
         int ans = 0;
         while(low <= high){
-            long long mid = low + (high - low) / 2;
+            int mid = low + (high - low) / 2;
             // if the candidate works we look for a larger one
             // since we are trying to maximize the answer
             if(canGive(candies, mid, k)){
