@@ -41,8 +41,9 @@ public:
         TreeNode* leftResult = lowestCommonAncestor(curr->left,p,q);
         TreeNode* rightResult = lowestCommonAncestor(curr->right,p,q);
         
-        // if from the current node both of P and Q exists in left an right 
-        // then the current node is the LCA 
+       // If both subtrees return a result,
+       // P and Q were found on opposite sides of curr,
+       // so curr is their LCA.
         if(leftResult && rightResult){
             return curr;
         }
