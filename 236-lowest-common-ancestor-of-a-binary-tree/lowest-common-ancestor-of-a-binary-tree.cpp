@@ -40,16 +40,23 @@ public:
         TreeNode* curr = root;
         TreeNode* leftResult = lowestCommonAncestor(curr->left,p,q);
         TreeNode* rightResult = lowestCommonAncestor(curr->right,p,q);
-
+        
+        // if from the current node both of P and Q exists in left an right 
+        // then the current node is the LCA 
         if(leftResult && rightResult){
             return curr;
         }
+        // if only leftResult is true : means p or q somewhere exists in the left subtree  
+        // incase the LCA exists in the left subtreee
         if(leftResult){
             return leftResult;
         }
+        // if only rightResult is true : means p or q somewhere exists in the right subtree
+        // incase the LCA exists in the right subtree
         if(rightResult){
             return rightResult;
         }
+        // if both of them doesn't exist return nullptr
         return nullptr;
     }   
 };
