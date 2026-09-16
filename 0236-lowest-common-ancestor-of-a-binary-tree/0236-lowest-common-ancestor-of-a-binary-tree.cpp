@@ -39,6 +39,11 @@ public:
         }
 
        // Store P and all of its ancestors 
+       // why a set not a vector instead
+       // using a set provides us O(1) for look up
+       // using a vector would have required to search entirely
+       // and would've resulted in O(h) in lookup 
+       // the reason why we use set here 
        unordered_set<TreeNode*> ancestors;
        TreeNode* curr = p;
 
