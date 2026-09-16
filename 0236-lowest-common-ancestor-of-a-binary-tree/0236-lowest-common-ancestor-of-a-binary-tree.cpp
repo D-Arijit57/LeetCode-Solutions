@@ -49,6 +49,8 @@ public:
 
        while(curr != nullptr){
         ancestors.insert(curr);
+        // move to the ancestor of the current node
+        // {key,value} : value here is the ancestor
         curr = parentmap[curr];
        }
 
