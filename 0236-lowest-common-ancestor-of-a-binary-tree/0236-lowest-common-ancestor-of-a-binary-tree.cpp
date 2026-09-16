@@ -16,7 +16,6 @@ public:
         // the first common ancestor becomes the LCA 
         // as that is the diversion point of P and Q
         if(root == nullptr) return nullptr;
-        if(root == p || root == q) return root;
 
         // parentmap : e.g parent[5] = 3
         unordered_map<TreeNode*, TreeNode*>parentmap;
