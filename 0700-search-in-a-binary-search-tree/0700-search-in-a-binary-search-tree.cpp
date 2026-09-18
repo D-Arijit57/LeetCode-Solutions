@@ -13,8 +13,9 @@ class Solution {
 public:
     TreeNode* searchBST(TreeNode* root, int val) {
         // since its a BST one thing we know that 
-        // if the immediate left child is greater than the val then it cannot exists in the left
-        // same with the right
+        // property :  everything in left Subtree < current node < everything in right Subtree
+        // if the current node is greater than the val then it cannot exists in the right
+        // similarly if its lesser than the val it cannot exists in the left
         // by this navigation strategy we iterate the tree and try to find the val
         // basically we're searching only in the possible spaces instead of everywhere
         if(root == nullptr) return nullptr;
