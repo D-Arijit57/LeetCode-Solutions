@@ -24,6 +24,7 @@ public:
             // why check list1 instead of list1->next?
             // because we have to check is current list1 is valid or not 
             // if its already a nullptr it makes no sense to do list->next
+            // because : if list1 is already nullptr, evaluating list1->next would dereference a null pointer.
             list2 = list2 ? list2->next : headA;   
         }
         return nullptr;
