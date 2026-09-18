@@ -12,15 +12,17 @@
 class Solution {
 public:
     TreeNode* searchBST(TreeNode* root, int val) {
-        // since its a BST one thing we know that 
-        // property :  everything in left Subtree < current node < everything in right Subtree
-        // if the current node is greater than the val then it cannot exists in the right
-        // similarly if its lesser than the val it cannot exists in the left
-        // by this navigation strategy we iterate the tree and try to find the val
-        // basically we're searching only in the possible spaces instead of everywhere
-        if(root == nullptr) return nullptr;
-        if(root->val == val) return root;
-        if(root->val > val) return searchBST(root->left,val);
-        return searchBST(root->right,val);  
+        TreeNode* curr = root;
+        while(curr){
+            // if its the same value then return immediately
+            if(curr->val == val) return curr;
+            // if the current node is smaller than the target
+            // there's no way it can exist on the left side
+            if(curr->val < val) curr = curr->right;
+            // if the current node is greater than the target
+            // for sure the value exists in the left
+            else curr = curr->left;
+        }
+        return nullptr;
     }
 };
