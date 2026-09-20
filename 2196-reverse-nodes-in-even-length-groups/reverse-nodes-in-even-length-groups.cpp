@@ -11,65 +11,49 @@
 class Solution {
 public:
     ListNode* reverseEvenLengthGroups(ListNode* head) {
-        // head is going to be the first group so ignore it anyway
-        // assign before/prev pointer to it
-        // we're going to start from the group two 
+        // edge case : empty list
+        if(!head) return nullptr;
+        // due to a dummy node every node out there will have a valid node before it
         ListNode dummy(0);
         dummy.next = head;
-
-        ListNode* prevGroup = &dummy;
-        ListNode* groupStart = head;
-
-        // we're starting with group 1, so intended no of nodes are 1
-        int groupSize = 1;
-        // while groupStart exist
+        int group = 1;
+        ListNode* before = &dummy;
+        ListNode* groupStart = before->next;
         while(groupStart){
-
-            int actualSize = 0;
             ListNode* groupEnd = groupStart;
-            // find the actual size of the group 
-            while(groupEnd && actualSize < groupSize){
-                actualSize++;
-                if(actualSize == groupSize || !groupEnd->next){
-                    break;
-                }
+            int actualLen = 1;
+            while(groupEnd->next && actualLen < group){
                 groupEnd = groupEnd->next;
+                actualLen++;
             }
-            // starting group of the next is just right after the groupEnd node
             ListNode* nextGroup = groupEnd->next;
-            // reverse the group if it has even length 
-            if(actualSize % 2 == 0){
-                ListNode* prev = nextGroup;
+            // check if the length is even, then we can reverse the group
+            if(actualLen % 2 == 0) {
+                // reverse the group
                 ListNode* curr = groupStart;
-
-                // reversal logic
-                while(actualSize--){
-                    ListNode* getnext = curr->next;
+                ListNode* prev = nextGroup;
+                while(actualLen--){
+                    ListNode* next = curr->next;
                     curr->next = prev;
                     prev = curr;
-                    curr = getnext;
+                    curr = next;
                 }
 
-                // set the new groupStart and beforeGroup after reversal
-                // prev is the new head of the group
-                // connect it with the last node of the group before
-                prevGroup->next = prev;
-                // old groupStart becomes the tail
-                prevGroup = groupStart;
-            }
-            // if it is odd 
-            // then set prevGroup directly to groupEnd 
-            // cuz that's the last node of the group before in case of odd length
-            else{
-                prevGroup = groupEnd;
-            }
+                // reconnection
+                // prev is the newhead
+                before->next = prev;
 
+                // assign new before
+                // just before the groupStart
+                // since its reversed the groupStart is the new tail
+                before = groupStart;
+            }
+            // if not reversed the groupEnd is the new before
+            else  before = groupEnd;
+            // set the newGroupStart
             groupStart = nextGroup;
-            // process 1 node -> 1st group
-            // process 2 nodes -> 2nd group 
-            // process n nodes -> nth group
-            groupSize++;
-
+    
+            group++;
         }
         return dummy.next;
     }
