@@ -1,46 +1,52 @@
 class Solution {
 public:
-    bool canSplit(vector<int>&nums, int limitSum, int k){
+    bool canSplit(vector<int>&nums, int mid, int k){
         int n = nums.size();
-        int currSum = 0, splitCnt = 1;
+        int cnt_splits = 1, sum = 0;
         for(int i = 0 ; i < n ; i++){
-            // if we can fit the current element within the limit
-            // add it
-            // delay the start of the new split as long as possible - * Greedy Choice *
-            if(currSum + nums[i] <= limitSum){
-                currSum += nums[i];
+            // if we have our target sum, start a new split
+            if(sum + nums[i] > mid){
+                cnt_splits++;
+                sum = 0;
             }
-            // if we can't fit the current element within the limit
-            // start a new split
-            else{
-                currSum = nums[i];
-                splitCnt++;
-            }
-        }
-        return splitCnt <= k;
+            sum += nums[i];
+        }        
+        // check if the splits
+        // are not more than the desired splits
+        return cnt_splits <= k;
     }
     int splitArray(vector<int>& nums, int k) {
-        // edge case : if number of subarrays are more than total elements in the array
-        // we cannnot create the splits, because there aren't enough elements to split into 
-        // non-empty subarrays
+        // egde case : if the size of the subarrays we need is more than the total size of the array then it's impossible to make splits
         if(k > nums.size()) return -1;
-        // the search space belongs from the largest element to total sum of all elements in the array
-        // since the splits are supposed to be non-empty one split should have atleast one element, it should be capable of holding the largest element 
-        int low = *max_element(nums.begin(), nums.end());
-        int high = accumulate(nums.begin(), nums.end(), 0);
-        while(low < high){
-            // mid represents the maximun sum candidate
+        // search space here is the sum 
+        // starting from the highest element
+        // as the split or the partition or subarray should be able to contain the largest element itself
+        int n = nums.size();
+        int sum = 0;
+        for(int i = 0 ; i < n ; i++){
+            sum += nums[i];
+        }
+        int low = *max_element(nums.begin(), nums.end()), high = sum;
+        int ans = INT_MAX;
+        while(low <= high){
+            // mid represents the sum
             int mid = low + (high - low) / 2;
-            // if the current sum is feasible, then find a smaller sum
-            if(canSplit(nums, mid, k)){
-               high = mid;
+            // search is monotonic :  F F F T T T
+
+
+            // if this sum satifies the split : if the array can be splitted in such a way
+            // that this sum can be justified we can for sure say its large enough and we can look for a smaller sum
+            if(canSplit(nums,mid,k)){
+                ans = mid;
+                high = mid - 1;
             }
-           // The candidate maximum sum is too small.
-           // It requires more than k subarrays.
+            // if it doesn't satistfy then its too small
+            // and it doesn't justify the number of splits we can have in this array
+            // so we need to look for a larger sum
             else{
                 low = mid + 1;
             }
         }
-        return low;
+        return ans;
     }
 };
