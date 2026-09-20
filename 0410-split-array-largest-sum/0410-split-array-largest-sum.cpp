@@ -2,6 +2,7 @@ class Solution {
 public:
     bool canSplit(vector<int>&nums, int mid, int k){
         int n = nums.size();
+        // we are starting from split 1
         int cnt_splits = 1, sum = 0;
         for(int i = 0 ; i < n ; i++){
             // if we have our target sum, start a new split
