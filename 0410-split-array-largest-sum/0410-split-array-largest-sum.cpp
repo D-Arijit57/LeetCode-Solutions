@@ -23,6 +23,7 @@ public:
         // starting from the highest element
         // as the split or the partition or subarray should be able to contain the largest element itself
         int n = nums.size();
+        // the maximum a split can hold (k = 1) is the total sum of all the elements in the array
         int sum = 0;
         for(int i = 0 ; i < n ; i++){
             sum += nums[i];
