@@ -41,6 +41,9 @@ public:
         TreeNode* curr = p;
         unordered_set<TreeNode*>ancestors;
         while(curr){
+            //  a node can itself be one of the targets for the LCA 
+            // the reason why we include p as well
+            // otherwise by definition p is not the ancestor of itself
             ancestors.insert(curr);
             // set to curr to the parent of of the current node (we're tracing back)
             curr = parent_map[curr];
