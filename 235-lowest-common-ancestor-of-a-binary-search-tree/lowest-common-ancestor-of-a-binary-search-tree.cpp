@@ -11,52 +11,21 @@
 class Solution {
 public:
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
-        // edge case : empty tree
+        // since its BST we can determine which subtree to enter
+        // we know that p < LCA < q 
+        // since its a BST 
         if(root == nullptr) return nullptr;
-        // parent_map : represents the record of the each node and their immidate ancestor /parent
-        unordered_map<TreeNode*, TreeNode*>parent_map;
-        // using a BFS Approach
-        queue<TreeNode*>nodes;
-        nodes.push(root);
-        // initial value of parent_map (root, nullptr)
-        parent_map[root] = nullptr;
-        while(!nodes.empty()){
-            TreeNode* curr = nodes.front();
-            nodes.pop();
-            // iterate every node and store 
-            // each node with its immediate parent (ancestor)
-            // for both left and right subtree
-            if(curr->left){
-                parent_map[curr->left] = curr;
-                nodes.push(curr->left);
-            }
-            if(curr->right){
-                parent_map[curr->right] = curr;
-                nodes.push(curr->right);
-            }
-        }
-        // trace back from p and q
-        // record their ancestors
-        // the first meeting point becomes the LCA 
-        TreeNode* curr = p;
-        unordered_set<TreeNode*>ancestors;
+        TreeNode* curr = root;
         while(curr){
-            //  a node can itself be one of the targets for the LCA 
-            // the reason why we include p as well
-            // otherwise by definition p is not the ancestor of itself
-            ancestors.insert(curr);
-            // set to curr to the parent of of the current node (we're tracing back)
-            curr = parent_map[curr];
-           
-        }
-        
-        curr = q;
-        while(curr){
-           // check if this is the meeting point
-           if(ancestors.count(curr)) return curr;
-           // if not check the next ancestor using the parent map 
-           curr = parent_map[curr];
-           
+            // if both p and q are smaller than current node
+            // then the LCA is probably in the left subtree
+            if(p->val < curr->val && curr->val > q->val) curr = curr->left;
+            // if both p and q are larger than the current node 
+            // then LCA is probably in the right subtree 
+            else if(p->val > curr->val && curr->val < q->val) curr = curr->right;
+            // the current node would be LCA when
+            // P < curr < Q or Q < curr < P
+            else return curr ;
         }
         return nullptr;
     }
