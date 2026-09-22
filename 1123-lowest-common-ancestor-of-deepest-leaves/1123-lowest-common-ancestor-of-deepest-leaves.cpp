@@ -35,6 +35,10 @@ public:
         // each child would produce something like (depth, LCA)
         // so we would need something to store it
         // e.g. result[2] = {4,2}, the subtree rooted at 2 has a depth of 4 and the LCA is 2
+        // Your result map is basically a DP table for the tree.
+        // we maintain and update throughout our iteration, at the end it helps us find out the maximum depth (distance between the root and deepest leaves) and LCA of the deepest leaves
+
+        // we update the table bottom up, processing one current at a time calculating its relative distance to its deepest leaves along with the LCA
         unordered_map<TreeNode*,pair<int,TreeNode*>>result;
         while(!st.empty()){
             auto[curr, visited] = st.top();
@@ -90,7 +94,7 @@ public:
                 }
                 // if the left subtree == right subtree then the current node is the LCA
                 // move one level upwards
-                else result[curr] = {rightDepth + 1, curr};
+                else result[curr] = {leftDepth + 1, curr};
             }
         }
         return result[root].second;
