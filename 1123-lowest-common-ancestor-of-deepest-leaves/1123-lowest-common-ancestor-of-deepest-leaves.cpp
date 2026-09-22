@@ -14,6 +14,8 @@ public:
     TreeNode* lcaDeepestLeaves(TreeNode* root) {
         // edge case : if the tree is empty
         if(root == nullptr) return nullptr;
+
+        // overall its a bottom up approach
         
         // we are trying solve children of every parent node 
         // and get the required informaton that is (depth,LCA)
@@ -60,14 +62,18 @@ public:
                 // if left exists store the depth
                 // and the LCA
                 if(curr->left){
+                    // maximum distance in the left down from this node
                     leftDepth = result[curr->left].first;
+                    // LCA
                     leftLCA = result[curr->left].second;
                 }
 
                 // if right exists store the depth
                 // and the LCA
                 if(curr->right){
+                    // maximum distance in the right down from this node
                     rightDepth = result[curr->right].first;
+                    // LCA 
                     rightLCA = result[curr->right].second;
                 }
 
@@ -80,6 +86,7 @@ public:
                     result[curr] = {rightDepth + 1, rightLCA};
                 }
                 // if the left subtree == right subtree then the current node is the LCA
+                // move one level upwards
                 else result[curr] = {leftDepth + 1, curr};
             }
         }
