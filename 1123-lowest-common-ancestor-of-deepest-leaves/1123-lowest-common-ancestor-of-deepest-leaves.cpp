@@ -76,7 +76,10 @@ public:
                     // LCA 
                     rightLCA = result[curr->right].second;
                 }
+                
 
+                // keep in mind that we aren't maintaining the depth from the root
+                // rather we are maintaining the distance between the current node and its deepest leaves
                 // if left subtree > right subtree then for sure the LCA exists somewhere in the left subtree
                 if(leftDepth > rightDepth){
                     result[curr] = {leftDepth + 1, leftLCA};
