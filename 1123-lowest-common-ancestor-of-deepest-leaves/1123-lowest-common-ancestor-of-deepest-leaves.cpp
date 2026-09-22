@@ -90,7 +90,7 @@ public:
                 }
                 // if the left subtree == right subtree then the current node is the LCA
                 // move one level upwards
-                else result[curr] = {leftDepth + 1, curr};
+                else result[curr] = {rightDepth + 1, curr};
             }
         }
         return result[root].second;
