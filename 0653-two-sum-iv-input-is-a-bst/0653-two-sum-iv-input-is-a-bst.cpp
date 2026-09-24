@@ -59,10 +59,11 @@ public:
             // if the sum is smaller than target
             // Move to next larger value
             else if(sum < k){
-                // come back to previous node 
+                // Consume the current smallest node.
                 leftStack.pop();
                 
-                // go left again for the larger node just after it (if it exists)
+                // Continue inorder traversal through its right subtree.
+                // The leftmost node there becomes the next smallest value.
                 curr = leftNode->right;
                 while(curr){
                     leftStack.push(curr);
@@ -72,9 +73,10 @@ public:
 
             // if sum is greater then move the pointer that is pointing to the larger element
             else {
-            // Move to next smaller value
+            // Consume the current largest node.
                 rightStack.pop();
-
+            // Continue reverse inorder traversal through its left subtree.
+            // The rightmost node there becomes the next largest value.
                 curr = rightNode->left;
                 while (curr) {
                     rightStack.push(curr);
