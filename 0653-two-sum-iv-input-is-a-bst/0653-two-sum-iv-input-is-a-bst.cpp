@@ -31,6 +31,7 @@ public:
             int required = k - curr->val;
             // if the other half already exists then return directly
             if(seen.count(required)) return true;
+            // other wise record if in case we encounter this required in future
             seen.insert(curr->val);
 
             // post order stack
