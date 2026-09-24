@@ -12,31 +12,71 @@
 class Solution {
 public:
     bool findTarget(TreeNode* root, int k) {
-        // optimized solution
-        // keep an record of the pair (required) that we have encountered in a set
-        // if a the required exists it'll fulfill the condition of its other half
+        // Optimized solution:
+
+        // if you conceptually think the tree as a flattened array
+        // it would be something like 2,3,4,5,6,7
+        // since the its binary search ree and its sorted
+
+        // two pointer approach :
+        // since we know this is a BST 
+        // everything in leftsubtree < curr < everything in rightsubtree
+        // so we would have two pointers in each of its two subtrees
+        // one pointing (L) to the smaller ones in the left and one pointing (R) to the larger one in the right
+        // because of invariant L <= R always
         if(root == nullptr) return false;
-        
-        // using stack for DFS
-        stack<TreeNode*>st;
-        st.push(root);
+        stack<TreeNode*> leftStack;
+        stack<TreeNode*> rightStack;
 
-        // hash set contains values whose complementary partner we're still looking for 
-        unordered_set<int>seen;
+        TreeNode* curr = root;
 
-        while(!st.empty()){
-            TreeNode* curr = st.top();
-            st.pop();
+        // Initialize the left iterator to the smallest node
+        while(curr){
+            leftStack.push(curr);
+            curr = curr->left;
+        }
+        // Initialize right iterator to the largest node
 
-            int required = k - curr->val;
-            // if the other half already exists then return directly
-            if(seen.count(required)) return true;
-            // other wise record if in case we encounter its complement in future
-            seen.insert(curr->val);
+        curr = root;
+        while (curr) {
+            rightStack.push(curr);
+            curr = curr->right;
+        }
+        // one of them runs out first
+        while(!leftStack.empty() || !rightStack.empty()){
+            TreeNode* leftNode = leftStack.top();
+            TreeNode* rightNode = rightStack.top();
 
-            // pre order DFS
-            if(curr->left)  st.push(curr->left);
-            if(curr->right) st.push(curr->right);
+            if(leftNode == rightNode) break;
+
+            int sum = leftNode->val + rightNode->val;
+
+            if(sum == k) return true;
+
+            // if the sum is smaller than target
+            // Move to next larger value
+            else if(sum < k){
+                leftStack.pop();
+
+                curr = leftNode->right;
+                while(curr){
+                    leftStack.push(curr);
+                    curr = curr->left;
+                }
+            }
+
+            // if sum is greater then move the pointer that is pointing to the larger element
+            else {
+            // Move to next smaller value
+                rightStack.pop();
+
+                curr = rightNode->left;
+                while (curr) {
+                    rightStack.push(curr);
+                    curr = curr->right;
+                }
+            }
+
         }
         return false;
     }
