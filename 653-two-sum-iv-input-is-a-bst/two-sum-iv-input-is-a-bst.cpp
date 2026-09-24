@@ -21,8 +21,9 @@ public:
         // two pointer approach :
         // since we know this is a BST 
         // everything in leftsubtree < curr < everything in rightsubtree
-        // so we would have two pointers in each of its two subtrees
-        // one pointing (L) to the smaller ones in the left and one pointing (R) to the larger one in the right
+        // L points to the smallest unprocessed value.
+        // R points to the largest unprocessed value.
+        // Together they simulate two pointers on the sorted inorder sequence.
         // because of invariant L <= R always
         if(root == nullptr) return false;
         stack<TreeNode*> leftStack;
@@ -43,11 +44,12 @@ public:
             curr = curr->right;
         }
         // one of them runs out first
-        while(!leftStack.empty() || !rightStack.empty()){
+        while(!leftStack.empty() && !rightStack.empty()){
             TreeNode* leftNode = leftStack.top();
             TreeNode* rightNode = rightStack.top();
 
-            // we're pointing towards the same node mean the value doesn't exists
+            // Both iterators reached the same node.
+            // We need two distinct nodes, so no valid pair remains.
             if(leftNode == rightNode) break;
 
             int sum = leftNode->val + rightNode->val;
@@ -57,9 +59,9 @@ public:
             // if the sum is smaller than target
             // Move to next larger value
             else if(sum < k){
+                // come back to previous node 
                 leftStack.pop();
                 
-                // come back to previous node 
                 // go left again for the larger node just after it (if it exists)
                 curr = leftNode->right;
                 while(curr){
