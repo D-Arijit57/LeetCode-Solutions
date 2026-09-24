@@ -47,6 +47,7 @@ public:
             TreeNode* leftNode = leftStack.top();
             TreeNode* rightNode = rightStack.top();
 
+            // we're pointing towards the same node mean the value doesn't exists
             if(leftNode == rightNode) break;
 
             int sum = leftNode->val + rightNode->val;
@@ -57,7 +58,9 @@ public:
             // Move to next larger value
             else if(sum < k){
                 leftStack.pop();
-
+                
+                // come back to previous node 
+                // go left again for the larger node just after it (if it exists)
                 curr = leftNode->right;
                 while(curr){
                     leftStack.push(curr);
