@@ -48,7 +48,8 @@ public:
             TreeNode* leftNode = leftStack.top();
             TreeNode* rightNode = rightStack.top();
 
-            // we're pointing towards the same node mean the value doesn't exists
+            // Both iterators reached the same node.
+            // We need two distinct nodes, so no valid pair remains.
             if(leftNode == rightNode) break;
 
             int sum = leftNode->val + rightNode->val;
