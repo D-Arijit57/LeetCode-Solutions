@@ -21,7 +21,7 @@ public:
         stack<TreeNode*>st;
         st.push(root);
 
-        // hash set to maintain the record of the required that we have seen already
+        // hash set contains values whose complementary partner we're still looking for 
         unordered_set<int>seen;
 
         while(!st.empty()){
@@ -31,10 +31,10 @@ public:
             int required = k - curr->val;
             // if the other half already exists then return directly
             if(seen.count(required)) return true;
-            // other wise record if in case we encounter this required in future
+            // other wise record if in case we encounter its complement in future
             seen.insert(curr->val);
 
-            // post order stack
+            // pre order DFS
             if(curr->left)  st.push(curr->left);
             if(curr->right) st.push(curr->right);
         }
