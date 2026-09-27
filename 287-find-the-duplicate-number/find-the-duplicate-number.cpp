@@ -17,6 +17,10 @@ public:
             // and move fast and slow by one place
             if(slow == fast){
                 slow = nums[0];
+
+                // the moment they meet (which is bound to happen)
+                // return slow or fast either 
+                // as they both are pointing towards the missing element
                 while(slow != fast){
                     slow = nums[slow];
                     fast = nums[fast];
