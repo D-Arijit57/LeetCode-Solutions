@@ -12,37 +12,40 @@
 class Solution {
 public:
     vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
+        // edge case:
         if(root == nullptr) return {};
-        // we have altenate squence left->right, right-> left at alternate levels
-        // starting from level 0 (l -> r), the level 1 (r -> l) and so on 
-        // if you notice all even levels sequence are left -> right
-        // and right -> left for all the odd levels
-        // keep in mind that the sequence is not an node discovery concern
-        // its an output concern so we can reverse that before pushing if the level is odd or even accordingly
-        vector<vector<int>>ans;
+        // peform BFS -> level order tarversal
+        // once the specific level is done and to be inserted into the answer 
+        // just before that reverse if required (if the level is odd)
         queue<TreeNode*>levels;
         levels.push(root);
+        vector<vector<int>>ans;
         int levelCnt = 0;
-        // until all the levels are processed completely
         while(!levels.empty()){
+            // freeze the level size
             int levelSize = levels.size();
-            vector<int>currLevel;
-            // process the current level completely
+            
+            vector<int>currentLevel;
+
             for(int i = 0 ; i < levelSize ; i++){
                 TreeNode* curr = levels.front();
-                currLevel.push_back(curr->val);
                 levels.pop();
 
-                // discover the childrens of the processed node
+                currentLevel.push_back(curr->val);
+
+                // push the next subtree rooted at the immediate child
+                // of the current node's left and right
+                // if only they exists
                 if(curr->left) levels.push(curr->left);
                 if(curr->right) levels.push(curr->right);
             }
-            if(levelCnt % 2 == 1 ) {
-                reverse(currLevel.begin(),currLevel.end());
-                ans.push_back(currLevel);
+            // if the level is odd then only reverse
+            // otherwise directly push it
+            if(levelCnt % 2 != 0){
+                reverse(currentLevel.begin(), currentLevel.end());
+                ans.push_back(currentLevel);
             }
-            else  ans.push_back(currLevel);
-            // increase the level count once a level is completely processed 
+            else ans.push_back(currentLevel);
             levelCnt++;
         }
         return ans;
