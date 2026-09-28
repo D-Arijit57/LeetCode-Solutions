@@ -32,8 +32,8 @@ public:
             if(curr->right) nodes.push(curr->right);
         }
 
-        // pop the min_heap k times to find the kth smallest element
-        for(int i = 1 ; i < k ; i++){
+        // pop the min_heap k - 1 times to find the kth smallest element
+        for(int i = 0 ; i < k - 1 ; i++){
             min_heap.pop();
         }
 
