@@ -34,6 +34,7 @@ public:
         inorderdfs(root, order);
 
         int cnt = 0;
+        // iterate till kth smallest
         for(auto kth : order){
             cnt++;
             if(cnt == k) return kth;
