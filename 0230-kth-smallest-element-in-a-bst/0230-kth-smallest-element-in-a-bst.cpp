@@ -15,8 +15,7 @@ public:
         // if we reach the end of the subtree return
         if(root == nullptr) return;
 
-        // in order traversal
-
+        // inorder traversal
         // process the left subtree
         inorderdfs(root->left, order);
 
