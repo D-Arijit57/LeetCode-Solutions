@@ -11,34 +11,33 @@
  */
 class Solution {
 public:
+    void inorderdfs(TreeNode* root, vector<int>&order){
+        // if we reach the end of the subtree return
+        if(root == nullptr) return;
+
+        // in order traversal
+
+        // process the left subtree
+        inorderdfs(root->left, order);
+
+        // process the current node
+        order.push_back(root->val);
+
+        // process the right subtree
+        inorderdfs(root->right, order);
+    }
     int kthSmallest(TreeNode* root, int k) {
-        // the first thing we can think of is a basic BFS + min heap
-        // the min heap always stores the smallest in the current sequence
-        // so after storing all of the node inside the queue
-        // we can just pop it up k times to find the kth smallest element
-        priority_queue<int, vector<int>, greater<int>>min_heap;
-        queue<TreeNode*>nodes;
-        nodes.push(root);
-        while(!nodes.empty()){
-            TreeNode* curr = nodes.front();
-            nodes.pop();
+        // the BST property says that left < root < right
+        // therefore the inorder traversal produce the nodes in ascending order
+        // therefore we don't need priority queue
+        vector<int>order;
+        inorderdfs(root, order);
 
-            // push the value into the min_heap
-            min_heap.push(curr->val);
-            
-            // if it exists ; push the left subtree rooted at the immdidate left child
-            if(curr->left) nodes.push(curr->left);
-            // if it exists ; push the right subtree rooted at the immdidate right child
-            if(curr->right) nodes.push(curr->right);
+        int cnt = 0;
+        for(auto kth : order){
+            cnt++;
+            if(cnt == k) return kth;
         }
-
-        // pop the min_heap k - 1 times to find the kth smallest element
-        for(int i = 0 ; i < k - 1 ; i++){
-            min_heap.pop();
-        }
-
-        // after popping exactly k times
-        // return the top of the min heap
-        return min_heap.top();
+        return -1;
     }
 };
