@@ -24,7 +24,8 @@ public:
         postorderDFS(root->left, depth + 1, ans);
         // explore the right subtree
         postorderDFS(root->right, depth + 1, ans);
-      
+
+        // processes current node
     }
     int minDepth(TreeNode* root) {
         if(root == nullptr) return 0;
