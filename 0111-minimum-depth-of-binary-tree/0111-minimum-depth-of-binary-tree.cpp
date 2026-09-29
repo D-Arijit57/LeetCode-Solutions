@@ -11,7 +11,7 @@
  */
 class Solution {
 public:
-    void postorderDFS(TreeNode* root, vector<int>&order, int depth, int &ans){
+    void postorderDFS(TreeNode* root, int depth, int &ans){
         // post order dfs :
         // left -> right -> root
         if (root == nullptr) return;
@@ -21,12 +21,9 @@ public:
         if(!root->left && !root->right) ans = min(ans, depth);
         
         // explore the left subtree
-        postorderDFS(root->left, order, depth + 1, ans);
+        postorderDFS(root->left, depth + 1, ans);
         // explore the right subtree
-        postorderDFS(root->right, order, depth + 1, ans);
-
-        // process the current node after exploring its left and right subtree
-        order.push_back(root->val);
+        postorderDFS(root->right, depth + 1, ans);
       
     }
     int minDepth(TreeNode* root) {
@@ -35,10 +32,9 @@ public:
         // for each of the node check if it has left or right children
         // if they do explore till the leaf node then and update the depth
         // if the current node is leafNode then record the depth
-        vector<int>order;
         // intial depth is 1
         int depth = 1, ans = INT_MAX;
-        postorderDFS(root, order, depth, ans);
+        postorderDFS(root, depth, ans);
         return ans;
     }
 };
