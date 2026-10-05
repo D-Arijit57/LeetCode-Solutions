@@ -12,6 +12,9 @@
 class Solution {
 public:
     int height(TreeNode* root){
+        // our convention :
+        // -1 : unbalanced tree 
+        // 0,1,2 : anything is balanced tree
         // empty tree : height is 0 
         if(!root) return 0;
 
