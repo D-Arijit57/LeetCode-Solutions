@@ -17,12 +17,12 @@ public:
 
         // calculate the leftHeight
         int leftHeight = height(root->left);
-        // if its the initial root the height is initally -1
+        // if its -1 then the subtree is unbalanced
         if(leftHeight == -1) return -1;
 
         // calculate the rightHeight
         int rightHeight = height(root->right);
-        // if its the initial root the height is initally -1
+        // if its -1 then the subtree is unbalanced
         if(rightHeight == -1) return -1;
 
 
