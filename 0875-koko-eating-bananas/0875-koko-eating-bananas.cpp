@@ -1,28 +1,34 @@
 class Solution {
 public:
-    bool canFinish(vector<int>&piles,int k,int h){
-        int curr_hours = 0;
-        for(int i = 0 ; i < piles.size() ; i++){
-            // we need to ceil value because each remaining banana takes an extra hour to consume 
-            curr_hours += (piles[i] + k - 1) / k;
+    // feasibility function :
+    // if koko can finish eating the bananas within the specified hours
+    bool canEat(vector<int>&piles, int k, int h){
+        int n = piles.size();
+        long long cnt_hours = 0;
+        for(int i = 0 ; i < n ; i++){
+            cnt_hours += (piles[i] + k - 1) / k;
         }
-        return curr_hours <= h;
+        return cnt_hours <= h;
     }
     int minEatingSpeed(vector<int>& piles, int h) {
-        // this is a binary search on answer space problem
-        // we need to find a k with which koko can finish eating the bananas before h hours
-        int low = 1, high = *max_element(piles.begin(),piles.end());
-        while(low < high){
+        // search space is the number of bananas koko can eat
+        int n = piles.size();
+        // minimum koko can eat 1 pile / hour 
+        // maximum koko can eat n pile / hour, where n is the maximum piles[i] in piles
+        int low = 1 , high = *max_element(piles.begin(), piles.end());
+        int ans = INT_MAX;
+        while(low <= high){
+            // mid represents the value of k (or the candidate k we are checking with)
             int mid = low + (high - low) / 2;
-            // if it returns true, then all the space after this has a valid k
-            // but we want the minimum so we eliminate the right search space
-            if(canFinish(piles,mid,h)){
-                high = mid;
+
+            // if it satisfies the condition look for smaller answer
+            if(canEat(piles, mid, h)){
+                ans = mid;
+                high = mid - 1;
             }
-            // if it returns false, then all the search space before it doesn't contain the answer
-            // so eliminate the search space before it
+            // if it doesn't work then we have to look for a larger answer
             else low = mid + 1;
         }
-        return high;
+        return ans;
     }
 };
