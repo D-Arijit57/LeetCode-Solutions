@@ -28,7 +28,14 @@ public:
             int left1 = partition1 == 0 ? INT_MIN : nums1[partition1 - 1];
             int right1 = partition1 == n ? INT_MAX : nums1[partition1]; 
             
+            // if the total length pf the merged array is n + m
+            // then for sure one of the half contains exactly n + m / 2 elements
+            // now we know it's not confirmed that the length will be always even
+            // so to tackle the odd length case we do n + m + 1 / 2
             int leftTotal = (n + m + 1) / 2;
+
+            // why leftTotal - partition1 ?
+            // because the partition1 and 2 defines the entire lefthalf of the conceptually merged array not the entire one
             int partition2 = leftTotal - partition1;
 
             int left2 = partition2 == 0 ? INT_MIN : nums2[partition2 - 1];
