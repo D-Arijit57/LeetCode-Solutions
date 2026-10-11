@@ -12,6 +12,10 @@
 class Solution {
 public:
     vector<int> inorderTraversal(TreeNode* root) {
+        // using curr we are traversing / exploring the tree and here the stack
+        // represents the trace or the order in which are visiting the nodes
+        // the nodes stored in stack represent the visited but haven't processed ones
+
         // if empty tree return empty array
         if(!root) return {};
         // inorder traversalo : left -> root -> right
