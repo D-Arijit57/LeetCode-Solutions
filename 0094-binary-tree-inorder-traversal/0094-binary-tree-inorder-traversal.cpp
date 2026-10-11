@@ -12,27 +12,32 @@
 class Solution {
 public:
     vector<int> inorderTraversal(TreeNode* root) {
-        // inorder traveral :
-        // reach the end of the left subtree, comeback process one node, if there is right go right
-        // left -> node -> right
+        // if empty tree return empty array
+        if(!root) return {};
+        // inorder traversalo : left -> root -> right
         stack<TreeNode*>st;
-        TreeNode* node = root;
+        TreeNode* curr = root;
         vector<int>ans;
-        // keep going till there is either a subtree OR there is a ancestor waiting in the stack to be processed
-        while(!st.empty() || node != nullptr){
-            // while there is a left subtree move left
-            // till you reach the end
-            while(node != nullptr){
-                st.push(node);
-                node = node->left;
+        // if all the nodes haven't processed :
+        // either stack is not empty yet or curr is still valid
+        while(curr || !st.empty()){
+            
+            // move left, while there is a left subtree rooted at the immediate left child
+            while(curr){
+                st.push(curr);
+                curr = curr->left;
             }
-            // if you reach nullptr means there is no left subtree left
-            node = st.top();
+
+            // once you reach the end process the current node
+            curr = st.top();
+            ans.push_back(curr->val);
+            // pop() : since we have processed it
             st.pop();
-            ans.push_back(node->val);
-            // move to the right subtree
-            node = node->right;
+            
+            // move to the right 
+            curr = curr->right;
+            
         }
-    return ans;
+        return ans;
     }
 };
