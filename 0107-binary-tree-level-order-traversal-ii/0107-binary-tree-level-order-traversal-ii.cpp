@@ -12,29 +12,28 @@
 class Solution {
 public:
     vector<vector<int>> levelOrderBottom(TreeNode* root) {
-        // normal BFS, reverse at the end
-        if(root == nullptr) return {};
+        if(!root) return {};
+        queue<TreeNode*>levels;
+        levels.push(root);
+
         vector<vector<int>>ans;
-        queue<TreeNode*>level;
-        level.push(root);
-
-        while(!level.empty()){
-            int levelSize = level.size();
-            TreeNode* curr = level.front();
-
-            vector<int>currLevel;
+        while(!levels.empty()){
+            int levelSize = levels.size();
+            
+            vector<int>currlevel;
+            
             for(int i = 0 ; i < levelSize ; i++){
-                curr = level.front();
-                currLevel.push_back(curr->val);
-                level.pop();
-                // check if the left and right exists
-                // if they do push them
-                if(curr->left) level.push(curr->left);
-                if (curr->right) level.push(curr->right);
+                TreeNode* curr = levels.front();
+                levels.pop();
+
+                currlevel.push_back(curr->val);
+
+                if(curr->left) levels.push(curr->left);
+                if(curr->right) levels.push(curr->right);
             }
-            ans.push_back(currLevel);
+            ans.push_back(currlevel);
         }
-        // reverse the list 
+
         reverse(ans.begin(), ans.end());
         return ans;
     }
