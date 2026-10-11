@@ -12,38 +12,37 @@
 class Solution {
 public:
     bool isSymmetric(TreeNode* root) {
-        // till level 1 the nodes should be the same
-        // after that it follows the pattern: (to be a mirror/ symmetric)
-        // leftSubtree->left = rightSubtree->right;
-        // leftSubtree->right = rightSubtree->left;
-        
-        // and empty tree is considered symmetric 
-        if(root == nullptr) return true;
-        // the queue represents a pair of nodes {l->left, r->right} and {l->right, r->left}
-        // these are supposed to be mirrors (should have the same value)
-        queue<pair<TreeNode*, TreeNode*>>levels;
-        levels.push({root->left, root->right});
-        while(!levels.empty()){
-            // this isn't a level order problem which would require you to finish the previous level before going for the next one
-            // the queue doesn't represents the current level rather it represents the possible mirror nodes
-                TreeNode* L = levels.front().first;
-                TreeNode* R = levels.front().second;
-                levels.pop();
-                // first check the pair's child's existence
-                // e.g if left parent's right child exists but right parent's left child doesn't exist it cannot be a mirror 
-                if(!L && !R) continue;
+        // we need a queue of pairs
+        // the nodes that we are going to compare should be the same
+        // for each of the node in the tree
+        // their left and right child should have the same value
+        // means :
+        // node1 -> left == node2 -> right 
+        // node1 -> right == node2 -> left
 
-                // if only one of them exists then it cannot be mirror 
-                if(!L || !R) return false;
+        if(!root) return true;
+        queue<pair<TreeNode*, TreeNode*>>pairs;
+        // we start from root's left and right child
+        pairs.push({root->left, root->right});
+        while(!pairs.empty()){
+            auto [L, R] = pairs.front();
+            pairs.pop();
+            // if both dosen't exist then its fine
+            if(!L && !R) continue;
 
-                // if the value isn't the same then it cannot be mirror
+            // if one of them exists not both then the tree is not mirror of itself
+            else if(!L || !R) return false;
+
+            // if both exists then check their values
+            else{
                 if(L->val != R->val) return false;
-                // prepare the next level
-                // for the first test case we are storing 
-                // {3,3} , {4,4} in the queue
-                levels.push({L->left, R->right});
-                levels.push({L->right, R->left});
+            }
+
+            // push the pairs that are supposed to be compared and 
+            // have to be the same leading the tree to be its own mirror
+            pairs.push({L->left, R->right});
+            pairs.push({L->right, R->left});
         }
-        return true;
+    return true;
     }
 };
