@@ -23,7 +23,7 @@ public:
         // its the fundamental limitation in this algorithm
         // A BST is not defined by the relationship between each parent and its immediate children. It’s defined by the relationship between each node and every value in its left and right subtrees.
 
-        // because of this we have to maintain valid bounds
+        //**** because of this we have to maintain valid bounds
         // best we have seen in the left and the right
 
         // BFS with Bounds
