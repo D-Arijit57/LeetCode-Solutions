@@ -12,6 +12,7 @@
 class Solution {
 public:
     // custom struct for storing current node, lower and upper bound
+    // required for valid approach
     struct nodeInfo{
         TreeNode* node;
         long long lower;
