@@ -70,6 +70,10 @@ public:
         // then check if the left child is smaller or not (as it should be)
         if(curr.node->left) {
             if(curr.node->left->val >= curr.node->val) return false;
+            // using case 2 to visualize
+            // (1, LLONG_MIN, 5)
+            // for the left subtree( in case two)
+            // the valid range is (-infinity, 5)
             nodes.push({curr.node->left, curr.lower, curr.node->val});
         }
 
