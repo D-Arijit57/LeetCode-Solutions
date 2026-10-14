@@ -17,7 +17,7 @@ public:
         // check where they meet at first (their first common point)
         // maintain a parent map 
 
-        // this map stores the current node and their immediate parent
+        // this map stores each node to its immediate parent
         unordered_map<TreeNode*,TreeNode*>parent;
         // root's parent is null
         parent[root] = nullptr;
@@ -26,7 +26,7 @@ public:
         queue<TreeNode*>nodes;
         nodes.push(root);
 
-        // using a pre order tarversal
+        // using a BFS Traversal
         while(!nodes.empty()){
             TreeNode* curr = nodes.front();
             nodes.pop();
@@ -46,7 +46,7 @@ public:
         // now we have the information about all the nodes
         // and their parents
 
-        // what we have to do is start from p and q
+        // We'll traverse upward from p and q using parent pointers
         // then check where they meet at first
 
         // first pick p and and store all of its ancestors 
