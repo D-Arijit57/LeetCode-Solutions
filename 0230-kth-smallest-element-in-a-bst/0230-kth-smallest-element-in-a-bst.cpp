@@ -11,33 +11,32 @@
  */
 class Solution {
 public:
-    void inorderdfs(TreeNode* root, vector<int>&order){
-        // if we reach the end of the subtree return
-        if(root == nullptr) return;
+    void inorderDFS(TreeNode* root, vector<int>&order){
+        if(root == nullptr) return; 
 
-        // inorder traversal
-        // process the left subtree
-        inorderdfs(root->left, order);
+        // go left
+        inorderDFS(root->left, order);
 
         // process the current node
         order.push_back(root->val);
 
-        // process the right subtree
-        inorderdfs(root->right, order);
+        // go right
+        inorderDFS(root->right, order);
+
     }
     int kthSmallest(TreeNode* root, int k) {
-        // the BST property says that left < root < right
-        // therefore the inorder traversal produce the nodes in ascending order
-        // therefore we don't need priority queue
         vector<int>order;
-        inorderdfs(root, order);
+        inorderDFS(root, order);
 
-        int cnt = 0;
-        // iterate till kth smallest
-        for(auto kth : order){
-            cnt++;
-            if(cnt == k) return kth;
+
+        // since the order is strictly increasing
+        // starting from position
+        // tarverse till kth position
+        // you'll have the kth largest element
+        int ans = 0;
+        for(int i = 0 ; i < k ; i++){
+            ans = order[i];
         }
-        return -1;
+        return ans;
     }
 };
