@@ -1,28 +1,26 @@
 class Solution {
 public:
     int longestOnes(vector<int>& nums, int k) {
-        // we need to check only for zeros
-        // the count of zeros inside the window should be always <= k
-        // if it breaks we should shrink the window
-        // why it works ?
-        // we are maintainig a window where we make sure the number of zeros stays within <= k, every window where the number of zeros <= k is a valid window , and we only update the maximum length for those valid windows
-        // and this also make sure that you don't miss out on any valid window, which means we are sure to find the maximum since we are only updating the maximum number ones (including the flipped one) only for the valid windows
         int n = nums.size();
-        int left = 0, zeros = 0;
-        int ans = INT_MIN;
+        // invariant : 
+        // number of zeros in the window <= k
+        // if it becomes >k , then trim from the left side
+        int cntZero = 0, left = 0;
+        int max_len = INT_MIN;
         for(int right = 0 ; right < n ; right++){
-            // expand the window
-            if(nums[right] == 0) zeros++;
-            // shrink the window if there are more zeros than ks
-            while(zeros > k){
-                // since we are shrinking from the left we should decrease the count of zero only if it is zero
-                // otherwise it would miscount and decrease even if the left is 1
-                if(nums[left] == 0) zeros--;
-                left++;                
+            if(nums[right] == 0) cntZero++;
+
+            // shrink the window 
+            // when it breaks the invariant
+            while(cntZero > k){
+                if(nums[left] == 0) cntZero--;
+                left++;
             }
-            // for every valid window, update the maximum length
-            ans = max(ans, right - left + 1);
-        }      
-        return ans;
+
+            // for the valid window
+            // update the new length (for the longest consecutive ones we have seen till now)
+            max_len = max(max_len, right - left + 1);
+        }
+        return max_len;
     }
 };
