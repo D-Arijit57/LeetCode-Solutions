@@ -10,57 +10,63 @@
 class Solution {
 public:
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
-        // iterative approach 
-        // // We build a parent map for every node.
-        // Using it, we can trace the ancestor chain of P and Q.
-        // the first common ancestor becomes the LCA 
-        // as that is the diversion point of P and Q
-        if(root == nullptr) return nullptr;
+        // edge case : empty tree
+        if(!root) return nullptr;
 
-        // parentmap : e.g parent[5] = 3
-        unordered_map<TreeNode*, TreeNode*>parentmap;
+        // start from bottom up for p and q 
+        // check where they meet at first (their first common point)
+        // maintain a parent map 
+
+        // this map stores the current node and their immediate parent
+        unordered_map<TreeNode*,TreeNode*>parent;
+        // root's parent is null
+        parent[root] = nullptr;
+
+
         queue<TreeNode*>nodes;
         nodes.push(root);
-        parentmap[root] = nullptr;
+
+        // using a pre order tarversal
         while(!nodes.empty()){
             TreeNode* curr = nodes.front();
             nodes.pop();
-            // push the left and right child
-            // while keeping a record of their parents
+
+            // prepare for the next level
+            // while doing so make sure you store the {parent, child}
+            // pair in the map as well
             if(curr->left){
+                parent[curr->left] = curr;
                 nodes.push(curr->left);
-                parentmap[curr->left] = curr;
             }
             if(curr->right){
+                parent[curr->right] = curr;
                 nodes.push(curr->right);
-                parentmap[curr->right] = curr;
-            }
+            } 
+        }
+        // now we have the information about all the nodes
+        // and their parents
+
+        // what we have to do is start from p and q
+        // then check where they meet at first
+
+        // first pick p and and store all of its ancestors 
+        // in a set
+        // why set instead of a vector? because it gives us a O(1) look up
+        TreeNode* curr = p;
+        unordered_set<TreeNode*>ancestors;
+
+        while(curr){
+            // as per the definition we are following here
+            // the node is a descendant of itself so store it first
+            ancestors.insert(curr);
+            curr = parent[curr];
         }
 
-       // Store P and all of its ancestors 
-       // why a set not a vector instead
-       // using a set provides us O(1) for look up
-       // using a vector would have required to search entirely
-       // and would've resulted in O(h) in lookup 
-       // the reason why we use set here 
-       unordered_set<TreeNode*> ancestors;
-       TreeNode* curr = p;
-
-       while(curr != nullptr){
-        ancestors.insert(curr);
-        // move to the ancestor of the current node
-        // {key,value} : value here is the ancestor
-        curr = parentmap[curr];
-       }
-
-       // Start from Q and move upward
-       // The first node that is also an ancestor of P is the LCA
+        // starting from q check with all p's ancestors
         curr = q;
-        while(curr != nullptr){
-            if(ancestors.count(curr)){
-                return curr;
-            }
-            curr = parentmap[curr];
+        while(curr){
+            if(ancestors.count(curr)) return curr;
+            curr = parent[curr];
         }
 
         return nullptr;
