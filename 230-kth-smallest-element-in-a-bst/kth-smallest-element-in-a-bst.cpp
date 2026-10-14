@@ -11,34 +11,29 @@
  */
 class Solution {
 public:
-    void inorderDFS(TreeNode* root, vector<int>&order){
+    void inorderDFS(TreeNode* root, int &ans, int k, int &cnt){
         if(root == nullptr) return; 
 
         // go left
-        inorderDFS(root->left, order);
+        inorderDFS(root->left, ans, k, cnt);
 
         // process the current node
-        order.push_back(root->val);
+        cnt++;
+        if(cnt == k) {
+            ans = root->val;
+            return;
+        }
 
         // go right
-        inorderDFS(root->right, order);
+        inorderDFS(root->right,ans, k , cnt);
 
     }
     int kthSmallest(TreeNode* root, int k) {
         // because of the BST property : everything in left subtree  < root < everything in right subtree
         // the inorder of a BST produces strictly increasing sequence of the node values
         vector<int>order;
-        inorderDFS(root, order);
-
-
-        // since the order is strictly increasing
-        // starting from position
-        // tarverse till kth position
-        // you'll have the kth largest element
-        int ans = 0;
-        for(int i = 0 ; i < k ; i++){
-            ans = order[i];
-        }
+        int ans = 0, cnt = 0;
+        inorderDFS(root, ans, k, cnt);
         return ans;
     }
 };
