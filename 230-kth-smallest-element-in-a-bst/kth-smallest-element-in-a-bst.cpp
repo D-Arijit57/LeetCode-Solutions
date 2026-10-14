@@ -25,6 +25,8 @@ public:
 
     }
     int kthSmallest(TreeNode* root, int k) {
+        // because of the BST property : everything in left subtree  < root < everything in right subtree
+        // the inorder of a BST produces strictly increasing sequence of the node values
         vector<int>order;
         inorderDFS(root, order);
 
