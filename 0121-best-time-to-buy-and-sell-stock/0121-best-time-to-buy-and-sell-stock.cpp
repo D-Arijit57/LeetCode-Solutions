@@ -5,7 +5,7 @@ public:
         int bestDay = INT_MAX, maxProfit = 0;
         for(int i = 0 ; i < n ; i++){
             bestDay = min(bestDay, prices[i]);
-            maxProfit = max(maxProfit, abs(bestDay - prices[i]));
+            maxProfit = max(maxProfit, prices[i] - bestDay);
         }
         return maxProfit;
     }
