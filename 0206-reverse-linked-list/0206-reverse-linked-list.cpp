@@ -11,22 +11,14 @@
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
-        // curr represents first of the portion of the list that is still un-processed
-        // previous represents last of the portion that we just processed
-        // processed == reversed
-
-        // so at each portion of the list we make sure that we preserve the next node to be processed
-        // and then only reverse the current node 
+        if(!head) return nullptr;
+        ListNode* curr = head  ;
         ListNode* prev = nullptr;
-        ListNode* curr = head;
+        ListNode* next ;
         while(curr){
-            // save the next unprocessed node before going for reversal of the current node
-            ListNode* next = curr->next;
-            // reconnect the current node 
+            next = curr->next;
             curr->next = prev;
-            // the current one (already reversed) becomes the previous 
             prev = curr;
-            // since we saved the checkpoint, move to it 
             curr = next;
         }
         return prev;
