@@ -44,6 +44,9 @@ public:
        // first : the larger misplaced value
        // second : the misplaced value we find later 
        TreeNode* prev = nullptr;
+       
+       // The key to understanding first and second is to realize that we aren’t searching for two arbitrary nodes that violate the BST property.
+       // We’re exploiting the specific guarantee that exactly two node values have been swapped.
        TreeNode* first = nullptr;
        TreeNode* second = nullptr;
 
