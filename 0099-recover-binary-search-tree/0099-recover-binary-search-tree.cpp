@@ -28,6 +28,8 @@ public:
             first = prev;
             }
             //  the current node at the inversion becomes the second candidate
+            // keep updating it since the node we found to be small for first time
+            // doesn't necessarily is the node that has been mistakenly swapped with the larger value
             second = root;
         }
 
@@ -44,7 +46,7 @@ public:
        // first : the larger misplaced value
        // second : the misplaced value we find later 
        TreeNode* prev = nullptr;
-       
+
        // The key to understanding first and second is to realize that we aren’t searching for two arbitrary nodes that violate the BST property.
        // We’re exploiting the specific guarantee that exactly two node values have been swapped.
        TreeNode* first = nullptr;
