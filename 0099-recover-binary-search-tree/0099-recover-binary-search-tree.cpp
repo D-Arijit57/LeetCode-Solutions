@@ -27,7 +27,7 @@ public:
             if(!first){
             first = prev;
             }
-            // assign the smaller value to the second (the one which is later in the sequence as per inorder)
+            //  the current node at the inversion becomes the second candidate
             second = root;
         }
 
