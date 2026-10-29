@@ -1,17 +1,16 @@
 class Solution {
 public:
     int findKthLargest(vector<int>& nums, int k) {
-    // With a max-heap, the largest element is always at the top. So we can repeatedly remove the largest element until we reach the kth one.
-       priority_queue<int>maxHeap;
+        priority_queue<int>maxHeap;
 
-       for(int num : nums){
-            maxHeap.push(num);
-       }
+        for(int it : nums){
+            maxHeap.push(it);
+        }
 
-       for(int i = 1; i < k; i++){
+        for(int i = 0 ; i < k - 1 ; i++){
             maxHeap.pop();
-       }
+        }
 
-       return maxHeap.top();
+        return maxHeap.top();
     }
 };
