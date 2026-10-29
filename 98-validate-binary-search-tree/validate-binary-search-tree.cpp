@@ -11,7 +11,13 @@
  */
 class Solution {
 public:
-    // 
+    // check if the inorder is strictly increasing
+    // as this is a BST 
+    // due to its property of left <root< right
+    // the inorder traversal will always produce a strictly increasing order
+    // instead of storing the order into an array and re check 
+    // we can just check it during the runtime of the inorder traversal 
+    
     bool inorderDFS(TreeNode* root, TreeNode*& prev){
         if(!root) return true;
 
