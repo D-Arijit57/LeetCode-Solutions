@@ -9,16 +9,21 @@ public:
         int longest_seq = 0;
 
         for(int it : st){
-
+            
+            // if the number before the current number exist
+            // for example :
+            // if curr is 2 but 1 exists then we should skip it as a starting point
             if(st.find(it - 1) == st.end()){
                 int curr = it;
                 int len = 1;
 
+            // while there the consecutive sequence continues
             while(st.find(curr + 1) != st.end()){
                 curr++;
                 len++;
             }
-
+            // whenever it breaks the sequence 
+            // update the longest sequence 
             longest_seq = max(longest_seq, len);
             }  
         }
