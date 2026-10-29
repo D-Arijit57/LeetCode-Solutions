@@ -101,6 +101,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0128-longest-consecutive-sequence](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0128-longest-consecutive-sequence) |
 | [0141-linked-list-cycle](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0141-linked-list-cycle) |
 | [0142-linked-list-cycle-ii](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0142-linked-list-cycle-ii) |
+| [0146-lru-cache](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0146-lru-cache) |
 | [0160-intersection-of-two-linked-lists](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0160-intersection-of-two-linked-lists) |
 | [0202-happy-number](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0202-happy-number) |
 | [0268-missing-number](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0268-missing-number) |
@@ -199,6 +200,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 ## Design
 |  |
 | ------- |
+| [0146-lru-cache](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0146-lru-cache) |
 | [3797-design-spreadsheet](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/3797-design-spreadsheet) |
 ## Matrix
 |  |
@@ -225,6 +227,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0141-linked-list-cycle](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0141-linked-list-cycle) |
 | [0142-linked-list-cycle-ii](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0142-linked-list-cycle-ii) |
 | [0143-reorder-list](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0143-reorder-list) |
+| [0146-lru-cache](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0146-lru-cache) |
 | [0160-intersection-of-two-linked-lists](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0160-intersection-of-two-linked-lists) |
 | [0206-reverse-linked-list](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0206-reverse-linked-list) |
 | [0234-palindrome-linked-list](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0234-palindrome-linked-list) |
@@ -548,4 +551,8 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 |  |
 | ------- |
 | [0128-longest-consecutive-sequence](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0128-longest-consecutive-sequence) |
+## Doubly-Linked List
+|  |
+| ------- |
+| [0146-lru-cache](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0146-lru-cache) |
 <!---LeetCode Topics End-->
