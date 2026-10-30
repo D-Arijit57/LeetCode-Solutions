@@ -81,6 +81,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 ## Dynamic Programming
 |  |
 | ------- |
+| [0005-longest-palindromic-substring](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0005-longest-palindromic-substring) |
 | [0053-maximum-subarray](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0053-maximum-subarray) |
 | [0120-triangle](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0120-triangle) |
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0121-best-time-to-buy-and-sell-stock) |
@@ -177,6 +178,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 |  |
 | ------- |
 | [0003-longest-substring-without-repeating-characters](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0003-longest-substring-without-repeating-characters) |
+| [0005-longest-palindromic-substring](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0005-longest-palindromic-substring) |
 | [0020-valid-parentheses](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0020-valid-parentheses) |
 | [0030-substring-with-concatenation-of-all-words](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0030-substring-with-concatenation-of-all-words) |
 | [0071-simplify-path](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0071-simplify-path) |
@@ -248,6 +250,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 ## Two Pointers
 |  |
 | ------- |
+| [0005-longest-palindromic-substring](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0005-longest-palindromic-substring) |
 | [0015-3sum](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0015-3sum) |
 | [0016-3sum-closest](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0016-3sum-closest) |
 | [0018-4sum](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0018-4sum) |
@@ -555,4 +558,8 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 |  |
 | ------- |
 | [0146-lru-cache](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0146-lru-cache) |
+## Manacher
+|  |
+| ------- |
+| [0005-longest-palindromic-substring](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0005-longest-palindromic-substring) |
 <!---LeetCode Topics End-->
