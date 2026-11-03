@@ -11,40 +11,35 @@
  */
 class Solution {
 public:
-    void preorderdfs(TreeNode* root, int &ans, string &num){
+    void preorderdfs(TreeNode* root, int &ans, int currNum){
         // if you reach the end return 
         if(!root) return;
 
         // if it's a leaf node
-        // add up the path 
-        num += to_string(root->val);
+        // append the current digit
+        currNum = currNum * 10 + (root->val);
+
+        // if it's a leaf (doesn't have any children)
         if(!root->left && !root->right){
-            ans += stoi(num);
-            // we have to remove it from the string since it's a leaf 
-            num.pop_back();
+            ans += currNum;
             // since it's a leaf 
             // return after processing this node
             return;
         }
 
         // explore left
-        preorderdfs(root->left, ans, num);
+        preorderdfs(root->left, ans, currNum);
         // explore right
-        preorderdfs(root->right, ans, num);
-
-        // while moving back towards the top
-        // remove the last character
-        num.pop_back();
+        preorderdfs(root->right, ans, currNum);
 
     }
     int sumNumbers(TreeNode* root) {
         // edge case: if the tree is empty
         if(!root) return 0;
 
-        int ans = 0;
-        string num = "";
+        int ans = 0,  currNum = 0;
         // preoder dfs
-        preorderdfs(root, ans, num);
+        preorderdfs(root, ans, currNum);
         
         return ans;
         
