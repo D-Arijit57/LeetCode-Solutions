@@ -21,6 +21,8 @@ public:
         int rightGain = max(0,preorderdfs(root->right, maxSum));
 
         // calculate the maximum path sum between both the subtrees
+        // e.g 15 -> 20 -> 7, both of the children are involved, none of them are repeated so it's a valid path
+        // e.g 15 -> 20 -> -10 -> 20 -> 7 not a valid path
         int pathSum = root->val + leftGain + rightGain;
 
         // update the maximum sum
