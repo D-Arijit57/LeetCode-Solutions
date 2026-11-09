@@ -26,7 +26,7 @@ public:
         k = k % size; // minimize k
         // as rotation for the same remainder is the same
         // e.g we are going to rotate three times if k is 3, 18 or 27
-        if(k % size == 0) return head;
+        if(k == 0) return head;
 
         // find the node just newTail the first node to rotate
         // size - k
