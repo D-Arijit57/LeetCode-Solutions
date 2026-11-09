@@ -11,37 +11,41 @@
 class Solution {
 public:
     ListNode* rotateRight(ListNode* head, int k) {
-        if(!head || !head->next || k == 0) return head;
-        // if we observe this is not a reversal problem 
-        // what we really need to do here is 
-        // we need to find a split point, cut the second half, reconnect it to the head 
-        // if we observe the position of the new head is : n - k + 1 , new tail : n - k( n: the size of the linkelist )
+        if(!head || !head->next) return head;
+
         ListNode* temp = head;
-        int n = 1;
-        while(temp->next){
+        int size = 0 ;
+        ListNode* tail = nullptr ;
+        while(temp){
+            size++;
+            if(!temp->next) tail = temp;
             temp = temp->next;
-            n++;
         }
-        // make the list circular
-        temp->next = head;
-        // find the new tail 
-        // reduce k (normlization)
-        k %= n;
-        // if it is n = 7 we need three rotations that's same as n = 3
-        // so we normalize it by % N 
-        int newHead = n - k + 1;
-        int newTail = n - k;
-        ListNode* nh = head;
-        ListNode* nt = head;
-        // find the newtail
-        for(int i = 1 ; i < newTail ; i++){
-            nt = nt->next;
+        // if k is remainder of size 
+        // then rotating it makes no sense as it produces the same linkedlist
+        k = k % size; // minimize k
+        // as rotation for the same remainder is the same
+        // e.g we are going to rotate three times if k is 3, 18 or 27
+        if(k % size == 0) return head;
+
+        // find the node just newTail the first node to rotate
+        // size - k
+        int pos = size - k;
+
+        
+
+        ListNode* newTail = head;
+        ListNode* newHead = head;
+        // go till the rotate position
+        // newHead is the new head
+        while(pos--){
+            newTail = newHead;
+            newHead = newHead->next;
         }
-        // find the new head
-        for(int i = 1; i < newHead ; i++){
-            nh = nh->next;
-        }
-        nt->next = nullptr;
-        return nh;
+        
+        // assignments
+        tail->next = head;
+        newTail->next = nullptr;
+        return newHead;
     }
 };
