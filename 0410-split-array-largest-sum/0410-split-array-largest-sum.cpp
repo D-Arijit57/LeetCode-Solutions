@@ -4,6 +4,11 @@ public:
         int n = nums.size();
         int cntSplit = 1, sum = 0;
         for(int i = 0 ; i < n ; i++){
+            // if the current element is greater than the candidate_sum
+            // it for sure can't accomodate one element
+            // there's no use to move forward from this point
+            if(nums[i] > candidate_sum) return false;
+
             // the moment it crosses the candidate sum
             // we need to start a new split
             if(sum + nums[i] > candidate_sum){
