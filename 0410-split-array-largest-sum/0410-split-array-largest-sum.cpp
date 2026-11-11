@@ -24,6 +24,8 @@ public:
         // and check if the given k
         // can be used to to form valid splits
         int n = nums.size();
+        // max(sums) gives you mathematically tight lower bound
+        // mathematically it should be always answer >= max(nums)
         int low = *max_element(nums.begin(), nums.end()), high = 0;
         for(int i = 0 ; i < nums.size(); i++){
             high += nums[i];
