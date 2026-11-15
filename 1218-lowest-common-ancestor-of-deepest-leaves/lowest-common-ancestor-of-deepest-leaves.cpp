@@ -11,14 +11,17 @@
  */
 class Solution {
 public:
-     pair<TreeNode*, int> postorderdfs(TreeNode* root, pair<TreeNode*, int> &lca){
+    // the first node represents the LCA of deepest leaves
+    // the integer represents the maxDepth
+    // { LCA of deepest leaves, maxDepth} 
+     pair<TreeNode*, int> postorderdfs(TreeNode* root){
         // check if you have reach the end
         if(!root) return {nullptr, 0};
 
         // explore left
-        auto leftResult = postorderdfs(root->left, lca);
+        auto leftResult = postorderdfs(root->left);
         // explore right
-        auto rightResult = postorderdfs(root->right, lca);
+        auto rightResult = postorderdfs(root->right);
 
         // if leftSubtree's depth is more than the right
         // the LCA cannot exist in the rightsubtree
@@ -32,7 +35,6 @@ public:
         // the LCA cannot exist in the left subtree
         else if(leftResult.second < rightResult.second){
 
-
             // 1 because we have to count the current node's depth while returning the information to its parent
             // {LCA of deepest leaves must be in the right subtree, 1 + rightsubtree's depth )
             return {rightResult.first, 1 + rightResult.second};
@@ -44,9 +46,6 @@ public:
     }
     TreeNode* lcaDeepestLeaves(TreeNode* root) {
         // use postorder dfs
-        // the first node represents the LCA of deepest leaves
-        // the integer represents the maxDepth 
-        pair<TreeNode*, int>lca = {nullptr, 0};
-        return postorderdfs(root, lca).first;
+        return postorderdfs(root).first;
     }
 };
