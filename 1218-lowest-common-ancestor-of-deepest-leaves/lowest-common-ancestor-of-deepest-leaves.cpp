@@ -11,92 +11,42 @@
  */
 class Solution {
 public:
-    TreeNode* lcaDeepestLeaves(TreeNode* root) {
-        // edge case : if the tree is empty
-        if(root == nullptr) return nullptr;
+     pair<TreeNode*, int> postorderdfs(TreeNode* root, pair<TreeNode*, int> &lca){
+        // check if you have reach the end
+        if(!root) return {nullptr, 0};
 
-        // overall its a bottom up approach
-        
-        // we are trying solve children of every parent node 
-        // and get the required informaton that is (depth,LCA)
-        // the parent node process this information and checks -
-        // 1. if left subtree depth > right subtree depth the LCA for sure exists somewhere in the left subtree
-        // 2. if the right subtree depth > left subtree depth the LCA for sure exists somewhere in the right subtree 
-        // 3. if the depth of the both subtrees are the same for the current node 
-        // the current node is the LCA
-        // using a post order traversal 
+        // explore left
+        auto leftResult = postorderdfs(root->left, lca);
+        // explore right
+        auto rightResult = postorderdfs(root->right, lca);
 
-        // we store the information of the node and if its visited or not 
-        // visited = True : we have processed its children now process this node
-        // visited = False : childrens are yet to process
-        stack<pair<TreeNode*,bool>>st;
-        st.push({root,false});
-
-        // each child would produce something like (depth, LCA)
-        // so we would need something to store it
-        // e.g. result[2] = {4,2}, the subtree rooted at 2 has a depth of 4 and the LCA is 2
-        // Your result map is basically a DP table for the tree.
-        // we maintain and update throughout our iteration, at the end it helps us find out the maximum depth (distance between the root and deepest leaves) and LCA of the deepest leaves
-
-        // we update the table bottom up, processing one current at a time calculating its relative distance to its deepest leaves along with the LCA
-        unordered_map<TreeNode*,pair<int,TreeNode*>>result;
-        while(!st.empty()){
-            auto[curr, visited] = st.top();
-            st.pop();
-
-            // if the children are not processed 
-            if(visited == false){
-                // we need to process the children first
-                st.push({curr, true});
-
-                // push the right first since during popping the sequence is reversed
-                if(curr->right) st.push({curr->right, false});
-                if(curr->left) st.push({curr->left,false});
-            }
-
-            // if the children are already processed
-            else {
-                // Since a child might not exist the depth should be -1 initially
-                int leftDepth = -1;
-                int rightDepth = -1;
-
-                TreeNode* leftLCA = nullptr;
-                TreeNode* rightLCA = nullptr;
-
-                // if left exists store the depth
-                // and the LCA
-                if(curr->left){
-                    // maximum distance in the left down from this node
-                    leftDepth = result[curr->left].first;
-                    // LCA
-                    leftLCA = result[curr->left].second;
-                }
-
-                // if right exists store the depth
-                // and the LCA
-                if(curr->right){
-                    // maximum distance in the right down from this node
-                    rightDepth = result[curr->right].first;
-                    // LCA 
-                    rightLCA = result[curr->right].second;
-                }
-                
-
-                // keep in mind that we aren't maintaining the depth from the root
-                // rather we are maintaining the distance between the current node and its deepest leaves
-                // if left subtree > right subtree then for sure the LCA exists somewhere in the left subtree
-                if(leftDepth > rightDepth){
-                    result[curr] = {leftDepth + 1, leftLCA};
-                }
-                // if left subtree < right subtree then for sure the LCA exists somewhere in the right subtree
-                else if(leftDepth < rightDepth){
-                    result[curr] = {rightDepth + 1, rightLCA};
-                }
-                // if the left subtree == right subtree then the current node is the LCA
-                // move one level upwards
-                else result[curr] = {leftDepth + 1, curr};
-            }
+        // if leftSubtree's depth is more than the right
+        // the LCA cannot exist in the rightsubtree
+        if(leftResult.second > rightResult.second){
+            // 1 because we have to count the current node's depth while returning the information to its parent
+            // {LCA of deepest leaves must be in the left subtree, 1 + leftsubtree's depth )
+            return {leftResult.first, 1 + leftResult.second};
         }
-        return result[root].second;
+
+        // similarly if the rightSubtree's depth is more than leftSubtree
+        // the LCA cannot exist in the left subtree
+        else if(leftResult.second < rightResult.second){
+
+
+            // 1 because we have to count the current node's depth while returning the information to its parent
+            // {LCA of deepest leaves must be in the right subtree, 1 + rightsubtree's depth )
+            return {rightResult.first, 1 + rightResult.second};
+        }
+
+        // if both's length are the same then the current node is the LCA
+        // since the depths are same , take any of them
+        else return {root, 1 + leftResult.second};
+    }
+    TreeNode* lcaDeepestLeaves(TreeNode* root) {
+        // use postorder dfs
+        // the first node represents the LCA of deepest leaves
+        // the integer represents the maxDepth 
+        pair<TreeNode*, int>lca = {nullptr, 0};
+        return postorderdfs(root, lca).first;
     }
 };
