@@ -13,7 +13,7 @@ class Solution {
 public:
     // the first node represents the LCA of deepest leaves
     // the integer represents the maxDepth
-    // { LCA of deepest leaves, maxDepth} 
+    // {a pointer to the LCA of deepest leaves within that subtree, the maximum depth of the subtree measured to its relative root} 
      pair<TreeNode*, int> postorderdfs(TreeNode* root){
         // check if you have reach the end
         if(!root) return {nullptr, 0};
