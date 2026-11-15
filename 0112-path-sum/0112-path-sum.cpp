@@ -38,7 +38,7 @@ public:
         // we remove the previous node's value from the currentSum
         currSum -= root->val;
         
-        // if we always return false
+        // mistake during revision : if we always return false
         // the parent might falsely capture it as the sum being not present even the path is valid
         // so what we do is , we maintain a variable that states
         // if the target is present in one of the subtrees or not
