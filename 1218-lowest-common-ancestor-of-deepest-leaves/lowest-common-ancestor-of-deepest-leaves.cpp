@@ -39,7 +39,7 @@ public:
         }
 
         // if both's length are the same then the current node is the LCA
-        // since the depths are same , take any of them
+        // since the depths are same , take any of them (left or right doesn't matter)
         else return {root, 1 + leftResult.second};
     }
     TreeNode* lcaDeepestLeaves(TreeNode* root) {
