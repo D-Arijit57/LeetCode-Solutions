@@ -31,6 +31,17 @@ public:
             // B starts before A ends or A ends before B ends
             // we can express that using this:
             // max(a.start,b.start) <= min(a.end,b.end)
+
+            // why this works ? 
+            /*
+                When does a valid interval exist?
+
+            Think about it:
+                - If the intersection starts before it ends, there is an overlap.
+                - If they start and end at exactly the same point, there is still an overlap because these are closed intervals. It consumes the other interval
+                - If the intersection starts after it ends, there is no overlap.
+            Therefore: max(a.start,b.start) <= min(a.end,b.end)
+            */
             if(max(firstList[i][0],secondList[j][0]) <= min(firstList[i][1], secondList[j][1])){
                 // consider two lists : firstList = [[a,b], ...], secondList = [[c,d],...]
                 // the intersection is : e.g [[0,2],...], [[1,5],...] 
