@@ -42,6 +42,9 @@ public:
                 - If the intersection starts after it ends, there is no overlap.
             Therefore: max(a.start,b.start) <= min(a.end,b.end)
             */
+            
+            // in simple words in every type of case :
+            // one of the intervals has to start before the other ends to have an overlap
             if(max(firstList[i][0],secondList[j][0]) <= min(firstList[i][1], secondList[j][1])){
                 // consider two lists : firstList = [[a,b], ...], secondList = [[c,d],...]
                 // the intersection is : e.g [[0,2],...], [[1,5],...] 
