@@ -17,7 +17,8 @@ public:
             // add the current weight
             currWeight += weights[i];
         }
-        // check if the current count of days is lesser than the required days
+        // if the above checks are succesfully done
+        // we can ship it 
         return true;
     }
 
