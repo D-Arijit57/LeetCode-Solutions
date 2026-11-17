@@ -9,6 +9,8 @@ public:
                 currWeight = 0;
                 currDays++;
             }
+            // after reseting currWeight (in case it needs) 
+            // add the current weight
             currWeight += weights[i];
         }
         // check if the current count of days is lesser than the required days
