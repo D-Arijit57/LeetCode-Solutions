@@ -1,6 +1,6 @@
 class Solution {
 public:
-    bool canShip(vector<int>&weights, int days, int cap){
+    bool canShip(const vector<int>&weights, int days, int cap){
         int currWeight = 0, currDays = 1;
         for(int i = 0 ; i < weights.size(); i++){
             // if adding the current weight makes the currWeight more than the capacity 
@@ -17,7 +17,8 @@ public:
             // add the current weight
             currWeight += weights[i];
         }
-        // check if the current count of days is lesser than the required days
+        // if the above checks are succesfully done
+        // we can ship it 
         return true;
     }
 
@@ -26,7 +27,7 @@ public:
         // weights
         // starting from the maximum weight till the summation of all weights
         // monotonicity : increasing
-        // TTTTTTFFFFFFF
+        // FFFTTTTTT
         int n = weights.size();
         // because the belt should be able to carry atleast the maximum weight in a single day itself
         int low = *max_element(weights.begin(), weights.end());
