@@ -8,7 +8,9 @@ public:
             if(currWeight + weights[i] > cap){
                 currWeight = 0;
                 currDays++;
-
+                // if the currentDays are already more than the required days 
+                // return false
+                // as we can't ship it with the current capacity
                 if(currDays > days) return false;
             }
             // after reseting currWeight (in case it needs) 
@@ -16,7 +18,7 @@ public:
             currWeight += weights[i];
         }
         // check if the current count of days is lesser than the required days
-        return currDays <= days;
+        return true;
     }
 
     int shipWithinDays(vector<int>& weights, int days) {
