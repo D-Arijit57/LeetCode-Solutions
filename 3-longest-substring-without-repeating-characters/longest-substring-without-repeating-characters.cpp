@@ -13,7 +13,6 @@ public:
 
             while(countFreq[s[right]] > 1){
                 countFreq[s[left]]--;
-                if(countFreq[s[left]] == 0) countFreq.erase(s[left]);
                 left++;
             }
 
