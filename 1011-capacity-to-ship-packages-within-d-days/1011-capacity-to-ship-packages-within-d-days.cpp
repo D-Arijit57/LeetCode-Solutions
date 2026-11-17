@@ -8,6 +8,8 @@ public:
             if(currWeight + weights[i] > cap){
                 currWeight = 0;
                 currDays++;
+
+                if(currDays > days) return false;
             }
             // after reseting currWeight (in case it needs) 
             // add the current weight
