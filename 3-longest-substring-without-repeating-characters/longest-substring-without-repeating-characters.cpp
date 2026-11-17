@@ -4,21 +4,21 @@ public:
         int n = s.size();
         if(n == 0) return 0;
 
-        unordered_map<char, int>countFreq;
+        vector<int>freq(128,0);
         
-        int left = 0, ans = 0;
+        int left = 0, maxLength = 0;
 
         for(int right = 0 ; right < n ; right++){
-            countFreq[s[right]]++;
+            freq[s[right]]++;
 
-            while(countFreq[s[right]] > 1){
-                countFreq[s[left]]--;
+            while(freq[s[right]] > 1){
+                freq[s[left]]--;
                 left++;
             }
 
-            ans = max(ans, right - left + 1);
+            maxLength = max(maxLength, right - left + 1);
         }
-        return ans;
+        return maxLength;
 
     }
 };
