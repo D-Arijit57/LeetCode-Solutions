@@ -1,6 +1,6 @@
 class Solution {
 public:
-    
+    // typedef is a C++ keyword used to create a shorter, easier-to-read alias (nickname) for a long or complex data type.
     typedef pair<int, int>freqPair;
     vector<int> topKFrequent(vector<int>& nums, int k) {
           // maintain a hashmap to store the frequency of elements 
