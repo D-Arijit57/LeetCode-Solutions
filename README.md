@@ -37,6 +37,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0268-missing-number](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0268-missing-number) |
 | [0275-h-index-ii](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0275-h-index-ii) |
 | [0287-find-the-duplicate-number](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0287-find-the-duplicate-number) |
+| [0347-top-k-frequent-elements](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0347-top-k-frequent-elements) |
 | [0378-kth-smallest-element-in-a-sorted-matrix](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0378-kth-smallest-element-in-a-sorted-matrix) |
 | [0410-split-array-largest-sum](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0410-split-array-largest-sum) |
 | [0435-non-overlapping-intervals](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0435-non-overlapping-intervals) |
@@ -108,6 +109,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0160-intersection-of-two-linked-lists](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0160-intersection-of-two-linked-lists) |
 | [0202-happy-number](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0202-happy-number) |
 | [0268-missing-number](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0268-missing-number) |
+| [0347-top-k-frequent-elements](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0347-top-k-frequent-elements) |
 | [0383-ransom-note](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0383-ransom-note) |
 | [0387-first-unique-character-in-a-string](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0387-first-unique-character-in-a-string) |
 | [0409-longest-palindrome](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0409-longest-palindrome) |
@@ -136,6 +138,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 ## Counting
 |  |
 | ------- |
+| [0347-top-k-frequent-elements](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0347-top-k-frequent-elements) |
 | [0383-ransom-note](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0383-ransom-note) |
 | [0387-first-unique-character-in-a-string](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0387-first-unique-character-in-a-string) |
 | [0992-subarrays-with-k-different-integers](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0992-subarrays-with-k-different-integers) |
@@ -176,6 +179,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0108-convert-sorted-array-to-binary-search-tree](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0108-convert-sorted-array-to-binary-search-tree) |
 | [0215-kth-largest-element-in-an-array](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0215-kth-largest-element-in-an-array) |
 | [0240-search-a-2d-matrix-ii](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0240-search-a-2d-matrix-ii) |
+| [0347-top-k-frequent-elements](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0347-top-k-frequent-elements) |
 | [0918-maximum-sum-circular-subarray](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0918-maximum-sum-circular-subarray) |
 ## String
 |  |
@@ -290,6 +294,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 | [0075-sort-colors](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0075-sort-colors) |
 | [0215-kth-largest-element-in-an-array](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0215-kth-largest-element-in-an-array) |
 | [0268-missing-number](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0268-missing-number) |
+| [0347-top-k-frequent-elements](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0347-top-k-frequent-elements) |
 | [0378-kth-smallest-element-in-a-sorted-matrix](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0378-kth-smallest-element-in-a-sorted-matrix) |
 | [0435-non-overlapping-intervals](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0435-non-overlapping-intervals) |
 | [0442-find-all-duplicates-in-an-array](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0442-find-all-duplicates-in-an-array) |
@@ -405,6 +410,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 |  |
 | ------- |
 | [0215-kth-largest-element-in-an-array](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0215-kth-largest-element-in-an-array) |
+| [0347-top-k-frequent-elements](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0347-top-k-frequent-elements) |
 | [0378-kth-smallest-element-in-a-sorted-matrix](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0378-kth-smallest-element-in-a-sorted-matrix) |
 | [1464-maximum-product-of-two-elements-in-an-array](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/1464-maximum-product-of-two-elements-in-an-array) |
 ## Tree
@@ -526,6 +532,7 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 |  |
 | ------- |
 | [0215-kth-largest-element-in-an-array](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0215-kth-largest-element-in-an-array) |
+| [0347-top-k-frequent-elements](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0347-top-k-frequent-elements) |
 ## String Matching
 |  |
 | ------- |
@@ -586,4 +593,8 @@ Here's my Collection of Leetcode solutions for reference while solving leetcode 
 |  |
 | ------- |
 | [0113-path-sum-ii](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0113-path-sum-ii) |
+## Bucket Sort
+|  |
+| ------- |
+| [0347-top-k-frequent-elements](https://github.com/D-Arijit57/LeetCode-Solutions/tree/master/0347-top-k-frequent-elements) |
 <!---LeetCode Topics End-->
