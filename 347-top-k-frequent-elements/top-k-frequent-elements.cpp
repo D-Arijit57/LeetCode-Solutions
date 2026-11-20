@@ -1,7 +1,5 @@
 class Solution {
 public:
-    // typedef is a C++ keyword used to create a shorter, easier-to-read alias (nickname) for a long or complex data type.
-    typedef pair<int, int>freqPair;
     vector<int> topKFrequent(vector<int>& nums, int k) {
           // maintain a hashmap to store the frequency of elements 
           int n = nums.size();
@@ -14,7 +12,7 @@ public:
           // everytime it becomes more than k
           // pop() it
           // you'll left with the top k frequent elements
-          priority_queue<freqPair, vector<freqPair>, greater<freqPair>>minHeap;
+          priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int, int>>>minHeap;
 
           // iterate the map
           // and maintain a minHeap size of k
