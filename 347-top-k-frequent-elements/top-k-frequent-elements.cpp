@@ -1,35 +1,37 @@
 class Solution {
 public:
+    
+    typedef pair<int, int>freqPair;
     vector<int> topKFrequent(vector<int>& nums, int k) {
-        int n = nums.size();
-        unordered_map<int, int> freq;
-        for (int i = 0; i < n; i++) {
-            freq[nums[i]]++;
-        }
-        // using bucket sort
-        // creating a bucket
-        // indices -> frequency of elements (at max the size can be n)
-        vector<vector<int>> bucket(n + 1);
-        // taking n+1 since the index starts from zero and we wanna take the
-        // same size as the array
-        for (auto const& pair : freq) {
-            int elem = pair.first;
-            int cnt = pair.second;
-            bucket[cnt].push_back(
-                elem); // storing the element corresponding to the count
-        }
+          // maintain a hashmap to store the frequency of elements 
+          int n = nums.size();
+          unordered_map<int, int>freq;
+          for(int it : nums){
+            freq[it]++;
+          }
 
-        // creating the answer array
-        vector<int> ans;
+          // maintain a minHeap of size k
+          // everytime it becomes more than k
+          // pop() it
+          // you'll left with the top k frequent elements
+          priority_queue<freqPair, vector<freqPair>, greater<freqPair>>minHeap;
 
-        // reiterate the bucket from the back
-        for (int i = n; i >= 0 && ans.size() < k; i--) {
-            for (int it : bucket[i]) {
-                ans.push_back(it);
-                if (ans.size() == k)
-                    break;
-            }
-        }
-        return ans;
+          // iterate the map
+          // and maintain a minHeap size of k
+          for(const auto &it : freq){
+            minHeap.push({it.second, it.first});
+            if(minHeap.size() > k) minHeap.pop();
+          }
+
+         // extract all the K elements into a vector
+         // note: priority_queue doesn't have iterators
+          vector<int>ans;
+          while(!minHeap.empty()){
+            ans.push_back(minHeap.top().second);
+            minHeap.pop();
+          }
+
+          return ans;
+
     }
-    };
+};
