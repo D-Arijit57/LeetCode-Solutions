@@ -1,5 +1,6 @@
 class Solution {
 public:
+    
     typedef pair<int, int>freqPair;
     vector<int> topKFrequent(vector<int>& nums, int k) {
           // maintain a hashmap to store the frequency of elements 
