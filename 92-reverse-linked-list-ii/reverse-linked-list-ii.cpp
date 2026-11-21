@@ -12,47 +12,33 @@ class Solution {
 public:
     ListNode* reverseBetween(ListNode* head, int left, int right) {
         if(!head || !head->next) return head;
-
-        // just to make sure every node has a node before
+        // optimized
+        // head insertion **
+        // we immediately take the node immediately before the tail and insert it just after beforeLeft
         ListNode dummy(0);
         dummy.next = head;
 
         ListNode* beforeLeft = &dummy;
-        ListNode* leftPos = &dummy;
-        // right pos is more right - left positions from left
-        int rightPosCnt = right - left;
-        int cntNodes = right - left + 1;
-        // move left to its position
-        // while beforeLeft follows it and stays right before it
-        // make sure leftPos stays valid
-        
-        while(left-- && leftPos->next){
-            beforeLeft = leftPos;
-            leftPos = leftPos->next;
+        for(int i = 1; i < left ; i++){
+            beforeLeft = beforeLeft->next;
         }
-        
-        ListNode* rightPos = leftPos;
-        while(rightPosCnt-- && rightPos->next){
-            rightPos = rightPos->next;
-        }
-        // maintain the node afterRight for restructuring after reversal
-        ListNode* afterRight = rightPos->next;
-        // perform reversal of the nodes from left o right inclusive
-        ListNode* curr = leftPos;
-        ListNode* prev = afterRight;
 
-        while(cntNodes--){
-            ListNode* next = curr->next;
-            curr->next = prev;
-            prev = curr;
-            curr = next;
-        }
+        ListNode* curr = beforeLeft->next;
+        // this pointer represents / points to the node 
+        // that is supposed to reverse and inserted just after BeforeLeft
+        // for case 1 : 1 -> 2 -> 3 -> 4 -> 5 it points to 3
         
-        // restructuring
-        // prev becomes the new head
-        beforeLeft->next = prev;
-
+        int nodesToReverse = right - left;
+        while(nodesToReverse--){
+            ListNode* nodeToReverse = curr->next;
+            // update the curr's next
+            curr->next = nodeToReverse->next;
+            // update nodeToReverse's next before updating beforeLeft's next
+            nodeToReverse->next = beforeLeft->next;
+            // connect beforeLeft's next to the just inserted new head of the left boundary
+            beforeLeft->next = nodeToReverse;
+            
+        }
         return dummy.next;
-        
     }
 };
