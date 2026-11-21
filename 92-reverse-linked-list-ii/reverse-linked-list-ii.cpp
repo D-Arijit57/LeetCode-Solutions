@@ -11,38 +11,48 @@
 class Solution {
 public:
     ListNode* reverseBetween(ListNode* head, int left, int right) {
-        // use a dummy node so that every node in this list has previous node
+        if(!head || !head->next) return head;
+
+        // just to make sure every node has a node before
         ListNode dummy(0);
         dummy.next = head;
-        ListNode* before = &dummy;
-        for(int i = 1 ; i < left ; i++){
-            before = before->next;
-        }
-        ListNode* leftNode = before->next;
 
-        // reverse the segment left to right
-        // process exactly right - left + 1 nodes
-        int reverse_cnt = right - left + 1;
-        ListNode* curr = leftNode;
-        ListNode* prev = nullptr;
-        while(reverse_cnt--){
+        ListNode* beforeLeft = &dummy;
+        ListNode* leftPos = &dummy;
+        // right pos is more right - left positions from left
+        int rightPosCnt = right - left;
+        int cntNodes = right - left + 1;
+        // move left to its position
+        // while beforeLeft follows it and stays right before it
+        // make sure leftPos stays valid
+        
+        while(left-- && leftPos->next){
+            beforeLeft = leftPos;
+            leftPos = leftPos->next;
+        }
+        
+        ListNode* rightPos = leftPos;
+        while(rightPosCnt-- && rightPos->next){
+            rightPos = rightPos->next;
+        }
+        // maintain the node afterRight for restructuring after reversal
+        ListNode* afterRight = rightPos->next;
+        // perform reversal of the nodes from left o right inclusive
+        ListNode* curr = leftPos;
+        ListNode* prev = afterRight;
+
+        while(cntNodes--){
             ListNode* next = curr->next;
             curr->next = prev;
             prev = curr;
             curr = next;
         }
-        // prev is the new head
-        // we need to connect the end points right and left
-        // connect the new head to the before
-        before->next = prev;
-        // left_boundary is the tail of the reversed segment
-        // or you can say the right end point
-        // we need to connect with the node just after 
-        // which one should we connect to? its curr
-        // curr becomes the node just after the right after the reversal 
-        leftNode->next = curr;
+        
+        // restructuring
+        // prev becomes the new head
+        beforeLeft->next = prev;
 
         return dummy.next;
+        
     }
-
 };
