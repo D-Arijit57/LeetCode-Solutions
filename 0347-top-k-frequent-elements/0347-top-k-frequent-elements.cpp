@@ -1,38 +1,37 @@
 class Solution {
 public:
     vector<int> topKFrequent(vector<int>& nums, int k) {
-          // maintain a hashmap to store the frequency of elements 
-          int n = nums.size();
-          unordered_map<int, int>freq;
-          for(int it : nums){
-            freq[it]++;
-          }
+        // bucket sort : optimized TC O(N)
+        // Instead of organizing elements using a heap, we can create an array where the index itself represents the frequency.
+        if(nums.empty()) return {};
+        int n = nums.size();
 
-          // maintain a minHeap of size k
-          // everytime it becomes more than k
-          // pop() it
-          // you'll left with the top k frequent elements
-          // since we are maintaing a {key,value} for the priority we need to have a pair instead of int
-          priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int, int>>>minHeap;
+        // record the frequency of each element in a hashmap
+        unordered_map<int,int>freq;
+        for(const int &num : nums){
+            freq[num]++;
+        }
 
-          // iterate the map
-          // and maintain a minHeap size of k
-          for(const auto &it : freq){
-            // since the priority is based upon the frequency
-            // it.second (value) comes first
-            minHeap.push({it.second, it.first});
-            if(minHeap.size() > k) minHeap.pop();
-          }
 
-         // extract all the K elements into a vector
-         // note: priority_queue doesn't have iterators
-          vector<int>ans;
-          while(!minHeap.empty()){
-            ans.push_back(minHeap.top().second);
-            minHeap.pop();
-          }
+        // create buckets with the size of n + 1
+        // why n + 1 ? 
+        // Because frequency can range from 1 to n, and we want to use the frequency directly as the bucket index.
+        vector<vector<int>>buckets(n + 1);
+        for(const auto &it : freq){
+            buckets[it.second].push_back(it.first);
+        }
 
-          return ans;
-
+        vector<int>ans;
+        // taverse from the back to retrieve the top k frequent
+        int i = n;
+        while(i >= 1 && ans.size()!= k){
+            for(const auto &it : buckets[i]){
+                if(ans.size() == k) break;
+                ans.push_back(it);
+            }
+            i--;
+        }
+        return ans;
     }
+
 };
