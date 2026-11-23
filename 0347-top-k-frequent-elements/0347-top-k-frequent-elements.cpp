@@ -24,7 +24,8 @@ public:
         vector<int>ans;
         // taverse from the back to retrieve the top k frequent
         int i = n;
-        while(i >= 1 && ans.size()!= k){
+        while(i >= 0 && ans.size()!= k){
+            // for each frequency bucket push all the elements in the answer
             for(const auto &it : buckets[i]){
                 if(ans.size() == k) break;
                 ans.push_back(it);
