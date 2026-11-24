@@ -30,6 +30,8 @@ public:
             if(x - arr[mid] > arr[mid + k] - x){
                 low = mid + 1;
             }
+
+            // if the distances are equal or less then keep the left half as it contains the smaller elements
             else high = mid;
         }
 
